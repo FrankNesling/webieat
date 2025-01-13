@@ -1,0 +1,1419 @@
+<html>
+<head>
+
+<script type="text/javascript" src="Level1.js"></script>
+<script type="text/javascript" src="Level2.js"></script>
+<script type="text/javascript" src="Level3.js"></script>
+<script type="text/javascript" src="Level4.js"></script>
+<script type="text/javascript" src="Level5.js"></script>
+<script language="JavaScript">
+
+
+
+//------------------------BASICS - only theoratical----------------
+/*
+
+look in fields exactly.txt to see which number in array means which gif
+
+
+*/
+//---------------------------KEYS--------------------------------------
+controlfreezed = 0;										//2.1
+
+
+document.addEventListener('keydown', function(event) {						//2.4ff			
+Key = event.keyCode;
+if(Key == 37 && controlfreezed == 0) control(2);						//left
+if(Key == 38 && controlfreezed == 0) control(3);						//up
+if(Key == 39 && controlfreezed == 0) control(1);						//right
+if(Key == 40 && controlfreezed == 0) control(4);						//down
+if(Key == 50)											//Cheat for lvlup 4.0.6.2ff
+{
+field_level_stopped = 0;
+lvl = lvl + 1;
+}
+});		
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-----------------------------Menu/Startup/Level---------------------------------------------
+
+
+function newgame(which_class)									//Start a new game 2.0
+{
+showsign.style.color    = "LightYellow";							//sign text-colour 3.0
+new_random_key = 1;										//5.0
+your_attack = 0;										//5.0
+malus = 0;											//5.0
+saved_random_number = 0;									//5.0
+
+full_inventar = 0;										//3.3
+
+
+button_is_used_one_time = 0;									//2.1
+lvl = 1;											//1.0
+field_level_stopped = 0;									//2.0
+
+armour_break = 0;										//2.7.4
+hammer_is_collected = 0;									//2.7.5
+bonus_903 = 0;											//3.3.2
+bonus_904 = 0;											//3.3.3
+bonus_905 = 0;	
+bonus_907 = 0;											//4.0.6
+bonus_908 = 0;											//4.0.6.3
+
+
+tries    = 3;											//3.4
+next_try = 0;											//3.4
+next_lvl = 0;											//4.0.6.4
+
+
+for_this_lvl_saved_player_speed = 15;								//4.0.6.1
+
+
+max_life     = 0;										//2.1
+player_life  = 0;										//1.0
+player_armour= 0;										//1.0
+player_attack= 0;										//1.0
+life_steal   = 0;										//2.0
+player_speed = 15;										//2.7
+ghost_attack = 0;										//3.1
+
+
+win_against_enemy  = 0;										//1.0
+
+
+fight_is_activated = 0;										//2.0
+enemy_life = 0;											//1.0
+
+
+
+
+knight_is_chosen = 0;										//2.0
+assassin_is_chosen = 0;										//2.0
+guard_is_chosen = 0;										//2.0
+
+
+if(which_class == 1) knight_is_chosen = 1;							//player class 1 - knight 2.0
+if(which_class == 2) assassin_is_chosen = 1;							//player class 2 - assassin 2.0
+if(which_class == 3) guard_is_chosen = 1;							//player class 3 - guard 2.0
+
+
+
+
+print_field();											//2.0
+}
+
+
+
+
+
+
+
+	
+function lvlup()									//level up
+{
+control_saved_class = 200;								//4.0
+button_is_used_one_time = 0;								//2.2
+controlfreezed = 0;
+
+
+
+
+
+if(next_try == 1)									//4.0.4ff
+{
+player_life = saved_player_life;
+player_armour = saved_player_armour;
+armour_break = saved_armour_break;
+life_steal = saved_life_steal;
+player_attack = saved_player_attack;
+max_life = saved_max_life;
+player_speed = saved_player_speed;
+}
+
+
+
+
+if(lvl == 1 && next_try == 0)								//4.0.4
+{
+if(knight_is_chosen == 1)								//3.4
+{
+max_life  =    20  + 10 * (lvl-1);							//3.4
+player_life  = 20  + 10 * (lvl-1);							//3.4
+player_armour= 0   +  0 * (lvl-1);		 					//3.4
+player_attack= 5   +  3 * (lvl-1);							//3.4
+life_steal   = 2   +  2 * (lvl-1);							//3.4
+}
+if(assassin_is_chosen == 1)								//3.4
+{
+max_life  =    17  +  5 * (lvl-1);							//3.4
+player_life  = 17  +  5 * (lvl-1);							//3.4
+player_armour= 0   +  0 * (lvl-1);							//3.4 
+player_attack= 8   +  8 * (lvl-1);							//3.4
+}		
+if(guard_is_chosen == 1)								//3.4.
+{
+max_life  =    25  + 18 * (lvl-1);							//3.4
+player_life  = 25  + 18 * (lvl-1);							//3.4
+player_armour= 0   +  0 * (lvl-1); 							//3.4
+player_attack= 2   +  2 * (lvl-1);							//3.4
+}
+saved_player_life = player_life;							//4.0.4
+saved_player_attack = player_attack;							//4.0.4
+saved_player_armour = player_armour;							//4.0.4
+saved_armour_break = armour_break;							//4.0.4
+saved_life_steal = life_steal;								//4.0.4
+saved_max_life = max_life;								//4.0.4
+saved_player_speed = player_speed;							//4.0.4
+}
+
+
+if(lvl > 1 && next_try == 0)								//3.4.1
+{
+if(knight_is_chosen == 1)								//3.4.1
+{
+max_life  =    max_life  + 10 * (lvl-1);						//3.4.1
+player_life  = player_life  + 10 * (lvl-1);						//3.4.1
+player_armour= player_armour   +  0 * (lvl-1);		 				//3.4.1
+player_attack= player_attack   +  3 * (lvl-1);						//3.4.1
+life_steal   = life_steal   +  2 * (lvl-1);						//3.4.1
+}
+if(assassin_is_chosen == 1)								//3.4.1
+{
+max_life  =    max_life  +  5 * (lvl-1);						//3.4.1
+player_life  = player_life  +  5 * (lvl-1);						//3.4.1
+player_armour= player_armour   +  0 * (lvl-1);						//3.4.1 
+player_attack= player_attack   +  8 * (lvl-1);						//3.4.1
+}		
+if(guard_is_chosen == 1)								//3.4.1
+{
+max_life  =    max_life  + 18 * (lvl-1);						//3.4.1
+player_life  = player_life  + 18 * (lvl-1);						//3.4.1
+player_armour= player_armour   +  0 * (lvl-1); 						//3.4.1
+player_attack= player_attack   +  2 * (lvl-1);						//3.4.1
+}
+
+saved_player_life = player_life;							//4.0.4
+saved_player_attack = player_attack;							//4.0.4
+saved_player_armour = player_armour;							//4.0.4
+saved_armour_break = armour_break;							//4.0.4
+saved_life_steal = life_steal;								//4.0.4
+saved_max_life = max_life;								//4.0.4
+saved_player_speed = player_speed;							//4.0.4
+}
+
+
+
+
+
+
+
+
+
+
+}
+
+
+//-------------------------------------------Field---------------------------------------------------------
+
+
+var field = new Array();									//Field-array 2.0
+var bgfield = new Array();									//bgfield-array 4.0
+	
+var inventar = new Array;
+inventar[00] = new Array(999,999,999,999);							//inventar 4.0ff
+inventar[01] = new Array(999,400,400,400);
+inventar[02] = new Array(999,200,200,200);
+inventar[03] = new Array(999,200,200,200);
+inventar[04] = new Array(999,200,200,200);
+inventar[05] = new Array(999,200,200,200);
+
+
+
+
+
+
+
+function print_field()										//get field on display
+{						
+
+if(fight_is_activated == 0)									//5.2.1
+{
+Y.style.left = -50;
+G.style.left = -50;
+R.style.left = -50;
+D.style.left = -50;
+}
+
+
+if(field_level_stopped == 0)									//field of your lvl 2.0
+{
+lvlup();											//3.4
+next_try = 0;											//3.4
+
+
+if(lvl <= 1)											//3.4ff
+{
+player_x = 2;
+player_y = 2;
+}
+
+if(lvl == 2)											//3.4ff
+{
+player_x = 3;
+player_y = 10;
+}
+
+if(lvl == 3)											//4.0.3ff
+{
+player_x = 1;
+player_y = 3;
+}
+
+
+if(lvl == 4)
+{
+player_x = 1;
+player_y = 3;
+}
+
+if(lvl == 5)
+{
+player_x = 5;
+player_y = 2;
+}
+
+
+if(lvl == 1)											//1.0
+{
+x_field_length = 14;										//3.2.2
+lvl1();												//4.1
+}
+
+
+
+
+
+if(lvl == 2)											//1.0
+{												
+x_field_length = 14;										//3.2.2
+lvl2();												//4.1
+}
+
+
+
+if(lvl == 3)											//1.0
+{
+x_field_length = 14;										//3.2.2
+lvl3();												//4.1
+}
+
+if(lvl == 4)											//game field for lvl 4 4.0.6ff										
+{
+x_field_length = 14;										
+lvl4();												//4.1
+}
+
+
+
+
+if(lvl == 5)											//game field for lvl 5 4.0.7ff
+{
+x_field_length = 14;
+lvl5();												//4.1
+}
+
+
+if(lvl == 6)
+{
+x_field_length = 14;
+lvl6();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+field_level_stopped = 1;									//2.0
+}
+
+				
+
+
+
+
+document.getElementById("button_knight").innerHTML = ""; 					//button is away 2.0
+document.getElementById("button_assassin").innerHTML = ""; 					//button is away 2.0
+document.getElementById("button_guard").innerHTML = ""; 					//button is away 2.0
+
+
+if(player_life > max_life) player_life = max_life;						//avoid more life than maxlife 2.1
+if(enemy_life < 0) enemy_life = 0;								//avoid negativ enemy_life 2.0
+if(player_life < 0) player_life = 0;								//avoid negativ player_life 2.0
+
+
+
+Draw = "<table cellspacing = '0' cellpadding = '0' border = '0'>";				//1.0
+
+for(i=1; i<15; i++)										//2.6
+{
+Draw = Draw + "<tr>";										//1.0
+	for(j=1; j<=x_field_length; j++)							//2.6
+	{
+	Draw = Draw + "<td><img src='";								//1.0ff
+
+	Draw = Draw + field[i][j] + ".gif'></td>";
+	}
+Draw = Draw + "</tr>";
+}
+Draw = Draw + "</table>";
+//alert(Draw);
+
+
+
+bgdraw = "<table cellspacing = '0' cellpadding = '0' border = '0'>";				//4.0ff
+
+for(i=1; i<15; i++)										
+{
+bgdraw = bgdraw + "<tr>";									
+	for(j=1; j<=x_field_length; j++)							
+	{
+	bgdraw = bgdraw + "<td><img src='";							
+
+	bgdraw = bgdraw + bgfield[i][j] + ".gif'></td>";
+	}
+bgdraw = bgdraw + "</tr>";
+}
+bgdraw = bgdraw + "</table>";
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById("Field").innerHTML = Draw;						//1.0
+document.getElementById("BgField").innerHTML = bgdraw;						//4.0
+document.getElementById("playerstats").innerHTML = "<h4> Life: </h4>"+player_life+"/"+max_life	//shows playerstats 2.7.2
+						 + "<h4> Attack: </h4>"+player_attack+" + ("+armour_break+")"
+						 + "<h4> Armour: </h4>"+player_armour
+						 + "<h4> Speed: </h4>"+player_speed;
+if(fight_is_activated == 1) document.getElementById("enemylife").innerHTML = "<h4 > Enemylife: </h4>" + enemy_life + "<p> </p>";	//shows enemy_life 2.3
+if(fight_is_activated == 0) document.getElementById("enemylife").innerHTML = "";							//2.0
+
+
+
+
+										
+
+
+
+
+
+
+
+
+itemsdraw = "<table cellspacing = '0' cellpadding = '0' border = '0'>";				//shows items in inventar 3.3ff
+
+for(i=1; i<5; i++)										
+{
+itemsdraw = itemsdraw + "<tr>";									
+	for(j=1; j<4; j++)									
+	{
+	itemsdraw = itemsdraw + "<td><img src='";						
+
+	itemsdraw = itemsdraw + inventar[i][j] + ".gif'></td>";	
+	}
+itemsdraw = itemsdraw + "</tr>";
+}
+itemsdraw = itemsdraw + "</table>";
+
+document.getElementById("inventarlayer").innerHTML = itemsdraw;
+
+
+
+
+
+
+//document.getElementById("testvariables").innerHTML = "x:"+player_x+"<br>"+"y:"+player_y;	//shows x and y-coordinate 1.0
+
+
+
+
+}
+
+
+
+
+
+
+
+
+//-----------------------------Controls-----------------------------------------
+
+
+
+
+
+function control(control_pressed)								//Control for all 4 directions 2.4
+{
+document.getElementById("showsign").innerHTML = "";						//deletes text in sign when going 3.0
+
+
+
+
+if(control_pressed == 1)									//right is pressed 2.4ff
+{
+next_field = field[player_y][player_x + 1];
+control_number = 1;
+next_bgfield = bgfield[player_y][player_x + 1];							//4.0
+}
+
+if(control_pressed == 2)									//left is pressed 2.4ff 
+{
+control_number = 2;
+next_field = field[player_y][player_x - 1];
+next_bgfield = bgfield[player_y][player_x - 1];							//4.0
+}
+
+if(control_pressed == 3)									//up is pressed 2.4ff
+{
+control_number = 3;
+next_field = field[player_y - 1][player_x];
+next_bgfield = bgfield[player_y - 1][player_x];							//4.0
+}
+
+if(control_pressed == 4) 									//down is pressed 2.4ff
+{
+next_field = field[player_y + 1][player_x];
+control_number = 4;
+next_bgfield = bgfield[player_y + 1][player_x];							//4.0
+}
+
+//alert(field[9][13]);										//shows an array-class 2.2
+
+
+
+
+
+controlfreezed = 1;
+
+
+
+
+
+
+
+
+
+if(next_bgfield < 200)										//4.0
+{
+
+
+
+
+if(next_field == 206) player_life -= lvl * 2;							//spikes 5.0.1
+
+
+
+
+
+if(next_field == 300) signstartup();								//next-field is sign 4.0
+
+if(next_field >= 500 && next_field < 600) enemystartup();					//next-field is enemy 4.0
+	
+if(next_field >= 600) itemstartup();								//next-field is item 4.0
+
+if(next_field == 303 && hammer_is_collected == 1) 						//next-field is destroyable stone 4.0
+
+{
+if(control_number == 1) field[player_y][player_x + 1] = 203;					//what happens to the destroyed stone - before you went right 4.0
+if(control_number == 2) field[player_y][player_x - 1] = 203;					//what happens to the destroyed stone - before you went left 4.0
+if(control_number == 3) field[player_y - 1][player_x] = 203;					//what happens to the destroyed stone - before you went up 4.0
+if(control_number == 4) field[player_y + 1][player_x] = 203;					//what happens to the destroyed stone - before you went down 3.0
+hammer_is_collected = 0;									//hammer is lost 3.0
+inventar[2][1] = 200;										//hammer is not in inventar any more 4.0
+document.getElementById("showupgrade").innerHTML = "<h4> Hammer lost </h4><p> </p>";		//text hammer is lost 3.0
+window.setTimeout('dontshowiteminfo()',2000);							//after a time text hammer is lost is not any more shown 3.0
+}				
+
+
+if(next_field == 302) 									//door for next Level 4.0
+{										
+
+
+if(lvl == 4 && player_y == 14)								//4.0.7.1ff
+{
+lvl = 5;										
+next_lvl = 1;
+}
+
+
+if(lvl == 3 && player_y == 14)								//4.0.6.1ff 
+{
+lvl = 4;										
+next_lvl = 1;										//4.0.6.4					
+}
+
+if(lvl == 2 && player_y == 2) 								//4.0.6.1ff
+{		
+lvl = 3;										
+next_lvl = 1;										//4.0.6.4			
+}
+
+
+if(lvl == 1 && player_y == 10) 								//4.0.6.1ff
+{		
+lvl = 2;										//4.0
+next_lvl = 1;										//4.0.6.4
+}
+
+
+
+
+
+
+
+
+
+if(next_lvl == 1)									//4.0.6.4ff
+{
+field_level_stopped = 0;								
+document.getElementById("showupgrade").innerHTML = "<h4> Level Up </h4>";		
+window.setTimeout('dontshowiteminfo()', 2000);		
+}
+
+
+next_lvl = 0;										//4.1.1
+}
+
+
+
+
+
+
+
+}
+
+
+
+if(next_bgfield <  100)										//next-field is walkable 4.0
+{
+
+if(next_bgfield == 002 || next_bgfield == 003) player_speed = player_speed - 10 		//4.0.5.2
+
+if(next_field >= 200 && next_field < 300)							//4.0
+{
+
+
+
+field[player_y][player_x] = control_saved_class;						//2.0
+
+
+
+
+
+
+if(control_number == 1)										//1.0ff
+{
+field[player_y][player_x + 1] = 400;
+player_x = player_x + 1;
+}
+
+if(control_number == 2)										//1.0ff
+{
+field[player_y][player_x - 1] = 400;
+player_x = player_x - 1;
+}
+
+if(control_number == 3)										//1.0ff
+{
+field[player_y - 1][player_x] = 400;
+player_y = player_y - 1;
+}
+
+if(control_number == 4)										//1.0ff
+{
+field[player_y + 1][player_x] = 400;
+player_y = player_y + 1;
+}
+
+
+
+
+control_saved_class = next_field;								//2.0
+
+
+}
+
+
+
+
+
+
+
+
+if(next_field == 202)										//next-field is walkable and a button 4.0
+{
+
+
+if(lvl == 1 && button_is_used_one_time == 0)							//lvl 1 healthpotion button 2.2
+{
+bgfield[5][8] = 000;										//4.0
+button_is_used_one_time = 1;									//2.2
+}
+
+
+if(lvl == 2 && button_is_used_one_time == 0)							//4.0.2ff
+{
+bgfield[7][7] = 000;
+button_is_used_one_time = 1;
+}
+
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+ 
+
+if(fight_is_activated == 0) window.setTimeout('controlfreeze()', 100 - player_speed);		//control is shortly freezed 4.0
+
+
+
+
+
+print_field();											//1.0
+if(player_life == 0 && fight_is_activated == 0) dead();						//dieing 5.1
+player_speed = for_this_lvl_saved_player_speed							//4.0.6.1
+}
+
+
+
+function controlfreeze()									//2.4
+{
+controlfreezed = 0;										//control is after a time not any more freezed 2.4
+}
+
+
+
+
+
+
+
+
+
+
+
+//-----------------------------Fight system-------------------------------------------
+
+
+
+function enemystartup()									//1.0
+{
+
+
+
+
+
+if(guard_is_chosen == 1)  player_armour = player_armour * 2;				//Guard - more armour 2.0
+
+if(bonus_903 == 1) player_attack = player_attack + armour_break;			//armourbreak adds attack sword3.3.2
+
+if(bonus_907 == 1) player_attack = player_attack + player_speed;			//bonus 907 4.0.6
+
+if(bonus_908 == 1) armour_break = armour_break + player_armour;
+
+	
+win_against_enemy = 0;									//new enemy -> no win 1.0
+
+
+
+
+
+
+
+if(next_field == 500)									//enemy class 21 1.0ff
+{
+enemy_life   = 28 + lvl * lvl;
+enemy_armour =  0; 
+enemy_attack =  3 + lvl * lvl;
+}
+
+if(next_field == 501)									//enemy class 22 1.0ff
+{
+enemy_life   = 18 + lvl * lvl;
+enemy_armour =  1 + lvl * lvl;
+enemy_attack = 15 + lvl * lvl;
+}
+
+if(next_field == 502)									//enemy class 22 1.0ff
+{
+enemy_life   = 50 + lvl * lvl;
+enemy_armour =  5 + lvl * lvl;
+enemy_attack =  2 + lvl * lvl;
+}
+
+if(next_field == 503)									//enemy class 22 1.0ff
+{
+enemy_life   = 20 + lvl * lvl;
+enemy_armour =  5 + lvl * lvl;
+enemy_attack = 25 + lvl * lvl;
+}
+
+
+
+if(next_field == 504)									//enemy class 23 - ghost 3.1ff
+{
+enemy_life   =  2 + lvl * lvl;
+enemy_armour =  0;
+enemy_attack = 10 + lvl * lvl;
+saved_forghost_player_attack = player_attack;						//4.0.4
+player_attack = ghost_attack;								//shows attack against ghosts 3.3
+}
+
+
+
+
+
+enemy_armour = enemy_armour - armour_break;						//enemy loses armour with armour breaker 2.7.4
+if(enemy_armour <= 0) enemy_armour = 0;							//avoid negativ enemy armour 2.7.4
+if(bonus_904 == 1) enemy_armour = 0;							//sword 50 3.3.3
+
+
+
+
+
+
+fight_is_activated = 1;									//2.1
+controlfreezed = 1;									//control is freezed 2.1
+
+
+assassin_firststrike_activated = 1;							//assassin first strike activated 2.0
+
+document.getElementById("enemylife").innerHTML = "Enemylife: "+enemy_life;		//shows enemylife shortly before attacking 2.1
+
+
+if(enemy_attack <= 0) enemy_attack = 0;							//avoid negativ enemy attack 4.0
+if(player_attack <= 0) player_attack = 0;						//avoid zero attack 4.0.2
+
+new_random_key = 1;									//5.0
+
+window.setTimeout('yourfight()', 500);
+window.setTimeout('fight()', 500);							//2.1
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function fight()									//Fight-function 1.0
+{
+
+if(assassin_is_chosen == 1 && assassin_firststrike_activated == 1) enemy_life = enemy_life - player_attack;	//assassin - first strike 2.1
+assassin_firststrike_activated = 0;							//2.1
+
+	
+random_player_armour = Math.random() * player_armour;					//5.3
+random_player_armour = Math.round(random_player_armour);				//5.3
+
+random_enemy_armour = Math.random() * enemy_armour;					//5.3
+random_enemy_armour = Math.round(random_enemy_armour);					//5.3
+
+
+
+enemy_attack  -= random_player_armour;							//5.3
+player_attack -= random_enemy_armour;							//5.3
+
+if(random_player_armour < 0) random_player_armour = 0;
+if(random_enemy_armour < 0) random_enemy_armour = 0;
+
+
+
+
+
+if(enemy_life  <= 0)									//1.0 
+{
+dontshowiteminfo();									//5.0
+if(guard_is_chosen == 1)  player_armour = player_armour / 2;				//Guard - normal armour 2.0
+
+if(bonus_903 == 1) player_attack = player_attack - armour_break;			//3.3.2
+
+if(bonus_905 == 1) player_life = max_life;
+
+if(bonus_907 == 1) player_attack = player_attack - player_speed				//4.0.6.1
+
+if(bonus_908 == 1) armour_break = armour_break - player_armuor;
+
+if(next_field == 504) player_attack = saved_forghost_player_attack;			//attack is back at ghost fight 4.0.4
+
+
+win_against_enemy  = 1;									//won, if not: still freezed 1.0
+controlfreezed = 0;									//1.0
+fight_is_activated = 0;									//2.0
+
+if(control_number == 1) field[player_y][player_x + 1] = 201;				//what happens to the dead enemy - before you went right 2.0
+
+if(control_number == 2) field[player_y][player_x - 1] = 201;				//what happens to the dead enemy - before you went left 2.0
+
+if(control_number == 3) field[player_y - 1][player_x] = 201;				//what happens to the dead enemy - before you went up 2.0
+
+if(control_number == 4) field[player_y + 1][player_x] = 201;				//what happens to the dead enemy - before you went down 2.0
+
+
+}
+
+
+
+
+
+
+
+if(player_life <= 0) 									//losing the game 1.0
+{
+if(next_field == 504) player_attack = saved_forghost_player_attack;			//attack is back at ghost fight 4.0.4
+if(bonus_903 == 1) player_attack = player_attack - armour_break;			//3.3.2
+
+
+dead();											//5.1								
+}
+
+
+//alert(enemy_life);									//1.0
+
+
+
+
+
+
+if(win_against_enemy == 0 && controlfreezed == 1 && next_try == 0)			//how to fight	 5.0ff				
+{
+player_life = player_life - enemy_attack;
+if(malus == 1) player_life -= enemy_attack + lvl * lvl;					//5.3
+malus = 0;
+}
+
+
+if(next_try == 0) print_field();								//3.4
+		
+enemy_attack += random_player_armour;								//5.3
+player_attack += random_enemy_armour;								//5.3
+if(win_against_enemy == 0 && controlfreezed == 1) window.setTimeout('fight()', 1000);		//1.0
+}
+
+
+
+
+function yourfight()										//yourattack fuction 5.0ff
+{
+time_to_next_yourfight = 500 - player_speed * 10;						//playerspeed effects your fight 5.2.1
+if(time_to_next_yourfight < 250) time_to_next_yourfight == 250;					
+
+
+
+
+
+if(new_random_key == 1)
+{
+
+do
+{
+random_key = Math.random() * 3 + 1;								//random key for pressing 5.0ff
+random_key = Math.round(random_key);
+}
+while(random_key == saved_random_number);
+
+G.style.left = -50;
+Y.style.left = -50;
+D.style.left = -50;
+R.style.left = -50;
+
+
+if(random_key == 1) 
+{
+random_key = 89;
+Y.style.left = 157;
+saved_random_number = 1;
+}
+if(random_key == 2) 
+{
+random_key = 68;
+D.style.left = 157;
+saved_random_number = 2;
+}
+if(random_key == 3) 
+{
+random_key = 82;
+R.style.left = 157;
+saved_random_number = 3;
+}
+if(random_key == 4) 
+{
+random_key = 71;
+G.style.left = 157;
+saved_random_number = 4;
+}
+
+
+}
+
+new_random_key = 0;
+
+
+
+document.addEventListener('keydown', function(event) {						//Fight keys 5.0ff		
+fight_key = event.keyCode;
+if(fight_key == random_key)
+{
+your_attack = 1;
+new_random_key = 1;
+}
+if(fight_key != random_key)
+{
+malus = 1;
+}
+});
+
+
+
+
+
+if(your_attack == 1)										//your attack 5.0ff
+{
+if(next_field == 504) enemy_life = enemy_life - ghost_attack;					//fight against ghost 3.1
+if(knight_is_chosen == 1 && player_attack > 0) player_life = player_life + life_steal;		//Knight - Lifesteal 3.1
+enemy_life  = enemy_life  - player_attack;
+print_field();
+your_attack = 0;
+}
+
+
+if(fight_is_activated == 1) window.setTimeout('yourfight()', time_to_next_yourfight);		//5.0
+
+
+
+}
+
+
+//--------------------------------You are Dead----------------------------------------------
+
+
+
+function dead()										//5.1
+{	
+dontshowiteminfo();									//5.0									
+controlfreezed = 1;									//1.0									
+field[player_y][player_x] = 201;							//what happens to dead player 2.0
+tries = tries - 1;									//3.4
+fight_is_activated = 0;									//3.4
+win_against_enemy = 1;									//3.4
+
+print_field();										//3.4
+
+
+
+
+ghost_attack = 0;									//3.4
+hammer_is_collected = 0;								//3.4
+bonus_903 = 0;										//3.4
+bonus_904 = 0;										//3.4
+bonus_905 = 0;										//4.0.6.1
+bonus_907 = 0;										//4.0.6.1
+
+
+for(i=2; i<5; i++)
+{
+for(j=1; j<4; j++)
+{
+inventar[i][j] = 200;
+}
+}
+
+
+
+
+
+if(tries > 0)										//one life lost 3.4ff
+{
+next_try = 1;										
+field_level_stopped = 0;						
+document.getElementById("showupgrade").innerHTML = "<h4> You Died! Next try! </h4>";
+window.setTimeout('dontshowiteminfo()', 2500);
+window.setTimeout('print_field()', 2500);						
+}
+
+if(tries == 2) inventar[1][3] = 200;							//3.4
+if(tries == 1) inventar[1][2] = 200;							//3.4
+if(tries == 0) 										//3.4ff
+{
+document.getElementById("showupgrade").innerHTML = "<h4> GAME OVER! </h4>"; 		//GAME OVER 3.4
+inventar[1][1] = 200;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+//---------------------------------Item system-----------------------------------------------
+
+
+
+
+
+
+
+
+function itemstartup()									//2.0
+{
+controlfreezed = 0;
+
+
+if(next_field == 302) 									//door for next Level 4.0
+{
+lvl = lvl + 1;										//2.0
+field_level_stopped = 0;								//2.0
+document.getElementById("showupgrade").innerHTML = "<h4> Level Up </h4>";		//2.7
+}
+
+if(next_field == 600) 									//sword 2.7.4ff								
+{
+player_attack = player_attack + 3 * lvl;
+document.getElementById("showupgrade").innerHTML = "<h4> Attack </h4> + " + 3 * lvl + "<p> </p>";
+}
+
+if(next_field == 601)									//armour breaker 2.7.4ff
+{
+armour_break = armour_break + 1 * lvl;
+document.getElementById("showupgrade").innerHTML = "<h4> Armour Break </h4> + "+ 1 * lvl + "<p> </p>";
+}
+
+if(next_field == 602) 									//sword 2.7.4ff								
+{
+player_attack = player_attack + 2 * lvl;
+document.getElementById("showupgrade").innerHTML = "<h4> Attack </h4> + " + 2 * lvl + "<p> </p>";
+}
+
+
+if(next_field == 603) 																
+{
+player_attack = player_attack + 2 * lvl;
+document.getElementById("showupgrade").innerHTML = "<h4> Attack </h4> + " + 2 * lvl + "<p> </p>";
+}
+
+if(next_field == 700) 									
+{
+player_armour = player_armour + 3 * lvl;
+document.getElementById("showupgrade").innerHTML = "<h4> Armour </h4> + " + 3 * lvl + "<p> </p>";	
+}
+
+if(next_field == 701) 									
+{
+player_armour = player_armour + 1 * lvl;
+document.getElementById("showupgrade").innerHTML = "<h4> Armour </h4> + " + 1 * lvl + "<p> </p>";	
+}
+
+if(next_field == 702) 									
+{
+player_armour = player_armour + 2 * lvl;
+document.getElementById("showupgrade").innerHTML = "<h4> Armour </h4> + " + 2 * lvl + "<p> </p>";	
+}
+
+if(next_field == 703) 									
+{
+player_armour = player_armour + 2 * lvl;
+document.getElementById("showupgrade").innerHTML = "<h4> Armour </h4> + " + 2 * lvl + "<p> </p>";	
+}
+
+if(next_field == 704) 									
+{
+player_armour = player_armour + 3 * lvl;
+document.getElementById("showupgrade").innerHTML = "<h4> Armour </h4> + " + 3 * lvl + "<p> </p>";	
+}
+					
+if(next_field == 800)									//healt potion gives you more life 2.1
+{
+player_life = player_life + 5 * lvl;							//2.1
+document.getElementById("showupgrade").innerHTML = "<h4> Life </h4> + " + 5 * lvl + "<p> </p>";//2.7
+}
+
+if(next_field == 801) 									//boots 2.7.4ff								
+{
+for_this_lvl_saved_player_speed = for_this_lvl_saved_player_speed + 10;
+player_speed = player_speed + 10;							//4.0.7.1
+document.getElementById("showupgrade").innerHTML = "<h4> Speed </h4> + 10 <p> </p>";
+}
+
+if(next_field == 900)									//hammer for destroying stones 2.7.5
+{
+
+if(hammer_is_collected == 1)								//only one hammer in inventar 3.3ff
+{
+document.getElementById("showupgrade").innerHTML = "<h4> You already have a hammer! </h4><p> </p>";
+full_inventar = 1;
+}
+
+
+if(hammer_is_collected == 0) document.getElementById("showupgrade").innerHTML = "<h4> Hammer collected </h4><p> </p>"; //3.3.1
+
+hammer_is_collected = 1									//2.7.5							
+											
+
+inventar[2][1] = 900;									//3.3
+}
+
+
+if(next_field == 901)									//ghost attack boost - ghost sword 3.1ff
+{
+ghost_attack = ghost_attack + 15;
+document.getElementById("showupgrade").innerHTML = "<h4> Attack against Ghosts </h4> + 15 <p> </p>";	
+inventar[2][2] = 901;
+}
+
+
+
+if(next_field == 903)									//Sword 49 3.3.2ff
+{
+bonus_903 = 1;
+armour_break = armour_break + 60;
+document.getElementById("showupgrade").innerHTML = "<h4> Armour Break </h4> + 60 <p> </p>";	
+inventar[4][2] = 903;									//3.3.3.1
+}
+
+
+if(next_field == 904)									//Sword 50 3.3.3
+{
+bonus_904 = 1;
+player_attack = player_attack + 80;
+document.getElementById("showupgrade").innerHTML = "<h4> Attack </h4> + 80 <p> </p>";	
+inventar[4][3] = 904;									//3.3.3.1
+}	
+
+
+if(next_field == 905)									
+{
+bonus_905 = 1;
+player_armour = player_armour + 2;
+document.getElementById("showupgrade").innerHTML = "<h4> Armour </h4> + 2 <p> </p>";	
+inventar[5][2] = 905;									
+}	
+
+if(next_field == 907)									
+{
+bonus_907 = 1;
+armour_break = armour_break + 20;
+document.getElementById("showupgrade").innerHTML = "<h4> Armour Break </h4> + 20 <p> </p>";	
+inventar[5][3] = 907;									
+}
+
+if(next_field == 908)									
+{
+bonus_908 = 1;
+player_armour = player_armour + 100;
+document.getElementById("showupgrade").innerHTML = "<h4> Armour </h4> + 100 <p> </p>";	
+inventar[5][1] = 908;									
+}
+
+									
+
+
+if(full_inventar == 0)									//item is collected only when inventar is not full 3.3
+{
+if(control_number == 1) field[player_y][player_x + 1] = 200;				//what happens to the used item - before you went right 2.0
+
+if(control_number == 2) field[player_y][player_x - 1] = 200;				//what happens to the used item - before you went left 2.0
+
+if(control_number == 3) field[player_y - 1][player_x] = 200;				//what happens to the used item - before you went up 2.0
+
+if(control_number == 4) field[player_y + 1][player_x] = 200;				//what happens to the used item - before you went down 2.0
+}
+
+
+
+full_inventar = 0;									//3.3
+window.setTimeout('dontshowiteminfo()', 2000)						//2.4
+print_field();										//2.0
+}
+
+
+
+function dontshowiteminfo()								//2.4
+{
+document.getElementById("showupgrade").innerHTML = "";					//item infos are invisible 2.4
+if(next_try == 1) controlfreezed = 0;							//3.4
+}
+
+
+
+//-----------------------------Story/Sign-------------------------------------------
+
+	
+function signstartup()										//3.0
+{									
+
+if(lvl == 1)											//3.4
+{
+if(player_x == 4)document.getElementById("showsign").innerHTML = "Your only aim is to come home to Castle Touran but the way will not be easy. Enemies are sieging your castle."; 	//first sign 3.0ff	
+if(player_x == 3)document.getElementById("showsign").innerHTML = "To fight against an enemy press the keys which are shown in the blue field."; 									//sign before fighting 4.0.2
+if(player_x == 6 || player_y == 11 || player_y == 13)document.getElementById("showsign").innerHTML = "For a siege you need weapons and other items. That's your possibilty to strengthen yourself.";				//items sign 4.0.2
+if(player_x == 9)document.getElementById("showsign").innerHTML = "The legend says: Doors are a way nearer to home."									//next lvl sign 4.0.2
+}
+
+if(lvl > 1) 
+{
+if(player_x == 7) document.getElementById("showsign").innerHTML = "Be careful about ghosts. Ghost cannot be killed with normal weapons.";
+if(player_x == 8 || player_x == 9) document.getElementById("showsign").innerHTML = "A ghost? But where's the weapon. It's impossible. Give it up. No chance. The game is over.";
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body bgcolor="#334422" background="background.jpg">
+
+<form>
+
+<div id="BgField" style="position: absolute; left: 324; top: 100"></div>
+
+<div id="Field" style="position: absolute; left: 324; top: 100"></div>
+
+
+<div id="playerstats" style="position: absolute; top: 100; background-color: #44cc77; width: 150; height: 686; left: 150; border-style: solid;  border-color: #447733; border-width: 7"></div>
+
+<div id="inventarlayer" style="position: absolute; left: 157; top: 500;"></div>
+
+<div id="showupgrade" style="position: absolute; background-color: #4477cc; top: 810; left: 150; width: 150; height: 100; border-style: solid; border-color: #3355bb; border-width: 7"></div>
+
+<div id="enemylife" style="position: absolute; left: 841; top: 810; background-color: #dd4433; width: 170; height: 100; border-style: solid; border-color: #992222; border-width: 7"></div>
+
+<div id="button_knight" style="position: absolute; top: 30%; left: 30%;"><img src="400.gif" onClick="newgame(1)">Choose Knight</div>
+
+<div id="button_assassin" style="position: absolute; top: 35%; left: 30%;"><img src="400.gif" onClick="newgame(2)">Choose Assassin</div>
+
+<div id="button_guard" style="position: absolute; top: 40%; left: 30%;"><img src="400.gif" onClick="newgame(3)">Choose Guard</div>
+
+<div id="showsign" style="position: absolute; border-style: solid; border-color: #663300; border-width: 7; top: 810; left: 324; background-color: #996600; width: 493; height: 100;"></div>
+
+<div id="Y" style="position: absolute; top: 817; left: -50"><img src="Y.gif"></div>
+
+<div id="R" style="position: absolute; top: 817; left: -50"><img src="R.gif"></div>
+
+<div id="D" style="position: absolute; top: 817; left: -50"><img src="D.gif"></div>
+
+<div id="G" style="position: absolute; top: 817; left: -50"><img src="G.gif"></div>
+
+
+
+
+
+
+<div id="testvariables" style="position: absolute; top: 70%;"></div>
+
+</form>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
