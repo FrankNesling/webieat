@@ -1,0 +1,272 @@
+<html>
+<head>
+<script language="JavaScript">
+
+padlx = 500;
+padly = 250;
+
+padry = 200;
+padrx = 995;
+
+blx = 976;
+bly = 224;
+
+ptr = 0;
+ptl = 0;
+
+
+dirx = -1;
+diry = 1;
+
+lost = 0;
+
+mstk = 2500;
+
+time = Math.random() * mstk + 100;
+time = Math.round(time);
+
+diff = 50;
+
+r = 0;
+s = 0;
+
+
+function again()
+{
+padlx = 500;
+
+padry = 300;
+padrx = 995;
+blx = 976;
+bly = 224;
+
+ptr = 0;
+ptl = 0;
+
+
+dirx = -1;
+diry = 1;
+
+r = 0;
+s = 0;
+
+
+time = Math.random() * mstk + 100;
+time = Math.round(time)
+
+lost = 0;
+document.getElementById("sttxt").innerHTML = ptl;
+document.getElementById("pttxt").innerHTML = "Punkte: ";
+document.getElementById("lstxt").innerHTML = "";
+
+ball();
+AI();
+}
+
+
+
+function up()
+{
+if(padly > 207) padly = padly - 3;
+padl.style.left = padlx;
+padl.style.top = padly;
+}
+
+
+function down()
+{
+if(padly < 400) padly = padly + 3;
+padl.style.left = padlx;
+padl.style.top = padly;
+}
+
+
+
+
+function mistake()
+{
+r = r + 1;
+padry = bly - 76;
+
+if(padry > 207 && padry < 400)
+{
+padr.style.top = padry;
+padr.style.left = padrx;
+}
+
+if(r < 400)
+{
+window.setTimeout('mistake()', 10)
+}
+
+if(r == 400)
+{
+time = Math.random() * mstk + 100;
+time = Math.round(time);
+s = 0;
+r = 0;
+window.setTimeout('AI()', 10)
+}
+}
+
+
+function AI()
+{
+s = s + 1;
+
+padry = bly - 50;
+if(padry > 207 && padry < 400)
+{
+
+padr.style.top = padry;
+padr.style.left = padrx;
+
+}
+
+if(s == time)
+{
+window.setTimeout('mistake()', 10)
+}
+
+else
+{
+window.setTimeout('AI()', 10)
+}
+}
+
+
+
+
+
+
+function ball()
+{
+
+
+if(lost == 0)
+{
+bl.style.left = blx;
+bl.style.top = bly;
+
+
+
+
+
+
+
+
+
+if(bly == 470) diry = -1;
+
+
+if(bly > padly && bly < padly + 75)
+{
+if(blx == 506)
+{
+dirx = 1;
+ptl = ptl + 1;
+}
+}
+
+
+
+if(bly == 202) diry = 1;
+
+
+if(bly > padry && bly < padry + 75)
+{
+if(blx == 994)
+{
+dirx = -1;
+ptr = ptr + 1;
+}
+}
+
+
+
+
+
+
+
+if(blx > 994) 
+{
+lost = 1;
+bl.style.left = -1000;
+bl.style.top = -1000;
+document.getElementById("lstxt").innerHTML = "<h1>VORBEI!!! Mit Enter neustarten!";
+}
+
+
+
+if(blx < 504) 
+{
+lost = 1;
+bl.style.left = -1000;
+bl.style.top = -1000;
+document.getElementById("lstxt").innerHTML = "<h1>VORBEI!!! Mit Enter neustarten!";
+}
+
+
+
+blx = blx + 2 * dirx;
+bly = bly + 2 * diry;
+
+
+ 
+
+
+window.setTimeout('ball()' , 20);
+document.getElementById("sttxt").innerHTML = ptl;
+document.getElementById("rpttxt").innerHTML = ptr;
+document.getElementById("pttxt").innerHTML = "Punkte: ";
+document.getElementById("test s").innerHTML = s;
+document.getElementById("test r").innerHTML = r;
+document.getElementById("test time").innerHTML = time;
+}
+}
+
+
+
+
+
+
+function speedup()
+{
+ball();
+}
+
+
+
+
+
+document.addEventListener('keydown', function(event) {
+key = event.keyCode;
+if(key == 38) up();
+if(key == 40) down();
+if(key == 32) ball();
+if(key == 32) AI();
+if(key == 75) speedup();
+if(key == 13) again();
+});
+
+
+
+
+</script>
+</head>
+<body bgcolor="#000000">
+<div id="padl" style="position: absolute; background-color: #ffffff; top: 250; left: 500; width: 5; height: 75;"></div>
+<div id="padr" style="position: absolute; background-color: #ffffff; top: 210; left: 995; width: 5; height: 75;"></div>
+<div id="wall top" style="position: absolute; background-color: #ffffff; top: 200; left: 500; width: 500; height: 5;"></div>
+<div id="wall bot" style="position: absolute; background-color: #ffffff; top: 475; left: 500; width: 500; height: 5;"></div>
+<div id="bl" style="position: absolute; background-color: #ffffff; top: -1000; left: -1000; width: 5; height: 5;"></div>
+<div id="sttxt" style="position: absolute; color: #ffffff; top: 600; left: 600;"><h1>Mit Leertaste das Spiel starten!</div>
+<div id="pttxt" style="position: absolute; color: #ffffff; top: 600; left: 535;"></div>
+<div id="rpttxt" style="position: absolute; color: #ffffff; top: 600; left: 900;"></div>
+<div id="lstxt" style="position: absolute; color: #ffffff; top: 500; left: 600;"></div>
+<div id="test s" style="position: absolute; color: #000000; top: 800; left: 600;"></div> 
+<div id="test r" style="position: absolute; color: #000000; top: 850; left: 600;"></div> 
+<div id="test time" style="position: absolute; color: #000000; top: 900; left: 600;"></div> 
+
+</body>
+</html>

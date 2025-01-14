@@ -1,0 +1,341 @@
+<html>
+<head>
+<script language="JavaScript">
+player = 1;
+
+
+document.addEventListener('keyup', function(event)   {
+Key = event.keyCode;
+if(Key == 37) left();
+if(Key == 38) up();
+if(Key == 39) right();
+if(Key == 40) down();
+});
+
+
+
+var x = 3;
+var y = 2;
+
+var shipx = 1;
+var shipy = 13;
+
+go = 1;
+
+
+var field = new Array();
+field[00] = new Array(9,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+field[01] = new Array(9,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+field[02] = new Array(9,0,0,2,1,0,0,0,0,0,0,1,4,0,0);
+field[03] = new Array(9,0,0,1,1,1,1,0,0,0,1,1,1,0,0);
+field[04] = new Array(9,0,0,0,1,6,1,0,1,1,1,1,0,0,0);
+field[05] = new Array(9,0,0,1,1,1,1,1,1,1,1,1,0,0,0);
+field[06] = new Array(9,0,0,1,1,0,1,0,0,0,1,0,0,0,0);
+field[07] = new Array(9,0,1,1,1,0,0,0,0,4,0,0,0,0,0);
+field[08] = new Array(9,0,1,1,1,1,1,1,1,1,1,0,0,0,0);
+field[09] = new Array(9,0,0,1,1,1,1,1,1,1,1,0,0,0,0);
+field[10] = new Array(9,0,0,1,1,1,1,1,1,1,1,0,0,0,0);
+field[11] = new Array(9,0,0,0,0,0,4,1,4,0,0,0,0,0,0);
+field[12] = new Array(9,0,0,0,0,0,0,1,0,0,0,0,0,0,0);
+field[13] = new Array(9,3,0,0,0,0,0,0,0,0,0,0,0,0,0);
+field[14] = new Array(9,0,0,0,0,0,0,0,0,0,0,0,4,1,0);
+
+
+
+
+
+
+function print_laby()
+{
+Draw = "<table cellspacing = '0' cellpadding = '0' border = '0'>";
+
+for(i=1; i<15; i++)
+{
+Draw = Draw + "<tr>";
+	for(j=1; j<15; j++)
+	{
+	Draw = Draw + "<td><img src='";
+
+	Draw = Draw + field[i][j] + ".gif'></td>";
+	}
+Draw = Draw + "</tr>";
+}
+Draw = Draw + "</table>";
+//alert(Draw);
+document.getElementById("Field").innerHTML = Draw;
+
+
+
+}
+
+
+
+
+function up()
+{
+
+if(field[y-1][x] == 0)
+{
+document.getElementById("Lost").innerHTML = "<p>The sharks caught you!";
+field[y][x] = field[y][x] - 1;
+player = 0;
+print_laby();
+}
+
+
+if(player == 1)
+{
+
+if(field[y-1][x] == 1)
+{
+
+y = y - 1;
+field[y][x] = field[y][x] + 1;
+field[y+1][x] = field[y+1][x] - 1;
+
+if(go == 1)
+{
+shipx = shipx + 1;
+field[shipy][shipx] = field[shipy][shipx] + 3;
+field[shipy][shipx - 1] = field[shipy][shipx - 1] - 3;
+}
+
+print_laby();
+}
+}
+
+
+if(field[y-1][x] == 6)
+{
+shipx = shipx + 1;
+y = y - 1;
+field[y][x] = field[y][x] - 4;
+field[y+1][x] = field[y+1][x] - 1;
+field[shipy][shipx] = field[shipy][shipx] + 3;
+field[shipy][shipx - 1] = field[shipy][shipx - 1] - 3;
+field[2][12] = field[2][12] + 1;
+field[7][9] = field[7][9] + 1;
+field[11][6] = field[11][6] + 1;
+field[11][8] = field[11][8] + 1;
+field[14][12] = field[14][12] + 1;
+go = 0;
+
+
+print_laby();
+
+}
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+function down()
+{
+
+if(field[y+1][x] == 0)
+{
+document.getElementById("Lost").innerHTML = "<p>The sharks caught you!";
+field[y][x] = field[y][x] - 1;
+player = 0;
+print_laby();
+}
+
+if(player == 1)
+{
+
+if(field[y+1][x] == 1)
+{
+
+y = y + 1;
+field[y][x] = field[y][x] + 1;
+field[y-1][x] = field[y-1][x] - 1;
+
+if(go == 1)
+{
+shipx = shipx + 1;
+field[shipy][shipx] = field[shipy][shipx] + 3;
+field[shipy][shipx - 1] = field[shipy][shipx - 1] - 3;
+}
+
+
+print_laby();
+}
+}
+
+if(field[y+1][x] == 6)
+{
+shipx = shipx + 1;
+y = y + 1;
+field[y][x] = field[y][x] - 4;
+field[y-1][x] = field[y-1][x] - 1;
+field[shipy][shipx] = field[shipy][shipx] + 3;
+field[shipy][shipx - 1] = field[shipy][shipx - 1] - 3;
+field[2][12] = field[2][12] + 1;
+field[7][9] = field[7][9] + 1;
+field[11][6] = field[11][6] + 1;
+field[11][8] = field[11][8] + 1;
+field[14][12] = field[14][12] + 1;
+go = 0;
+
+
+print_laby();
+
+}
+
+if(field[y+1][x] == 3)
+{
+document.getElementById("Victory").innerHTML = "You escaped!";
+field[y][x] = field[y][x] - 1;
+player = 0;
+print_laby();
+}
+
+
+
+
+
+}
+
+
+function right()
+{
+
+if(field[y][x+1] == 0)
+{
+document.getElementById("Lost").innerHTML = "<p>The sharks caught you!";
+field[y][x] = field[y][x] - 1;
+player = 0;
+print_laby();
+}
+
+if(player == 1)
+{
+
+if(field[y][x+1] == 1)
+{
+
+x = x + 1;
+field[y][x] = field[y][x] + 1;
+field[y][x-1] = field[y][x-1] - 1;
+
+if(go == 1)
+{
+shipx = shipx + 1;
+field[shipy][shipx] = field[shipy][shipx] + 3;
+field[shipy][shipx - 1] = field[shipy][shipx - 1] - 3;
+}
+
+print_laby();
+
+}
+}
+
+
+if(field[y][x+1] == 6)
+{
+shipx = shipx + 1;
+x = x + 1;
+field[y][x] = field[y][x] - 4;
+field[y][x-1] = field[y][x-1] - 1;
+field[shipy][shipx] = field[shipy][shipx] + 3;
+field[shipy][shipx - 1] = field[shipy][shipx - 1] - 3;
+field[2][12] = field[2][12] + 1;
+field[7][9] = field[7][9] + 1;
+field[11][6] = field[11][6] + 1;
+field[11][8] = field[11][8] + 1;
+field[14][12] = field[14][12] + 1;
+go = 0;
+
+
+print_laby();
+
+}
+
+
+
+
+}
+
+
+
+
+function left()
+{
+
+if(field[y][x-1] == 0)
+{
+document.getElementById("Lost").innerHTML = "<p>The sharks caught you!";
+field[y][x] = field[y][x] - 1;
+player = 0;
+print_laby();
+}
+
+if(player == 1)
+{
+
+if(field[y][x-1] == 1)
+{
+
+x = x - 1;
+field[y][x] = field[y][x] + 1;
+field[y][x+1] = field[y][x+1] - 1;
+
+if(go == 1)
+{
+shipx = shipx + 1;
+field[shipy][shipx] = field[shipy][shipx] + 3;
+field[shipy][shipx - 1] = field[shipy][shipx - 1] - 3;
+}
+
+print_laby();
+}
+}
+
+if(field[y][x-1] == 6)
+{
+shipx = shipx + 1;
+x = x - 1;
+field[y][x] = field[y][x] - 4;
+field[y][x+1] = field[y][x+1] - 1;
+field[shipy][shipx] = field[shipy][shipx] + 3;
+field[shipy][shipx - 1] = field[shipy][shipx - 1] - 3;
+field[2][12] = field[2][12] + 1;
+field[7][9] = field[7][9] + 1;
+field[11][6] = field[11][6] + 1;
+field[11][8] = field[11][8] + 1;
+field[14][12] = field[14][12] + 1;
+go = 0;
+
+
+print_laby();
+
+}
+
+
+
+
+}
+
+
+
+
+
+</script>
+</head>
+<body onLoad="print_laby()">
+
+<div id="Field" style="position: absolute; left: 10%;"></div>
+<div id="Victory" style="position: absolute; left: 10%; top: 80%;"></div>
+<div id="Lost" style="position: absolute; left: 10%; top: 80%;"></div>
+
+</body>
+</html>

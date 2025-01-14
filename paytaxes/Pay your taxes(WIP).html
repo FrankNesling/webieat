@@ -1,0 +1,454 @@
+<html>
+<head>
+<script language="JavaScript">
+
+nolmt = 1;
+poplmt = 20;
+coins = 980;
+frmpop = 0;
+
+window.setTimeout('normal()',50);
+
+time = 10000;
+
+function normal()									//Start
+{
+document.getElementById("coins").innerHTML = "Coins: "+coins+"";
+document.getElementById("knghlgt").innerHTML = "Knights: "+kngh.length+"";
+document.getElementById("ctzlgt").innerHTML = "Citiziens: "+ctz.length+"";
+document.getElementById("inv").innerHTML = "Next Invasion: ?";
+repeat();
+window.setTimeout('cns()',time);
+
+attktime = 120000;
+
+rndtime = Math.random() * attktime + 120000;
+rndtime = Math.round(rndtime);
+
+//rndtime = 20000;
+
+
+window.setTimeout('scoutmethod()', rndtime - 10000 * sct.length);
+
+window.setTimeout('invasion()', rndtime);
+
+
+}
+
+
+
+
+function repeat()									//Repeat
+{
+
+
+
+
+document.getElementById("coins").innerHTML = "Coins: "+coins+"";
+document.getElementById("time").innerHTML = "Time to the next taxes: "+time/1000+" sec";
+document.getElementById("knghlgt").innerHTML = "Knights: "+kngh.length+"";
+document.getElementById("ctzlgt").innerHTML = "Citiziens: "+ctz.length+"";
+document.getElementById("frmlgt").innerHTML = "Farms: "+frm.length+"";
+document.getElementById("hslgt").innerHTML = "Houses: "+hs.length+"";
+document.getElementById("sctlgt").innerHTML = "Scouts: "+sct.length+"";
+
+document.getElementById("pop").innerHTML = "Population: "+pop+"/"+poplmt+"";
+
+
+
+
+
+frmpop = 5 * frm.length;
+pop = sct.length + kngh.length + ctz.length + frmpop;
+poplmt = 10 + hs.length * 10;
+
+
+if(pop > poplmt - 1)									//Population-Limit
+{
+nolmt = 0;
+}
+
+
+
+if(pop < poplmt)
+{
+nolmt = 1;
+}
+
+//if(pop == 0) lost();
+
+
+
+if(time < 0) time = 0;
+if(coins < 0) coins = 0;
+if(ctz.length < 0) ctz.length = 0;
+
+
+
+
+
+window.setTimeout('repeat()',50);
+}
+
+
+
+function cns()										//Coins/Steuern
+{
+coins = coins + 10 + ctz.length * 2 + frm.length * 5;
+
+
+window.setTimeout('cns()',time);
+}
+
+
+function invasion()									//Invasion
+{
+sct.length = 0;
+
+rdn = Math.random() * kngh.length;
+rdn = Math.round(rdn);
+
+enemy = Math.random() * kngh.length + rdn ;
+enemy = Math.round(enemy);
+
+if(enemy < 3) enemy = 3;
+
+if(enemy < kngh.length)
+{
+document.getElementById("vic").innerHTML = "You survived the enemie's army("+enemy+")!";
+coins = coins + enemy * 50 + kngh.length;
+window.setTimeout('elem()',5000);
+if(nolmt == 1) ctz.length = ctz.length + 10;
+}
+
+if(enemy > kngh.length)
+{
+document.getElementById("lost").innerHTML = "The enemy("+enemy+") attacked your village!";
+coins = coins - 400 - enemy - kngh.length;
+kngh.length = 0;
+time = time + 30 * enemy + 4/3 * frm.length;
+if(ctz.length < 50) ctz.length = 0;
+if(ctz.length >= 50) ctz.length = ctz.length - 50;
+if(frm.length < 3) frm.length = 0;
+if(frm.length >= 3) frm.length = frm.length - 3;
+if(hs.length >= 3) hs.length = hs.length - 3;
+if(hs.length < 3) hs.length = 0;
+document.getElementById("knghlgt").innerHTML = "Knights: "+kngh.length+"";
+document.getElementById("ctzlgt").innerHTML = "Citiziens: "+ctz.length+"";
+document.getElementById("time").innerHTML = "Zeit bis zu den nächsten Steuern: "+time/1000+" sek";
+document.getElementById("frmlgt").innerHTML = "Farms: "+frm.length+"";
+window.setTimeout('elem()',5000);
+}
+
+if(enemy == kngh.length)
+{
+document.getElementById("standoff").innerHTML = "Standoff!"
+kngh.length = 0;
+coins = coins + 5 * enemy;
+if(ctz.length > 20) ctz.length = 20;
+if(frm.length == 0) frm.length = 0;
+frm.length = frm.length - 1;
+time = time + 1000;
+window.setTimeout('elem()',5000);
+document.getElementById("frmlgt").innerHTML = "Farms: "+frm.length+"";
+}
+
+
+if(kngh.length < 5) attktime = 64000;
+
+if(attktime > 8000) attktime = attktime - 4000;
+ 
+
+rndtime = Math.random() * attktime + 60000;
+rndtime = Math.round(rndtime);
+
+
+window.setTimeout('scoutmethod()', rndtime - 10000 * sct.length);
+window.setTimeout('invasion()',rndtime);
+}
+
+function Scout(cost)									//Späher Plan
+{
+this.cost = cost
+}
+
+
+function House(cost)									//Haus Plan
+{
+this.cost = cost;
+}
+
+
+function Knight(cost)									//Krieger Plan
+{
+this.cost = cost;
+}
+
+
+function Farm(cost)									//Farm Plan
+{
+this.cost = cost;
+}
+
+
+function Citizien(cost)									//Bürger Plan
+{
+this.cost = cost;
+}
+
+
+frm = new Array();
+
+ctz = new Array();
+ctz[0] = new Citizien(10);
+
+sct = new Array();
+sct[0] = new Scout(150);
+
+
+hs = new Array();
+hs[0] = new House(250);
+
+
+kngh = new Array();
+kngh[0] = new Knight(100);
+
+
+function newScout()									//neuer Späher
+{
+cost = 150 + 5 * sct.length;
+
+if(nolmt == 1)
+{
+if(coins > cost - 1)
+{
+place = sct.length;
+sct[place] = new Scout(cost);
+document.getElementById("sctlgt").innerHTML = "Scouts: "+sct.length+"";
+coins = coins - cost;
+time = time + 50;
+}
+}
+
+}
+
+
+function newHouse()									//neues Haus
+{
+cost = 250 + 10 * hs.length;
+
+
+if(coins > cost - 1)
+{
+place = hs.length;
+hs[place] = new House(cost);
+document.getElementById("hslgt").innerHTML = "Houses: "+hs.length+"";
+coins = coins - cost;
+time = time + 200;
+poplmt = poplmt + 10;
+}
+
+}
+
+
+
+function newCitizien()									//neuer Bürger
+{
+cost = 10;
+
+if(nolmt == 1)
+{
+if(coins > cost - 1)
+{
+place = ctz.length;
+ctz[place] = new Citizien(cost);
+document.getElementById("ctzlgt").innerHTML = "Citiziens: "+ctz.length+"";
+coins = coins - cost;
+time = time - 125;
+}
+}
+
+}
+
+
+function newFarm()									//neue Farm
+{
+cost = 1000 + 100 * frm.length;
+
+if(nolmt == 1)
+{
+if(coins > cost - 1)
+{
+place = frm.length;
+frm[place] = new Farm(cost);
+document.getElementById("frmlgt").innerHTML = "Farms: "+frm.length+"";
+coins = coins - cost;
+time = time * 2/3;
+frmpop = 5 * frm.length;
+}
+}
+
+}
+
+
+function newKnight()									//neuer Krieger
+{
+cost = 100;
+
+if(nolmt == 1)
+{
+if(coins > cost - 1)
+{
+place = kngh.length;
+kngh[place] = new Knight(cost);
+document.getElementById("knghlgt").innerHTML = "Knights: "+kngh.length+"";
+coins = coins - cost;
+time = time + 250;
+}
+}
+
+}
+
+
+
+function elem()										//Anzeige
+{
+document.getElementById("vic").innerHTML = "";
+document.getElementById("lost").innerHTML = "";
+document.getElementById("standoff").innerHTML = "";
+document.getElementById("inv").innerHTML = "Next Invasion:  ? sec"; 
+}
+
+
+
+function recruit()									//rekrutieren
+{
+cost = 100;
+
+
+if(coins > cost - 1 && ctz.length > 0)
+{
+ctz.length = ctz.length - 1;
+kngh.length = kngh.length + 1;
+coins = coins - 100;
+time = time + 750;
+}
+}
+
+
+x = 11 * sct.length;
+
+
+
+function scoutmethod()									//Späher Methode
+{
+
+if(x > 1)
+{
+x = x - 1;
+
+document.getElementById("inv").innerHTML = "Next Invasion:  "+x+" sec";
+
+window.setTimeout('scoutmethod()', 1000);
+}
+
+}
+
+
+
+
+
+
+
+function Attack()									//Attackieren
+{
+rdn = Math.random() * kngh.length;
+rdn = Math.round(rdn);
+
+enemy = Math.random() * kngh.length + rdn ;
+enemy = Math.round(enemy);
+
+count = window.prompt("How many knights to you want to send in war?:" ,"");
+
+if(count > kngh.length)
+{
+alert("You don't have such a high number of knights, bastard!");
+count = window.prompt("How many knights to you want to send in war?:" ,"");
+}
+
+
+if(enemy < 3) enemy = 3;
+
+
+if(enemy < count)
+{
+document.getElementById("vic").innerHTML = "Victory! You defeated the enemie's army("+enemy+")!";
+coins = coins * 1 + enemy * 50 + count * 1;
+window.setTimeout('elem()',5000);
+}
+
+if(enemy > count)
+{
+document.getElementById("lost").innerHTML = "Lost! The enemy("+enemy+") defeated your army!";
+coins = coins - 100 * enemy - count;
+kngh.length = kngh.length - count;
+time = time + 15 * enemy;
+document.getElementById("knghlgt").innerHTML = "Knights: "+kngh.length+"";
+document.getElementById("ctzlgt").innerHTML = "Citiziens: "+ctz.length+"";
+document.getElementById("time").innerHTML = "Zeit bis zu den nächsten Steuern: "+time/1000+" sek";
+
+window.setTimeout('elem()',5000);
+}
+
+if(enemy == count)
+{
+document.getElementById("standoff").innerHTML = "Standoff!"
+coins = coins + 10 * enemy;
+time = time + 300;
+window.setTimeout('elem()',5000);
+}
+}
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+<form>
+<input type="Button" value="new Knight" onClick="newKnight()">
+<input type="Button" value="Attack" onClick="Attack()">
+<br>
+<input type="Button" value="new Citizien" onClick="newCitizien()">
+<input type="Button" value="recruit" onClick="recruit()">
+<br>
+<input type="Button" value="new Farm" onClick="newFarm()">
+<br>
+<input type="Button" value="new House" onClick="newHouse()">
+<br>
+<input type="Button" value="new Scout" onClick="newScout()">
+</form>
+
+
+<div id="knghlgt" style="position: absolute; top: 10; left: 200">Knights: </div>
+<div id="ctzlgt" style="position: absolute; top: 35; left: 200">Citiziens: 0</div>
+<div id="frmlgt" style="position: absolute; top: 60; left: 200">Farms: 0</div>
+<div id="hslgt" style="position: absolute; top: 85; left: 200">Houses: </div>
+<div id="sctlgt" style="position: absolute; top: 110; left: 200">Scouts: </div>
+<div id="inv" style="position: absolute; top: 135; left: 10">Next Invasion: </div>
+<div id="pop" style="position: absolute; top: 135; left: 200"></div>
+<div id="time" style="position: absolute; top: 25; left: 85%">Zeit bis zu den nächsten Steuern: 10 sek</div>
+<div id="coins" style="position: absolute; top: 0; left: 90%">Coins: </div> 
+<div id="vic" style="position: absolute; top: 500; left: 70%"></div> 
+<div id="lost" style="position: absolute; top: 500; left: 70%"></div>
+<div id="standoff" style="position: absolute; top: 500; left: 70%"></div>
+
+
+
+</body>
+</html>

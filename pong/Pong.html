@@ -1,0 +1,169 @@
+<html>
+<head>
+<script language="JavaScript">
+
+padx = 500;
+pady = 250;
+
+blx = 976;
+bly = 224;
+
+pt = 0;
+
+
+
+dirx = -1;
+diry = 1;
+
+lost = 0;
+
+
+
+function again()
+{
+
+
+blx = 976;
+bly = 224;
+
+pt = 0;
+
+
+
+dirx = -1;
+diry = 1;
+
+lost = 0;
+document.getElementById("sttxt").innerHTML = pt;
+document.getElementById("pttxt").innerHTML = "Punkte: ";
+document.getElementById("lstxt").innerHTML = "";
+
+ball();
+}
+
+
+
+function up()
+{
+if(pady > 207) pady = pady - 3;
+pad.style.left = padx;
+pad.style.top = pady;
+}
+
+
+function down()
+{
+if(pady < 400) pady = pady + 3;
+pad.style.left = padx;
+pad.style.top = pady;
+}
+
+
+function ball()
+{
+if(lost == 0)
+{
+bl.style.left = blx;
+bl.style.top = bly;
+
+
+
+
+
+
+
+
+
+if(bly == 470) diry = -1;
+
+
+/*for(i=0;i<75;i++)
+{
+if(bly == pady + i)
+{
+if(blx == 506)
+{
+dirx = 1;
+pt = pt + 1;
+}
+}
+}*/
+
+if(bly > pady && bly < pady + 75)
+{
+if(blx == 506)
+{
+dirx = 1;
+pt = pt + 1;
+}
+}
+
+
+
+if(bly == 202) diry = 1;
+
+if(blx == 998) dirx = -1;
+
+
+if(blx < 504) 
+{
+lost = 1;
+bl.style.left = -1000;
+bl.style.top = -1000;
+document.getElementById("lstxt").innerHTML = "<h1>VERLOREN!!! Mit Enter neustarten!";
+}
+
+
+blx = blx + 2 * dirx;
+bly = bly + 2 * diry;
+
+
+ 
+
+
+window.setTimeout('ball()' , 20);
+document.getElementById("sttxt").innerHTML = pt;
+document.getElementById("pttxt").innerHTML = "Punkte: ";
+}
+}
+
+
+
+
+
+
+function speedup()
+{
+ball();
+}
+
+
+
+
+
+document.addEventListener('keydown', function(event) {
+key = event.keyCode;
+if(key == 38) up();
+if(key == 40) down();
+if(key == 32) ball();
+if(key == 75) speedup();
+if(key == 13) again();
+});
+
+
+
+
+</script>
+</head>
+<body bgcolor="#000000">
+<div id="pad" style="position: absolute; background-color: #ffffff; top: 250; left: 500; width: 5; height: 75;"></div>
+<div id="wall top" style="position: absolute; background-color: #ffffff; top: 200; left: 500; width: 500; height: 5;"></div>
+<div id="wall bot" style="position: absolute; background-color: #ffffff; top: 475; left: 500; width: 500; height: 5;"></div>
+<div id="wall right" style="position: absolute; background-color: #ffffff; top: 200; left: 1000; width: 5; height: 280;"></div>
+<div id="bl" style="position: absolute; background-color: #ffffff; top: -1000; left: -1000; width: 5; height: 5;"></div>
+<div id="sttxt" style="position: absolute; color: #ffffff; top: 600; left: 600;"><h1>Mit Leertaste das Spiel starten!</div>
+<div id="pttxt" style="position: absolute; color: #ffffff; top: 600; left: 535;"></div>
+<div id="lstxt" style="position: absolute; color: #ffffff; top: 500; left: 600;"></div>
+
+</body>
+</html>

@@ -1,0 +1,660 @@
+<html>
+
+<head>
+
+<script language="JavaScript">
+
+
+
+var c = 1;										//Initialisierung
+var x = 798;
+var y = 99;
+var r = 51;
+var h = 0;
+
+eglx = Math.random() * -1500;
+eglx = Math.round(eglx);
+
+
+cldx = Math.random() * 1000;
+cldx = Math.round(cldx);
+
+cldy = Math.random() * 500;
+cldy = Math.round(cldy);
+
+
+PUy = Math.random() * 300;
+PUy = Math.round(PUy);
+
+PUy = PUy * 3;
+
+PUx = Math.random() * 400 + 175;
+PUx = Math.round(PUx);
+
+PUx = PUx * 3;
+
+ufinishy = 50;
+ufinishx = 1400;
+
+dfinishy = 800;
+dfinishx = 1400;
+
+a = 0;
+c = 1;
+d = 1;
+
+document.addEventListener('keydown', function(event) 					//Tastatursteuerung
+{
+key = event.keyCode;
+if(key == 38) up();
+if(key == 40) down();
+if(key == 39) right();
+if(key == 37) left();
+if(key == 13) h = 1;
+if(h == 1 && key == 75) Cheat();
+});
+
+
+
+function lost()										//Verloren
+{
+window.alert("Verloren! Neues Spiel starten?");
+again();
+}											//Ende Verloren
+
+
+
+
+function Cheat()									//Cheat
+{
+d = 2;
+}											//Ende Cheat	
+
+
+
+
+function again()									//Neustart bei Sieg
+{
+c = 1;
+x = 800;
+y = 100;
+
+
+eglx = Math.random() * -1500;
+eglx = Math.round(eglx);
+
+cldx = Math.random() * 1000 + 100;
+cldx = Math.round(cldx);
+
+cldy = Math.random() * 700;
+cldy = Math.round(cldy);
+
+PUy = Math.random() * 300;
+PUy = Math.round(PUy);
+
+PUy = PUy * 3;
+
+PUx = Math.random() * 400 + 200;
+PUx = Math.round(PUx); 
+
+PUX = PUx * 3;
+
+ufinishy = 50;
+ufinishx = 1400;
+
+dfinishy = 800;
+dfinishx = 1400;
+
+a = 0;
+c = 1;
+d = 1;
+
+lftpic.style.left = x;
+lftpic.style.top = y;
+rghpic.style.left = -1000;
+rghpic.style.top = -1000;
+RIP.style.left = -1000;
+RIP.style.top = -1000;
+ufinish.style.left = ufinishx;
+ufinish.style.top = ufinishy;
+dfinish.style.left = dfinishx;
+dfinish.style.top = dfinishy;
+PU.style.left = PUx;
+PU.style.top = PUy;
+ftxtpu.style.left = 500;
+ftxtpu.style.top = 50;
+ttxtpu.style.left = -1000;
+ttxtpu.style.top = -1000;
+
+if(x+10 > PUx-r && x+10 < PUx+r)
+{
+if(y+10 > PUy-r && y+10 < PUy+r)
+{
+if(d<2)
+{
+d = 0;
+}
+document.getElementById("ttxtpu").innerHTML = "<h1>Power-Up aktiviert!";
+ttxtpu.style.left = 500;
+ttxtpu.style.top = 50;
+ftxtpu.style.left = -1000;
+ftxtpu.style.top = -1000;
+//window.alert("Power-Up!");
+PU.style.left = -1000;
+PU.style.top = -1000;
+
+slow();
+}
+}
+
+
+attack();
+cloud();
+}											//Ende Neustart bei Sieg
+
+
+
+
+
+
+
+
+
+
+function normal()									//Anfang
+{
+
+
+
+lftpic.style.left = x;
+lftpic.style.top = y;
+rghpic.style.left = -1000;
+rghpic.style.top = -1000;
+RIP.style.left = -1000;
+RIP.style.top = -1000;
+ufinish.style.left = ufinishx;
+ufinish.style.top = ufinishy;
+dfinish.style.left = dfinishx;
+dfinish.style.top = dfinishy;
+PU.style.left = PUx;
+PU.style.top = PUy;
+
+
+
+
+attack();
+cloud();
+
+
+if(x+10 > PUx-r && x+10 < PUx+r)
+{
+if(y+10 > PUy-r && y+10 < PUy+r)
+{
+if(d<2)
+{
+d = 0;
+}
+document.getElementById("ttxtpu").innerHTML = "<h1>Power-Up aktiviert!";
+ttxtpu.style.left = 500;
+ttxtpu.style.top = 50;
+ftxtpu.style.left = -1000;
+ftxtpu.style.top = -1000;
+//window.alert("Power-Up!");
+PU.style.left = -1000;
+PU.style.top = -1000;
+
+slow();
+}
+}
+
+
+
+}											//Ende Anfang
+
+
+
+
+
+
+function attack()									//Bewegung des Adlers
+{
+
+
+
+
+if(d == 1)
+{
+
+if(eglx<x-150)
+{
+eglx=eglx+1;
+eagle.style.left = eglx;
+eagle.style.top = y;
+
+window.setTimeout ('attack()', 0);
+}
+}
+
+
+
+if(eglx==x-151)
+{
+window.alert("Verloren!")
+
+lftpic.style.left = -1000;
+lftpic.style.top = -1000;
+rghpic.style.left = -1000;
+rghpic.style.top = -1000;
+
+RIP.style.left = x;
+RIP.style.top = y;
+
+window.setTimeout ('lost()', 100);
+}
+
+
+}											//Ende Bewegung des Adlers
+
+
+
+clddir = 1;
+
+function cloud()									//Wolke
+{
+
+
+
+if(cldx == 1300) 
+{
+clddir = -1;
+}
+
+if(cldx == 100)
+{
+clddir = 1;
+}
+
+cldx = cldx + (1 * clddir);
+cld.style.left = cldx;
+cld.style.top = cldy;
+
+window.setTimeout ('cloud()', 50);
+}											//Ende Wolke
+
+
+
+
+
+
+
+
+
+
+
+
+
+function slow()										//Power-Up
+{
+PUy = -1000;
+
+if(d == 0)
+{
+if(eglx<x-150)
+{
+eglx=eglx+1;
+eagle.style.left = eglx;
+eagle.style.top = y;
+
+window.setTimeout ('slow()', 50);
+}
+}
+
+
+
+if(eglx==x-151)
+{
+window.alert("Verloren!")
+
+lftpic.style.left = -1000;
+lftpic.style.top = -1000;
+rghpic.style.left = -1000;
+rghpic.style.top = -1000;
+
+RIP.style.left = x;
+RIP.style.top = y;
+
+window.setTimeout ('lost()',100);
+}
+
+}											//Ende Power-Up
+
+
+
+
+
+
+
+
+
+
+
+
+
+function right()									//Rechts
+{
+
+x=x+3;
+
+
+
+
+
+rghpic.style.left = x;
+rghpic.style.top = y;
+
+lftpic.style.left = -1000;
+lftpic.style.top = -1000;
+
+a = 1;
+c = 0;
+
+
+if(x > 1349)
+{
+window.alert("Sieg! Neues Spiel starten?");
+again();
+}
+
+
+if(x+10 > PUx-r && x+10 < PUx+r)
+{
+if(y+10 > PUy-r && y+10 < PUy+r)
+{
+if(d<2)
+{
+d = 0;
+}
+document.getElementById("ttxtpu").innerHTML = "<h1>Power-Up aktiviert!";
+ttxtpu.style.left = 500;
+ttxtpu.style.top = 50;
+ftxtpu.style.left = -1000;
+ftxtpu.style.top = -1000;
+//window.alert("Power-Up!");
+PU.style.left = -1000;
+PU.style.top = -1000;
+
+slow();
+}
+}
+
+
+
+}											//Ende Rechts
+	
+
+
+function left()										//Links
+{
+
+
+x=x-3;
+
+
+
+
+
+
+lftpic.style.left = x;
+lftpic.style.top = y;
+
+rghpic.style.left = -1000;
+rghpic.style.top = -1000;
+
+a = 0;
+c = 1;
+
+
+
+
+if(x+10 > PUx-r && x+10 < PUx+r)
+{
+if(y+10 > PUy-r && y+10 < PUy+r)
+{
+if(d<2)
+{
+d = 0;
+}
+document.getElementById("ttxtpu").innerHTML = "<h1>Power-Up aktiviert!";
+ttxtpu.style.left = 500;
+ttxtpu.style.top = 50;
+ftxtpu.style.left = -1000;
+ftxtpu.style.top = -1000;
+//window.alert("Power-Up!");
+PU.style.left = -1000;
+PU.style.top = -1000;
+
+slow();
+}
+}
+
+
+
+
+}											//Ende Links
+
+
+
+
+function down()										//Hinunter
+{
+
+y=y+3;
+
+
+
+
+
+if(c == 1)
+{
+
+
+lftpic.style.left = x;
+lftpic.style.top = y;
+
+rghpic.style.left = -1000;
+rghpic.style.top = -1000;
+
+}
+
+
+
+if(a == 1)
+{
+
+
+rghpic.style.left = x;
+rghpic.style.top = y;
+
+lftpic.style.left = -1000;
+lftpic.style.top = -1000;
+
+}
+
+
+if(x+10 > PUx-r && x+10 < PUx+r)
+{
+if(y+10 > PUy-r && y+10 < PUy+r)
+{
+if(d<2)
+{
+d = 0;
+}
+document.getElementById("ttxtpu").innerHTML = "<h1>Power-Up aktiviert!";
+ttxtpu.style.left = 500;
+ttxtpu.style.top = 50;
+ftxtpu.style.left = -1000;
+ftxtpu.style.top = -1000;
+//window.alert("Power-Up!");
+PU.style.left = -1000;
+PU.style.top = -1000;
+
+slow();
+}
+}
+
+
+
+}											//Ende Hinunter
+
+
+
+
+
+
+
+
+function up()										//Hinauf
+{
+
+y=y-3;
+
+
+
+
+
+
+if(c == 1)
+{
+
+
+lftpic.style.left = x;
+lftpic.style.top = y;
+
+rghpic.style.left = -1000;
+rghpic.style.top = -1000;
+}
+
+
+
+if(a == 1)
+{
+
+
+rghpic.style.left = x;
+rghpic.style.top = y;
+
+lftpic.style.left = -1000;
+lftpic.style.top = -1000;
+
+}
+
+
+
+
+
+if(x+10 > PUx-r && x+10 < PUx+r)
+{
+if(y+10 > PUy-r && y+10 < PUy+r)
+{
+if(d<2)
+{
+d = 0;
+}
+document.getElementById("ttxtpu").innerHTML = "<h1>Power-Up aktiviert!";
+ttxtpu.style.left = 500;
+ttxtpu.style.top = 50;
+ftxtpu.style.left = -1000;
+ftxtpu.style.top = -1000;
+//window.alert("Power-Up!");
+PU.style.left = -1000;
+PU.style.top = -1000;
+
+slow();
+}
+}
+
+
+
+
+
+
+}											//Ende Hinauf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body onLoad="normal()" bgcolor="#ccffff">
+
+<div ID="ftxtpu" style="position: absolute; top: 50; left: 500; color: #ff0000;"><h1>Power-Up nicht aktiviert!</div>
+<div ID="ttxtpu" style="position: absolute; top: 50; left: 500; color: #008800;"></div>
+
+
+
+<div ID="ufinish" style="position:absolute">
+<img src="finish trans.png">
+</div>
+
+<div ID="dfinish" style="position:absolute">
+<img src="finish trans.png">
+</div>
+
+
+<div ID="RIP" style="position:absolute">
+<img src="RIP.png">
+</div>
+
+
+
+
+<div ID="eagle" style="position:absolute">
+<img src="eagle.gif">
+</div>
+
+
+<div ID="PU" style="position: absolute; width: 50; height: 50">
+<img src="Power-Up.png">
+</div>
+
+<div ID="rghpic" style="position:absolute">
+<img src="r-bat.gif">
+</div>
+
+<div ID="lftpic" style="position:absolute">
+<img src="bat.gif">
+</div>
+
+<div ID="cld" style="position:absolute">
+<img src="cloud.png">
+</div>
+
+
+
+
+
+
+</body>
+</html>

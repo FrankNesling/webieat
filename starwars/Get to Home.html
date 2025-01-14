@@ -1,0 +1,851 @@
+<html>
+<head>
+<script language="JavaScript">
+
+//----------------------------Basis---------------------------------------------
+
+alreadypressed = 0;
+
+document.addEventListener('keydown', function(event)				//Tastenbelegung
+{
+key = event.keyCode;
+if(key == 37) left();
+if(key == 38) up();
+if(key == 39) right();
+if(key == 40) down();
+if(key == 13 && stop == 0 && alreadypressed == 0) 
+{
+showcredits();
+alreadypressed = 1;
+game();
+}
+
+
+if(key == 50) 
+{
+lvl = 2;
+menu();
+}
+
+
+});
+
+
+/*To Do
+points = 0;
+level > 3;
+weapons = 0;  
+*/
+
+somewhere   = -1000;
+yourcredits =     0;
+
+lost    = 0;
+lvl     = 1;
+stop    = 0;
+bestlvl = 1;
+
+
+
+function menu()									//"Menü"
+{
+alreadypressed = 0;
+
+
+if(lvl == 1)
+{
+lvl1button.style.left = 400; 
+lvl1button.style.top  = 500;
+lvl2button.style.left = somewhere; 
+lvl2button.style.top  = somewhere;
+}
+
+
+if(lvl == 2)
+{
+lvl1button.style.left = somewhere; 
+lvl1button.style.top  = somewhere;
+lvl2button.style.left = 400; 
+lvl2button.style.top  = 500;
+}
+
+
+
+xwing.style.left      = somewhere;
+xwing.style.top       = somewhere;
+planet.style.left     = somewhere;
+planet.style.top      = somewhere;
+hangar.style.left     = somewhere;
+hangar.style.top      = somewhere;
+explosion.style.left  = somewhere;
+explosion.style.top   = somewhere;
+c1redit5.style.left   = somewhere;
+c1redit5.style.top    = somewhere;
+c2redit5.style.left   = somewhere;
+c2redit5.style.top    = somewhere;
+c3redit5.style.left   = somewhere;
+c3redit5.style.top    = somewhere;
+c4redit5.style.left   = somewhere;
+c4redit5.style.top    = somewhere;
+c5redit5.style.left   = somewhere;
+c5redit5.style.top    = somewhere;
+c1redit10.style.left  = somewhere;
+c1redit10.style.top   = somewhere;
+c2redit10.style.left  = somewhere;
+c2redit10.style.top   = somewhere;
+c3redit10.style.left  = somewhere;
+c3redit10.style.top   = somewhere;
+c1redit25.style.left  = somewhere;
+c1redit25.style.top   = somewhere;
+c2redit25.style.left  = somewhere;
+c2redit25.style.top   = somewhere;
+c3redit25.style.left  = somewhere;
+c3redit25.style.top   = somewhere;
+c1redit50.style.left  = somewhere;
+c1redit50.style.top   = somewhere;
+c2redit50.style.left  = somewhere;
+c2redit50.style.top   = somewhere;
+c3redit50.style.left  = somewhere;
+c3redit50.style.top   = somewhere;
+c1redit100.style.left = somewhere;
+c1redit100.style.top  = somewhere;
+c2redit100.style.left = somewhere;
+c2redit100.style.top  = somewhere;
+c1redit150.style.left = somewhere;
+c1redit150.style.top  = somewhere;
+c2redit150.style.left = somewhere;
+c2redit150.style.top  = somewhere;
+c1redit500.style.left = somewhere;
+c1redit500.style.top  = somewhere;
+c1redit1000.style.left= somewhere;
+c1redit1000.style.top = somewhere;
+meteor00.style.left   = somewhere;
+meteor00.style.top    = somewhere;
+meteor01.style.left   = somewhere;
+meteor01.style.top    = somewhere;
+meteor02.style.left   = somewhere;
+meteor02.style.top    = somewhere;
+meteor03.style.left   = somewhere;
+meteor03.style.top    = somewhere;
+meteor04.style.left   = somewhere;
+meteor04.style.top    = somewhere;
+meteor05.style.left   = somewhere;
+meteor05.style.top    = somewhere;
+meteor06.style.left   = somewhere;
+meteor06.style.top    = somewhere;
+meteor07.style.left   = somewhere;
+meteor07.style.top    = somewhere;
+meteor08.style.left   = somewhere;
+meteor08.style.top    = somewhere;
+meteor09.style.left   = somewhere;
+meteor09.style.top    = somewhere;
+meteor10.style.left   = somewhere;
+meteor10.style.top    = somewhere;
+meteor11.style.left   = somewhere;
+meteor11.style.top    = somewhere;
+meteor12.style.left   = somewhere;
+meteor12.style.top    = somewhere;
+meteor13.style.left   = somewhere;
+meteor13.style.top    = somewhere;
+
+stop = 0;
+}
+
+
+//--------------------------Inventar-----------------------------------------
+
+
+
+function showcredits()									//Credits anzeigen
+{
+document.getElementById("showcredits").innerHTML = "<h1>Credits: "+yourcredits+"";
+
+window.setTimeout('showcredits()', 20)
+}
+
+
+
+
+
+
+
+//---------------------------Steuerung-----------------------------------------
+
+
+
+
+
+function left()									//Links
+{
+if(lost == 0)
+{
+if(xwingx > 0)
+{
+xwingx = xwingx - 10;
+xwing.style.left = xwingx;
+}
+}
+}
+
+function up()									//Hinauf
+{
+if(lost == 0)
+{
+if(xwingy > 45)
+{
+xwingy = xwingy - 10;
+xwing.style.top = xwingy;
+}
+}
+}
+
+
+function right()								//Rechts
+{
+if(lost == 0)
+{
+if(xwingx < 750)
+{
+xwingx = xwingx + 10;
+xwing.style.left = xwingx;
+}
+}
+}
+
+
+
+function down()									//Hinunter
+{
+if(lost == 0)
+{
+if(xwingy < 750)
+{
+xwingy = xwingy + 10;
+xwing.style.top = xwingy;
+}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------------Spiel-------------------------------------
+
+function game()
+{
+bestlvl = bestlvl + 1;
+//alert(lvl);
+
+xwingx  =   300;									
+xwingy  =   750;
+planetx =  -300;
+hangarx =   500;
+
+function Meteor(meteorx, meteory, meteorspeed) 					//Meteor
+{
+this.meteorx 	   = meteorx;
+this.meteory       = meteory;
+this.meteorspeed   = meteorspeed;
+}
+
+
+function Credit(creditx, credity, addcredit)					//Credits
+{
+this.creditx   = creditx;
+this.credity   = credity;
+this.addcredit = addcredit;
+}
+
+
+
+Meteorarr = new Array();							//Meteorarray
+Meteorarr[00] = new Meteor(450, - 750, 10)
+Meteorarr[01] = new Meteor(375, -2000, 10)  
+Meteorarr[02] = new Meteor(225, -  50,  5)  
+Meteorarr[03] = new Meteor(400, - 600, 10)  
+Meteorarr[04] = new Meteor(325, -1750,  1) 
+Meteorarr[05] = new Meteor(100, - 350, 10) 
+Meteorarr[06] = new Meteor(175,     0,  5) 
+if(lvl > 1)
+{
+Meteorarr[07] = new Meteor(500, -4000,  5) 
+Meteorarr[08] = new Meteor( 20, - 300, 10) 
+Meteorarr[09] = new Meteor(650, - 500, 10) 
+Meteorarr[10] = new Meteor(750, -2500,  1) 
+Meteorarr[11] = new Meteor(300, - 500, 10) 
+Meteorarr[12] = new Meteor(475, -3000,  5) 
+Meteorarr[13] = new Meteor(200, - 450, 10) 
+}
+
+Creditarr = new Array();							//Creditarray
+Creditarr[00] = new Credit(100, -5000,  5)
+Creditarr[01] = new Credit(200, -1500,  5)
+Creditarr[02] = new Credit(300, -3250,  5)  
+Creditarr[03] = new Credit(400, -1000,  5)
+Creditarr[04] = new Credit(500, -1000, 10)
+Creditarr[05] = new Credit(250, - 700, 10)
+Creditarr[06] = new Credit(600, -1250, 10)
+Creditarr[07] = new Credit(700, -2250, 25)
+Creditarr[08] = new Credit(100, - 450, 25)
+Creditarr[09] = new Credit( 50, - 950, 50) 
+if(lvl > 1)
+{
+Creditarr[10] = new Credit(100, -5000,    5)
+Creditarr[11] = new Credit(200, -1500,   25)
+Creditarr[12] = new Credit(300, -3250,   50)  
+Creditarr[13] = new Credit(400, -1000,   50)
+Creditarr[14] = new Credit(500, -1500,  100)
+Creditarr[15] = new Credit(250, -4000,  100)
+Creditarr[16] = new Credit(600, -1250,  150)
+Creditarr[17] = new Credit(700, -2250,  150)
+Creditarr[18] = new Credit(700, -4500,  500)
+Creditarr[19] = new Credit( 50, -5000, 1000) 
+}
+
+
+
+
+
+
+
+
+if(lvl == 1) lvl1();
+if(lvl == 2) lvl2();
+if(lvl == 3) lvl3();
+
+
+
+
+
+
+function lvl1()									//Level 1
+{
+planety= -9750;
+hangary= -9000;
+
+
+
+lvl1button.style.left= somewhere; 
+lvl1button.style.top = somewhere;
+xwing.style.left     = xwingx;
+xwing.style.top      = xwingy;
+planet.style.left    = planetx;
+planet.style.top     = planety;
+hangar.style.left    = hangarx;
+hangar.style.top     = hangary;
+
+deactivation = 0;
+movementmeteor();
+movementplanet();
+movementcredits();
+}
+
+
+
+
+function lvl2()									//Level 2
+{
+planety= -15750;
+hangary= -15000;
+
+
+
+lvl2button.style.left= somewhere; 
+lvl2button.style.top = somewhere;
+xwing.style.left     = xwingx;
+xwing.style.top      = xwingy;
+planet.style.left    = planetx;
+planet.style.top     = planety;
+hangar.style.left    = hangarx;
+hangar.style.top     = hangary;
+
+deactivation = 0;
+movementmeteor();
+movementplanet();
+movementcredits();
+}
+
+
+
+
+
+function lvl3()									//Level 3
+{
+}
+
+
+}
+
+
+
+
+
+//----------------------------------Spielinhalte-----------------------------------
+
+
+
+
+
+function movementplanet()							//Bewegungen des Planeten
+{
+
+if(planety == -1000) deactivation = 1;
+
+
+if(hangary + 50 > xwingy)							//Sieg
+{
+if(xwingx > hangarx && xwingx < hangarx + 100) 
+{
+stop = 1;
+if(lvl < bestlvl) lvl  = lvl + 1;
+menu();
+}
+}
+
+
+
+if(planety < -750)
+{
+planety = planety + 5;
+hangary = hangary + 5;
+}
+
+planet.style.top = planety;
+hangar.style.top = hangary;
+
+
+
+if(lost == 0 && stop == 0) window.setTimeout ('movementplanet()', 20);
+}
+
+
+
+
+
+
+function movementmeteor()							//Bewegungen der Meteoren
+{
+collision = 50;
+
+
+for(i=0; i<Meteorarr.length; i++)
+{
+
+if(lost == 1)
+{
+xwing.style.left     = somewhere;
+xwing.style.top      = somewhere;
+explosion.style.left = xwingx;
+explosion.style.top  = xwingy;
+
+
+if(Meteorarr[i].meteorspeed > 1) Meteorarr[i].meteorspeed = Meteorarr[i].meteorspeed/5;
+}
+
+
+Meteorarr[i].meteory = Meteorarr[i].meteory + Meteorarr[i].meteorspeed;
+
+
+meteor00.style.left = Meteorarr[00].meteorx;
+meteor00.style.top  = Meteorarr[00].meteory;
+meteor01.style.left = Meteorarr[01].meteorx;
+meteor01.style.top  = Meteorarr[01].meteory;
+meteor02.style.left = Meteorarr[02].meteorx;
+meteor02.style.top  = Meteorarr[02].meteory;
+meteor03.style.left = Meteorarr[03].meteorx;
+meteor03.style.top  = Meteorarr[03].meteory;
+meteor04.style.left = Meteorarr[04].meteorx;
+meteor04.style.top  = Meteorarr[04].meteory;
+meteor05.style.left = Meteorarr[05].meteorx;
+meteor05.style.top  = Meteorarr[05].meteory;
+meteor06.style.left = Meteorarr[06].meteorx;
+meteor06.style.top  = Meteorarr[06].meteory;
+
+
+
+if(lvl > 1)
+{
+meteor07.style.left = Meteorarr[07].meteorx;
+meteor07.style.top  = Meteorarr[07].meteory;
+meteor08.style.left = Meteorarr[08].meteorx;
+meteor08.style.top  = Meteorarr[08].meteory;
+meteor09.style.left = Meteorarr[09].meteorx;
+meteor09.style.top  = Meteorarr[09].meteory;
+meteor10.style.left = Meteorarr[10].meteorx;
+meteor10.style.top  = Meteorarr[10].meteory;
+meteor11.style.left = Meteorarr[11].meteorx;
+meteor11.style.top  = Meteorarr[11].meteory;
+meteor12.style.left = Meteorarr[12].meteorx;
+meteor12.style.top  = Meteorarr[12].meteory;
+meteor13.style.left = Meteorarr[13].meteorx;
+meteor13.style.top  = Meteorarr[13].meteory;
+}
+
+
+
+
+if(i == 06) collision =  30;
+if(i == 13) collision = 100;
+
+
+
+if(Meteorarr[i].meteory + collision > xwingy && Meteorarr[i].meteory < xwingy) 		//Niederlage					//Kollision - Verloren
+{
+if(Meteorarr[i].meteorx + collision >= xwingx && Meteorarr[i].meteorx <= xwingx + collision)
+{
+lost = 1;
+this.Meteorarr[i].meteorx = somewhere;
+this.Meteorarr[i].meteory  = somewhere;
+}
+}
+
+
+
+
+
+
+randommeteory = Math.random() * - 300;
+randommeteory = Math.round(randommeteory);
+
+randommeteory = randommeteory * 10;
+
+randommeteorx = Math.random() * 750;
+randommeteorx = Math.round(randommeteorx);
+
+
+
+if(deactivation == 0)
+{
+if(Meteorarr[i].meteory > 900)
+{
+Meteorarr[i].meteory = randommeteory;
+Meteorarr[i].meteorx = randommeteorx;
+}
+}
+
+if(planety > -1000)
+{
+if(Meteorarr[i].meteory > 900)
+{
+Meteorarr[i].meteory = somewhere;
+Meteorarr[i].meteorx = somewhere;
+}
+}
+}
+
+
+if(stop == 0) window.setTimeout ('movementmeteor()', 20);
+}
+
+
+
+function movementcredits()							//Bewegungen der Credits
+{
+for(i=0; i<Creditarr.length; i++)
+{
+
+Creditarr[i].credity = Creditarr[i].credity + 5;
+
+c1redit5.style.left  = Creditarr[00].creditx;
+c1redit5.style.top   = Creditarr[00].credity;
+c2redit5.style.left  = Creditarr[01].creditx;
+c2redit5.style.top   = Creditarr[01].credity;
+c3redit5.style.left  = Creditarr[02].creditx;
+c3redit5.style.top   = Creditarr[02].credity;
+c4redit5.style.left  = Creditarr[03].creditx;
+c4redit5.style.top   = Creditarr[03].credity;
+c1redit10.style.left = Creditarr[04].creditx;
+c1redit10.style.top  = Creditarr[04].credity;
+c2redit10.style.left = Creditarr[05].creditx;
+c2redit10.style.top  = Creditarr[05].credity;
+c3redit10.style.left = Creditarr[06].creditx;
+c3redit10.style.top  = Creditarr[06].credity;
+c1redit25.style.left = Creditarr[07].creditx;
+c1redit25.style.top  = Creditarr[07].credity;
+c2redit25.style.left = Creditarr[08].creditx;
+c2redit25.style.top  = Creditarr[08].credity;
+c1redit50.style.left = Creditarr[09].creditx;
+c1redit50.style.top  = Creditarr[09].credity;
+if(lvl > 1)
+{
+c5redit5.style.left   = Creditarr[10].creditx;
+c5redit5.style.top    = Creditarr[10].credity;
+c3redit25.style.left  = Creditarr[11].creditx;
+c3redit25.style.top   = Creditarr[11].credity;
+c2redit50.style.left  = Creditarr[12].creditx;
+c2redit50.style.top   = Creditarr[12].credity;
+c3redit50.style.left  = Creditarr[13].creditx;
+c3redit50.style.top   = Creditarr[13].credity;
+c1redit100.style.left = Creditarr[14].creditx;
+c1redit100.style.top  = Creditarr[14].credity;
+c2redit100.style.left = Creditarr[15].creditx;
+c2redit100.style.top  = Creditarr[15].credity;
+c1redit150.style.left = Creditarr[16].creditx;
+c1redit150.style.top  = Creditarr[16].credity;
+c2redit150.style.left = Creditarr[17].creditx;
+c2redit150.style.top  = Creditarr[17].credity;
+c1redit500.style.left = Creditarr[18].creditx;
+c1redit500.style.top  = Creditarr[18].credity;
+c1redit1000.style.left= Creditarr[19].creditx;
+c1redit1000.style.top = Creditarr[19].credity;
+}
+
+
+randomcredity = Math.random() * - 500;
+randomcredity = Math.round(randomcredity);
+randomcredity = randomcredity * 10;
+
+randomcreditx = Math.random() * 750;
+randomcreditx = Math.round(randomcreditx);
+
+
+
+if(Creditarr[i].credity + 30 > xwingy && Creditarr[i].credity < xwingy) 						//Creditsammeln
+{
+if(Creditarr[i].creditx + 30 >= xwingx && Creditarr[i].creditx <= xwingx + 30)
+{
+yourcredits = yourcredits + this.Creditarr[i].addcredit;
+this.Creditarr[i].creditx  = randomcreditx;
+this.Creditarr[i].credity  = randomcredity;
+}
+}
+
+if(deactivation == 0)
+{
+if(Creditarr[i].credity > 900)
+{
+Creditarr[i].credity = randomcredity;
+Creditarr[i].creditx = randomcreditx;
+}
+}
+
+if(planety > -1000)
+{
+if(Creditarr[i].credity > 900)
+{
+Creditarr[i].credity = somewhere;
+Creditarr[i].creditx = somewhere;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+}
+
+if(lost == 0 && stop == 0) window.setTimeout ('movementcredits()', 20);
+}
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body onLoad="menu()" background="spacebackground.gif">
+
+<div id="planet" style="position: absolute">
+<img src="planet.gif">
+</div>
+
+<div id="c1redit5" style="position: absolute">
+<img src="credit5.gif">
+</div>
+
+<div id="c2redit5" style="position: absolute">
+<img src="credit5.gif">
+</div>
+
+<div id="c3redit5" style="position: absolute">
+<img src="credit5.gif">
+</div>
+
+<div id="c4redit5" style="position: absolute">
+<img src="credit5.gif">
+</div>
+
+<div id="c5redit5" style="position: absolute">
+<img src="credit5.gif">
+</div>
+
+<div id="c1redit10" style="position: absolute">
+<img src="credit10.gif">
+</div>
+
+<div id="c2redit10" style="position: absolute">
+<img src="credit10.gif">
+</div>
+
+<div id="c3redit10" style="position: absolute">
+<img src="credit10.gif">
+</div>
+
+<div id="c1redit25" style="position: absolute">
+<img src="credit25.gif">
+</div>
+
+<div id="c2redit25" style="position: absolute">
+<img src="credit25.gif">
+</div>
+
+<div id="c3redit25" style="position: absolute">
+<img src="credit25.gif">
+</div>
+
+<div id="c1redit50" style="position: absolute">
+<img src="credit50.gif">
+</div>
+
+<div id="c2redit50" style="position: absolute">
+<img src="credit50.gif">
+</div>
+
+<div id="c3redit50" style="position: absolute">
+<img src="credit50.gif">
+</div>
+
+<div id="c1redit100" style="position: absolute">
+<img src="credit100.gif">
+</div>
+
+<div id="c2redit100" style="position: absolute">
+<img src="credit100.gif">
+</div>
+
+<div id="c1redit150" style="position: absolute">
+<img src="credit150.gif">
+</div>
+
+<div id="c2redit150" style="position: absolute">
+<img src="credit150.gif">
+</div>
+
+<div id="c1redit500" style="position: absolute">
+<img src="credit500.gif">
+</div>
+
+<div id="c1redit1000" style="position: absolute">
+<img src="credit1000.gif">
+</div>
+
+<div id="xwing" style="position: absolute">
+<img src="xwing.gif">
+</div>
+
+<div id="hangar" style="position: absolute">
+<img src="hangar.gif">
+</div>
+
+<div id="meteor00" style="position: absolute">
+<img src="meteor1.gif">
+</div>
+
+<div id="meteor01" style="position: absolute">
+<img src="meteor1.gif">
+</div>
+
+<div id="meteor02" style="position: absolute">
+<img src="meteor2.gif">
+</div>
+
+<div id="meteor03" style="position: absolute">
+<img src="meteor2.gif">
+</div>
+
+<div id="meteor04" style="position: absolute">
+<img src="meteor3.gif">
+</div>
+
+<div id="meteor05" style="position: absolute">
+<img src="meteor3.gif">
+</div>
+
+<div id="meteor06" style="position: absolute">
+<img src="meteor4.gif">
+</div>
+
+<div id="meteor07" style="position: absolute">
+<img src="meteor5.gif">
+</div>
+
+<div id="meteor08" style="position: absolute">
+<img src="meteor5.gif">
+</div>
+
+
+<div id="meteor09" style="position: absolute">
+<img src="meteor5.gif">
+</div>
+
+
+<div id="meteor10" style="position: absolute">
+<img src="meteor6.gif">
+</div>
+
+<div id="meteor11" style="position: absolute">
+<img src="meteor6.gif">
+</div>
+
+<div id="meteor12" style="position: absolute">
+<img src="ufo1.gif">
+</div>
+
+<div id="meteor13" style="position: absolute">
+<img src="bigmeteor1.gif">
+</div>
+
+
+
+
+
+<div id="explosion" style="position: absolute">
+<img src="explosion.gif">
+</div>
+
+
+
+
+<div id="lvl1button" style="position: absolute">
+<img src="Start Level 1.gif">
+</div>
+
+
+<div id="lvl2button" style="position: absolute">
+<img src="Start Level 2.gif">
+</div>
+
+
+
+
+
+<div id="showcredits" style="position: absolute; top: 50%; left: 800; color: #ffffff;"></div> 
+
+
+
+
+
+
+</body>
+</html>

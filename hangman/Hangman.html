@@ -1,0 +1,160 @@
+<html>
+<head>
+<script language="JavaScript">
+
+function hgm()
+{
+
+
+wds = new Array("Zylinder", "Blume", "Advent", "Handy", "Flamingo", "Physik", "Formel", "Box", "Pflanze", "Baum")
+wdslgt = wds.length;
+	
+	//alert(wdslgt);
+
+wdslgt=wdslgt-1;
+
+rn = Math.random() * wdslgt;
+rn = Math.round(rn);
+
+	//alert(wds[rn]);
+		
+
+
+wd = wds[rn];
+
+wd = wd.toUpperCase();
+
+
+wdlgt = wd.length;
+
+	//alert(wdlgt);
+
+
+dspl = new Array;
+
+for(i=0;i<wdlgt;i++)
+{
+dspl[i] = " _ ";
+}
+
+
+	//alert(dspl)
+
+
+tries = 10;
+
+a = tries;
+
+
+
+
+r=0;
+for(i=0;i<tries;i++)
+{
+inpt = window.prompt(dspl)
+inpt = inpt.toUpperCase();
+	//alert(inpt);
+
+
+
+
+if(inpt == null)
+{
+break;
+}
+
+
+
+for(j=0;j<wdlgt;j++)
+{
+
+if(inpt == wd.charAt(j))
+{
+dspl[j] = inpt;
+
+}
+
+if(dspl[j] == inpt)
+{
+i=i-1;
+a=a+1;
+alert("Richtig! Der Buchstabe "+inpt+" ist enhalten.");
+break;
+}
+
+
+}
+
+
+
+for(j=0;j<wdlgt;j++)
+{
+if(dspl[j] == wd.charAt(j))
+{
+r=r+1;
+}
+
+}
+
+
+	//alert(r);
+
+if(r==wdlgt)
+{
+alert("Sieg!!! Du hast das gesuchte Wort "+wd+" gefunden!");
+break;
+}
+r=0;
+
+
+if(inpt == wd)							
+{
+alert("Gewonnen! Du hast das gesuchte Wort "+wd+" erraten!");
+break;
+}
+
+triescc = tries-1;
+
+if(i == triescc)
+{
+alert("Verloren!!! Das gesuchte Wort war: "+wd+"");
+break;
+}
+
+
+a=a-1;
+
+if(a == 1)
+{
+alert("Letzter Versuch!");
+}
+
+
+else
+{
+alert("Noch "+a+" Versuche!");
+}
+
+
+
+
+
+}
+
+}
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+<form>
+<input type="button" value="Neues Spiel" onClick="hgm()">
+</form>
+</body>
+</hmtl>
