@@ -1,0 +1,173 @@
+<html>
+<script>
+
+document.addEventListener('keyup', control);
+
+function control(event)  {
+Key = event.keyCode;
+if(Key == 37) left();
+if(Key == 38) up();
+if(Key == 39) right();
+if(Key == 40) down();
+}
+
+
+
+var x = 2;
+var y = 1;
+
+var minotaurX = 6
+var minotaurY = 9
+
+var field = new Array();
+field[00] = new Array("w","w","w","w","w","w","w","w","w","w","w","w","w","w","w");
+field[01] = new Array("w","f","p","f","w","w","f","f","f","f","f","w","w","w","w");
+field[02] = new Array("w","f","w","f","f","w","w","f","w","w","f","f","w","w","w");
+field[03] = new Array("w","f","w","w","f","f","f","f","f","w","w","f","w","w","w");
+field[04] = new Array("w","f","f","f","f","w","w","w","f","f","w","f","w","f","w");
+field[05] = new Array("w","w","w","w","f","w","w","w","w","f","w","f","w","f","w");
+field[06] = new Array("w","w","w","w","f","w","w","w","f","f","f","f","w","f","w");
+field[07] = new Array("w","f","w","w","f","f","f","w","f","w","w","f","f","f","w");
+field[08] = new Array("w","f","w","f","f","w","f","f","f","f","w","w","w","f","w");
+field[09] = new Array("w","f","w","f","w","w","m","w","w","f","w","w","w","f","w");
+field[10] = new Array("w","f","f","f","w","w","f","w","w","f","f","f","f","f","w");
+field[11] = new Array("w","f","w","w","w","w","f","w","w","f","w","f","w","w","w");
+field[12] = new Array("w","f","f","f","f","f","f","f","w","w","w","f","f","f","w");
+field[13] = new Array("w","w","w","f","w","w","f","w","w","w","f","f","w","f","w");
+field[14] = new Array("w","w","w","w","w","w","f","w","w","w","w","w","w","w","w");
+field[15] = new Array("f","f","f","f","f","f","f","f","f","f","f","f","f","f","f");
+
+
+
+function move_minotaur() {
+
+var moveDir = Math.random();
+moveDir = Math.floor(moveDir * 4) + 1;
+
+if (moveDir == 1) {	// x+1
+	if (field[minotaurY][minotaurX+1] && field[minotaurY][minotaurX+1] == "f") {		
+		field[minotaurY][minotaurX+1] = "m";
+		field[minotaurY][minotaurX] = "f";
+		minotaurX++
+	}
+} else if (moveDir == 2) {	// x-1
+	if (field[minotaurY][minotaurX-1] && field[minotaurY][minotaurX-1] == "f") {
+		field[minotaurY][minotaurX-1] = "m";
+		field[minotaurY][minotaurX] = "f";
+		minotaurX--
+	}
+} else if (moveDir == 3) {	// y+1
+	if (field[minotaurY+1][minotaurX] && field[minotaurY+1][minotaurX] == "f") {
+		field[minotaurY+1][minotaurX] = "m";
+		field[minotaurY][minotaurX] = "f";
+		minotaurY++
+	}
+} else if (moveDir == 4) {	// y-1
+	if (field[minotaurY-1][minotaurX] && field[minotaurY-1][minotaurX] == "f") {	
+		field[minotaurY-1][minotaurX] = "m";
+		field[minotaurY][minotaurX] = "f";
+		minotaurY--
+	}
+}
+
+
+}
+
+
+function draw_maze()
+{
+move_minotaur()
+
+Draw = "<table cellspacing = '0' cellpadding = '0' border = '0'>";
+
+for(i=y-1; i<=y+1; i++)
+{
+Draw = Draw + "<tr>";
+	for(j=x-1; j<=x+1; j++)
+	{
+	if (j >= 0 && i >= 0 && j < field.length && i < field.length) {
+		Draw = Draw + "<td><img src='";
+		Draw = Draw + field[i][j] + ".jpg'></td>";
+	}
+	}
+Draw = Draw + "</tr>";
+}
+Draw = Draw + "</table>";
+document.getElementById("field").innerHTML = Draw;
+
+}
+
+
+function up()
+{
+
+if(field[y-1][x] == "m") {
+	alert("You got caught!")
+	document.removeEventListener('keyup', control);
+} else if(field[y-1][x] == "f")
+{
+field[y-1][x] = "p";
+field[y][x] = "f";
+y--
+draw_maze();
+}
+}
+
+function down()
+{
+
+if(field[y+1][x] == "m") {
+	alert("You got caught!")
+	document.removeEventListener('keyup', control);
+} else if(field[y+1][x] == "f")
+{
+field[y+1][x] = "p";
+field[y][x] = "f";
+y++
+draw_maze();
+}
+
+if (y == 15) {		// TODO: Bugfix if both occur :)
+ 	alert("You mazescaped")
+	document.removeEventListener('keyup', control);
+}
+}
+
+function right()
+{
+
+if(field[y][x+1] == "m") {
+	alert("You got caught!")
+	document.removeEventListener('keyup', control);
+} else if(field[y][x+1] == "f")
+{
+field[y][x+1] = "p";
+field[y][x] = "f";
+x++
+draw_maze();
+}
+}
+
+function left()
+{
+
+if(field[y][x-1] == "m") {
+	alert("You got caught!")
+	document.removeEventListener('keyup', control);
+} else if(field[y][x-1] == "f")
+{
+field[y][x-1] = "p";
+field[y][x] = "f";
+x--
+draw_maze();
+}
+}
+
+
+
+</script>
+</head>
+<body onLoad="draw_maze()">
+<div id="field" style="position: absolute; border: 15px solid black;"></div>
+</body>
+</html>
