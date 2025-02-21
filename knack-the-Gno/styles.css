@@ -48,3 +48,22 @@ body, html {
 #player2-lives {
     right: -100px;
 }
+
+#banner {
+    position: absolute;
+    left: 250px;    /* game width/2 - image width/2 */
+    top: -101px;    /* image height + gamefield border size*/
+}
+
+.powerupinfo {
+    position: absolute;
+    bottom: -45px;
+}
+
+#powerupinfo-1 {
+    left: -15px
+}
+
+#powerupinfo-2 {
+    right: -15px
+}

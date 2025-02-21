@@ -202,7 +202,7 @@ class Player {
         this.invincibility(true)
 
         setTimeout(() => {
-            this.activateInvincibility(false)
-        }, 7000)
+            this.invincibility(false)
+        }, 4000)
     }
 }

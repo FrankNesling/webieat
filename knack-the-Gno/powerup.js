@@ -40,13 +40,9 @@ class PowerUp {
     }
 
     consume(player, opponent) {
-        console.log(this.effect)
         switch (this.effect) {
             case "AddLife":
                 player.addLife()
-                break;
-            case "Artillery":
-                opponent.changeShootingSpeed(1300)
                 break;
             case "DoubleShoot":
                 player.activateDoubleShoot()
@@ -71,7 +67,10 @@ class PowerUp {
                 break;
             case "SlowProjectile":
                 opponent.changeProjectileSpeed(1.1)
-                break;       
+                break; 
+            case "SlowShoot":
+                opponent.changeShootingSpeed(1300)
+                break;
             default:
                 break
         }

@@ -5,6 +5,9 @@ class Game {
 
     keysPressed = new Set();
 
+    player1PowerUpInfoTimeout
+    player2PowerUpInfoTimeout
+
     static Border = 1
     static BounderyTop = 0
     static BounderyBottom = 300
@@ -14,15 +17,16 @@ class Game {
     static PowerUpBounderyLeft = 250
     static PowerUpBounderyRight = 550
 
-    static WaitTillFirstPowerUp = 5000     // default 10sec
-    static TimeTillNextPowerUpUpperLimit = 7000
-    static TimeTillNextPowerUpLowerLimit = 4000
+    static WaitTillFirstPowerUp = 7000
+    static TimeTillNextPowerUpUpperLimit = 6000
+    static TimeTillNextPowerUpLowerLimit = 3000
     static PowerUpDespawnTimeUpperLimit = 20000
     static PowerUpDespawnTimeLowerLimit = 5000
 
+    static PowerUpInfoTimeout = 4000
+
     static Effects = [
         "AddLife",
-        "Artillery",
         "DoubleShoot",
         "FastMove",
         "FastProjectile",
@@ -30,7 +34,8 @@ class Game {
         "Invincibility",
         "Shotgun",
         "SlowMove",
-        "SlowProjectile"
+        "SlowProjectile",
+        "SlowShoot",
     ]
 
     boundKeyDown
@@ -93,6 +98,8 @@ class Game {
         let nextSpawnTime = getRandomInt(Game.TimeTillNextPowerUpLowerLimit, Game.TimeTillNextPowerUpUpperLimit)
         let randomEffect = getRandomInt(0, Game.Effects.length - 1)
 
+        // randomEffect = 5 // FOR DEBUG
+
         let newPowerUp = new PowerUp(randomX, randomY, Game.Effects[randomEffect], despawnTime, this.powerups)
         this.powerups.add(newPowerUp)
 
@@ -140,13 +147,25 @@ class Game {
             if (!projectile.leftDirection) {
                 if (projectile.x + Projectile.Width >= powerup.x
                     && projectile.y + Projectile.Height >= powerup.y
-                    && projectile.y <= powerup.y + PowerUp.Size)
+                    && projectile.y <= powerup.y + PowerUp.Size) {
+                    if (this.player1PowerUpInfoTimeout) clearTimeout(this.player1PowerUpInfoTimeout)
+                    this.player1PowerUpInfoTimeout = setTimeout(() => {
+                        document.getElementById("powerupinfo-" + (playerID + 1)).textContent = ""
+                    }, Game.PowerUpInfoTimeout)
                     powerup.consume(player, opponent)
+                    document.getElementById("powerupinfo-" + (playerID + 1)).textContent = powerup.effect
+                    }
             } else if (projectile.leftDirection) {
                 if (projectile.x <= powerup.x + PowerUp.Size
                     && projectile.y + Projectile.Height >= powerup.y
-                    && projectile.y <= powerup.y + PowerUp.Size)
+                    && projectile.y <= powerup.y + PowerUp.Size) {
+                    if (this.player1PowerUpInfoTimeout) clearTimeout(this.player1PowerUpInfoTimeout)
+                    this.player1PowerUpInfoTimeout = setTimeout(() => {
+                        document.getElementById("powerupinfo-" + (playerID + 1)).textContent = ""
+                    }, Game.PowerUpInfoTimeout)
                     powerup.consume(player, opponent)
+                    document.getElementById("powerupinfo-" + (playerID + 1)).textContent = powerup.effect
+                }                
             }
         })
     }
