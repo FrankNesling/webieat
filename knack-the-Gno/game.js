@@ -8,6 +8,8 @@ class Game {
     player1PowerUpInfoTimeout
     player2PowerUpInfoTimeout
 
+    wololoTimeout
+
     static Border = 1
     static BounderyTop = 0
     static BounderyBottom = 300
@@ -32,6 +34,7 @@ class Game {
         "FastProjectile",
         "FastShoot",
         "Invincibility",
+        "MirrorProjectiles",
         "Shotgun",
         "SlowMove",
         "SlowProjectile",
@@ -42,9 +45,11 @@ class Game {
     boundKeyUp
 
     constructor() {
-        // this bindings
+        // bind for correct this instance
         this.boundKeyDown = this.keyDown.bind(this);
         this.boundKeyUp = this.keyUp.bind(this);
+        this.gameLoop = this.gameLoop.bind(this);       
+
 
         let player1 = new Player(1, 0, 0)
         let player2 = new Player(2, 750, 0)
@@ -58,7 +63,6 @@ class Game {
             this.spawnPowerUp()
         }, Game.WaitTillFirstPowerUp);
 
-        this.gameLoop = this.gameLoop.bind(this);       // bind for correct this instance
         this.gameLoop()
     }
 
@@ -98,7 +102,7 @@ class Game {
         let nextSpawnTime = getRandomInt(Game.TimeTillNextPowerUpLowerLimit, Game.TimeTillNextPowerUpUpperLimit)
         let randomEffect = getRandomInt(0, Game.Effects.length - 1)
 
-        // randomEffect = 5 // FOR DEBUG
+        //randomEffect = 6 // FOR DEBUG
 
         let newPowerUp = new PowerUp(randomX, randomY, Game.Effects[randomEffect], despawnTime, this.powerups)
         this.powerups.add(newPowerUp)
@@ -134,6 +138,10 @@ class Game {
                     projectile.div.remove()
                 })
             })
+
+            // reset powerup info state
+            document.getElementById("powerupinfo-1").textContent = ""
+            document.getElementById("powerupinfo-2").textContent = ""
         }
 
         if (!this.gameOver) requestAnimationFrame(this.gameLoop);
@@ -152,7 +160,27 @@ class Game {
                     this.player1PowerUpInfoTimeout = setTimeout(() => {
                         document.getElementById("powerupinfo-" + (playerID + 1)).textContent = ""
                     }, Game.PowerUpInfoTimeout)
-                    powerup.consume(player, opponent)
+
+                    if (powerup.effect == "MirrorProjectiles") {
+                        opponent.projectiles.forEach(projectile => { 
+                            let changed = projectile.changePlayer()
+                            if (changed) {
+                                player.projectiles.add(projectile)
+                                opponent.projectiles.delete(projectile)
+                            }
+                            powerup.remove()
+                            clearTimeout(this.wololoTimeout)
+                            let wololo = document.getElementById("wololo")
+                            wololo.style.visibility = "visible"
+                            this.wololoTimeout = setTimeout(() => {
+                                let wololo = document.getElementById("wololo")
+                                wololo.style.visibility = "hidden"
+                            }, 3000)
+                        })
+                    } else {
+                        powerup.consume(player, opponent)
+                    }
+
                     document.getElementById("powerupinfo-" + (playerID + 1)).textContent = powerup.effect
                     }
             } else if (projectile.leftDirection) {
@@ -163,7 +191,27 @@ class Game {
                     this.player1PowerUpInfoTimeout = setTimeout(() => {
                         document.getElementById("powerupinfo-" + (playerID + 1)).textContent = ""
                     }, Game.PowerUpInfoTimeout)
-                    powerup.consume(player, opponent)
+
+                    if (powerup.effect == "MirrorProjectiles") {
+                        opponent.projectiles.forEach(projectile => {
+                            let changed = projectile.changePlayer()
+                            if (changed) {
+                                player.projectiles.add(projectile)
+                                opponent.projectiles.delete(projectile)
+                            }
+                            powerup.remove()
+                            clearTimeout(this.wololoTimeout)
+                            let wololo = document.getElementById("wololo")
+                            wololo.style.visibility = "visible"
+                            this.wololoTimeout = setTimeout(() => {
+                                let wololo = document.getElementById("wololo")
+                                wololo.style.visibility = "hidden"
+                            }, 3000)
+                        })
+                    } else {
+                        powerup.consume(player, opponent)
+                    }
+
                     document.getElementById("powerupinfo-" + (playerID + 1)).textContent = powerup.effect
                 }                
             }

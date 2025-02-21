@@ -16,7 +16,7 @@ class Player {
     shootingCoolOffTime
     shotgun = false
 
-    static StartingLives = 3
+    static StartingLives = 4
     static StandardMovementSpeed = 1.2
     static StandardProjectileSpeed = 1.6
     static Height = 50

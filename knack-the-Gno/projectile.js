@@ -31,9 +31,16 @@ class Projectile {
     }
 
     changePlayer() {
-        let imgSrc = this.div.child[0].src
-        let opponentImgSrc = imgSrc.swap() // TODO
-        imgSrc = opoonentImgSrc
+        if (this.x >= Game.PowerUpBounderyLeft && this.x <= Game.PowerUpBounderyRight) {
+            this.leftDirection = !this.leftDirection
+            let playerID = this.leftDirection ? "2" : "1"
+
+            let opponentImgSrc = "projectile" + playerID + ".png"
+            this.div.children[0].src = opponentImgSrc
+            return true
+        } else {
+            return false
+        }
     }
 
 }
