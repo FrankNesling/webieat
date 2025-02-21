@@ -46,7 +46,7 @@ class PowerUp {
                 player.addLife()
                 break;
             case "Artillery":
-                opponent.changeShootingSpeed(1100)
+                opponent.changeShootingSpeed(1300)
                 break;
             case "DoubleShoot":
                 player.activateDoubleShoot()
@@ -58,7 +58,7 @@ class PowerUp {
                 player.changeProjectileSpeed(2.5)
                 break;
             case "FastShoot":
-                player.changeShootingSpeed(500)
+                player.changeShootingSpeed(300)
                 break;
             case "Invincibility":
                 player.activateInvincibility()
