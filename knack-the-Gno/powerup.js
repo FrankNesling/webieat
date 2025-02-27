@@ -51,7 +51,7 @@ class PowerUp {
                 player.changeMovementSpeed(2)
                 break;
             case "FastProjectile":
-                player.changeProjectileSpeed(2.5)
+                player.changeProjectileSpeed(6.0)
                 break;
             case "FastShoot":
                 player.changeShootingSpeed(300)
