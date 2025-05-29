@@ -1,0 +1,79 @@
+.skill-card-table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--medium);
+    padding: var(--small);
+}
+
+.skill-card {
+    border: var(--border-medium) double var(--dark-brown);
+    background-color: var(--yellow);
+    padding: var(--small);
+    border-radius: var(--border-radius);
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+    height: 100px;
+    overflow-y: scroll;
+    /*    scrollbar-color: var(--brown) var(--brown);       // possible come back to it*/
+    scrollbar-width: none;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+    .skill-card:hover {
+        background-color: var(--light-yellow);
+        z-index: 1;
+    }
+
+        .skill-card:hover h2 {
+            color: var(--red);
+        }
+
+        .skill-card:hover ul {
+        }
+
+    .skill-card h2 {
+        margin-top: 0;
+    }
+
+    .skill-card ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+
+/* translations to the middle TODO: currently manual, get it automatically*/
+
+    .skill-card:nth-child(1):hover {
+        transform: scale(125%) translate(50px, 25px);
+    }
+    .skill-card:nth-child(2):hover {
+        transform: scale(125%) translate(0, 25px);
+    }
+
+    .skill-card:nth-child(3):hover {
+        transform: scale(125%) translate(-50px, 25px);
+    }
+
+    .skill-card:nth-child(4):hover {
+        transform: scale(125%) translate(50px, 0);
+    }
+
+    .skill-card:nth-child(5):hover {
+        transform: scale(125%) translate(0, 0);
+    }
+
+    .skill-card:nth-child(6):hover {
+        transform: scale(125%) translate(-50px, 0);
+    }
+
+    .skill-card:nth-child(7):hover {
+        transform: scale(125%) translate(50px, -25px);
+    }
+
+    .skill-card:nth-child(8):hover {
+        transform: scale(125%) translate(0, -25px);
+    }
+
+    .skill-card:nth-child(9):hover {
+        transform: scale(125%) translate(-50px, -25px);
+    }

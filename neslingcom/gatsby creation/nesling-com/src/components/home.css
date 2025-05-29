@@ -1,0 +1,141 @@
+#section-container {
+    display: flex;
+    width: 100vw;
+    flex-wrap: nowrap;
+}
+
+    section {
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        flex: 0 0 auto;
+    }
+
+#contact {
+    display: initial;   /* overwrite display flex => full width */
+}
+
+#home-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#upper-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: var(--small);
+}
+
+#introduction-text {
+    font-size: 2.5rem;
+    color: var(--black);
+    border-right: var(--border-thick) solid;
+    border-left: var(--border-thick) solid;
+    border-bottom: var(--border-thick) solid;
+    border-image: linear-gradient(to top, var(--brown), var(--dark-brown)) 1;
+    width: 65%;
+    align-self: center;
+    font-family: sans-serif;
+    padding: var(--medium) var(--small);
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+#last-topic-container {
+    transform: rotate(-2deg);
+}
+
+    #last-topic-container:hover {
+        transform: rotate(0deg);
+    }
+
+#last-project-container {
+    transform: rotate(15deg);
+}
+
+    #last-project-container:hover {
+        transform: rotate(10deg);
+    }
+
+#areas-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: var(--big) var(--small);
+}
+
+.area-container {
+    border: var(--brown) var(--border-medium) ridge;
+    display: flex;
+    flex-direction: column;
+    padding: var(--small);
+    width: fit-content;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.8s ease, box-shadow 0.8s ease;
+    background-color: var(--light-yellow);
+    cursor: pointer;
+}
+
+    .area-container:hover {
+        background-color: var(--yellow);
+        box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+    }
+
+.area-title {
+    color: var(--red);
+}
+
+.area-text {
+    text-align: justify;
+    align-self: center;
+}
+
+#about-me-text {
+    font-style: italic;
+    margin-top: calc( -1.5 * var(--big));
+    margin-left: var(--small);
+    background-image: linear-gradient(to bottom, var(--black) 35%, var(--white));
+    color: transparent;
+    background-clip: text; /* check why problem in code but not on browser*/
+    width: 35%;
+    align-self: center;
+    padding: var(--small);
+    border-right: var(--brown) var(--border-medium) solid;
+    border-left: var(--brown) var(--border-medium) solid;
+    border-bottom: var(--brown) var(--border-medium) solid;
+    border-image: linear-gradient(to right, var(--brown) 15%, transparent 15%, transparent 85%, var(--brown) 85%) 1;
+}
+
+
+#train-container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    right: 0;
+    bottom: 0;
+    left: 0%;    /* starting point*/
+    animation: slide 50s linear infinite;
+}
+
+#train-text {
+    font-size: 1.5rem;
+    background-color: var(--white);
+    font-style: italic;
+    border: var(--black) var(--border-thin) solid;
+    padding: var(--small);
+    margin-top: 25px; /* on the bottom of the train */
+    margin-left: 0px; /* attached to the last wagon of the train */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(400%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

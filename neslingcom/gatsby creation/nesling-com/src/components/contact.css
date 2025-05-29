@@ -1,0 +1,37 @@
+#contact-layout {
+    padding: var(--big) 0;
+    column-count: 2;
+}
+
+/* clean up IDs and classes */
+
+#address-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#address {
+    display: inline-block;
+    position: relative;
+}
+
+    #address img {
+       display: block;
+    }
+
+        #address p {
+    }
+
+#email {
+    font-weight: bold;
+}
+
+#address-text-container {
+    position: absolute;
+    left: 25%;
+    top: 25%;
+}
+
+
+

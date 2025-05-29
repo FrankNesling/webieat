@@ -1,0 +1,60 @@
+/* navigation top bar */
+
+.flag-image {
+    width: 50px;
+    transform: rotate(180deg) scaleX(-1);
+    position: absolute;
+    left: 0;
+    top: -15px;
+    transition: top 0.4s linear, visibility 0.5s ease-in;
+    cursor: pointer;
+    visibility: visible;
+}
+
+    .flag-image:hover {
+        top: 0;
+    }
+
+    .flag-image.hidden {
+        top: -50px;
+        visibility: hidden;
+    }
+
+
+.top-nav {
+    background: linear-gradient(to bottom, var(--dark-brown), var(--brown), var(--dark-brown));
+    padding: var(--medium);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100vw - 2 * var(--medium));
+    position: relative;
+    height: 30px; /* check if there is some better constraining, language switch changes height */
+}
+
+    .top-nav #left-container {
+        display: flex;
+    }
+
+    .top-nav h1 {
+        color: var(--white);
+        text-shadow: 10px 10px 15px var(--black);
+        transform: rotate(-2deg);
+    }
+
+    .top-nav .navigation-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .top-nav a {
+        color: var(--white);
+        padding: 0 var(--small);
+        font-size: 1.5em;
+        text-shadow: 10px 10px 15px var(--black);
+    }
+
+        .top-nav a:hover {
+            color: var(--red);
+            text-shadow: 10px 10px 10px var(--black);
+        }

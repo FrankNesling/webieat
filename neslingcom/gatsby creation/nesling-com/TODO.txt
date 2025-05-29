@@ -1,0 +1,21 @@
+flag with poll on the top right (on home!, everywhere?), coming from top?
+when clicking on it, with animation, it changes to other flag (UK - Germany)
+texts are transitioned also with animation to other language? (probably not -> too slow?)
+
+flag with poll maybe initially a bit hidden, only on hover it appears/fades in fully
+
+
+
+DONE all four sides are already there, they can be swiped in from the left
+DONE the train starts from the furthest right (contact) and moves slowly, with occasional stops, to the left pages
+
+
+cleanups => home is its own component
+flag images are 1MB big => make smaller
+
+
+
+
+Suggestions by Gatsby.js:
+You need to import JSON file that doesn’t have a consistent schema, like TopoJSON files, which is difficult to handle with GraphQL. Note that importing JSON files directly inside a page, a template, or a component using import syntax results in adding that file to the app bundle and increasing the size of all site’s pages. Instead, it’s better to place your JSON file inside the static folder and use the dynamic import syntax (import('/static/myjson.json')) within the componentDidMount lifecycle or the useEffect hook.
+ 
