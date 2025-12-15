@@ -4,6 +4,10 @@ import NavBar from '../components/NavBar.astro';
 ---
 
 <Layout>
-    <NavBar />
-    <slot />
+    <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
+        <NavBar />
+    </header>
+    <main class="pt-20 max-w-6xl mx-auto px-4">
+        <slot/>
+    </main>
 </Layout>
