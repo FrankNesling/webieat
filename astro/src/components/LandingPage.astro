@@ -9,9 +9,22 @@ const items = [
 ];
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+<!-- Initial paragraph -->
+<div class="max-w-xl mx-auto text-center px-4">
+  <h2 class="text-3xl font-bold mb-2">
+    Welcome to my site!
+  </h2>
+  <p class="text-gray-600 text-base italic">
+    This website is the greatest I've ever seen, some say the greatest of the world. Tremendous!
+    Please explore what I have written here, look around and I am sure you find something interesting.
+    Feel free to contact me anytime!
+  </p>
+</div>
+<!-- Items -->
+<h2 class="ml-15 text-2xl font-bold mb-2">Programming portfolio</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-12">
   {items.map(item => (
-    <div class="flex flex-col items-center text-center p-4 border rounded-lg shadow-sm">
+    <div class="flex flex-col items-center text-center p-4">
       <div class={`w-16 h-16 rounded-full ${item.color} mb-4`}></div>
       <h3 class="text-lg font-semibold mb-2">{item.headline}</h3>
       <p class="text-sm text-gray-600">{item.description}</p>
