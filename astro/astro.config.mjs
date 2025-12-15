@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://webie.at',
   build: {
-    assetsPrefix: './astro',
+    assetsPrefix: './',
   },
   vite: {
     plugins: [tailwindcss()]
