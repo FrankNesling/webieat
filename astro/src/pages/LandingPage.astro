@@ -1,5 +1,13 @@
 ---
-const items = [
+import SkillTopic from '../components/SkillTopic.astro';
+
+export interface Skill {
+  color: string;
+  headline: string;
+  description: string;
+}
+
+const items: Skill[] = [
   { color: 'bg-red-500', headline: 'C++', description: 'SfM, Coding Exercises, OpenGL' },
   { color: 'bg-blue-500', headline: 'Python', description: 'Koordirainer, Compute Server, AI API, Data Processing, Text Adventure' },
   { color: 'bg-green-500', headline: 'Java', description: '2D Games, Programming Exercises' },
@@ -7,7 +15,7 @@ const items = [
   { color: 'bg-purple-500', headline: 'JavaScript', description: 'React, Node.js, Typescript, Astro.js, Tools & Games, Babylon.js' },
   { color: 'bg-pink-500', headline: 'Kotlin', description: 'WichtelUp, PraiseUp, AdventsUp, StructureUp' },
   { color: 'bg-orange-500', headline: 'Flutter', description: 'CollectyUp' },
-  { color: 'bg-white', headline: 'php', description: 'Radtour Statistics, Authentication' },
+  { color: 'bg-white', headline: 'php', description: 'Radtour Statistics, Authentication, CRM Integration' },
   { color: 'bg-black', headline: 'Swift', description: 'iOS App' },
 ];
 ---
@@ -23,14 +31,5 @@ const items = [
     Feel free to contact me anytime!
   </p>
 </div>
-<!-- Items -->
-<h2 class="ml-15 text-2xl font-bold mb-2">Programming portfolio</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-12">
-  {items.map(item => (
-    <div class="flex flex-col items-center text-center p-4">
-      <div class={`w-16 h-16 rounded-full ${item.color} mb-4`}></div>
-      <h3 class="text-lg font-semibold mb-2">{item.headline}</h3>
-      <p class="text-sm text-gray-600">{item.description}</p>
-    </div>
-  ))}
-</div>
+<!-- Skills -->
+<SkillTopic skillTopic="Languages" items={items} />
