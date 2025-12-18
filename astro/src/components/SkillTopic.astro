@@ -1,10 +1,10 @@
 ---
 import SkillItem from './SkillItem.astro';
-import type { Skill } from '../pages/LandingPage.astro';
+import type { CollectionEntry } from 'astro:content';
 
 const { skillTopic, items} = Astro.props as {
   skillTopic: string;
-  items: Skill[];
+  items: CollectionEntry<'skills'>;
 };
 
 ---
@@ -12,7 +12,7 @@ const { skillTopic, items} = Astro.props as {
 <div>
   <h2 class="ml-15 text-2xl font-bold mb-2">{skillTopic}</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-12">
-    {items.map(item => (
+    {items.data?.map(item => (
       <SkillItem item={item} />
         ))}
   </div>

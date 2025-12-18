@@ -1,23 +1,9 @@
 ---
 import SkillTopic from '../components/SkillTopic.astro';
 
-export interface Skill {
-  color: string;
-  headline: string;
-  description: string;
-}
+import { getCollection } from "astro:content";
+const skills = await getCollection("skills");
 
-const items: Skill[] = [
-  { color: 'bg-red-500', headline: 'C++', description: 'SfM, Coding Exercises, OpenGL' },
-  { color: 'bg-blue-500', headline: 'Python', description: 'Koordirainer, Compute Server, AI API, Data Processing, Text Adventure' },
-  { color: 'bg-green-500', headline: 'Java', description: '2D Games, Programming Exercises' },
-  { color: 'bg-yellow-500', headline: 'C#', description: 'API, Image Processing' },
-  { color: 'bg-purple-500', headline: 'JavaScript', description: 'React, Node.js, Typescript, Astro.js, Tools & Games, Babylon.js' },
-  { color: 'bg-pink-500', headline: 'Kotlin', description: 'WichtelUp, PraiseUp, AdventsUp, StructureUp' },
-  { color: 'bg-orange-500', headline: 'Flutter', description: 'CollectyUp' },
-  { color: 'bg-white', headline: 'php', description: 'Radtour Statistics, Authentication, CRM Integration' },
-  { color: 'bg-black', headline: 'Swift', description: 'iOS App' },
-];
 ---
 
 <!-- Initial paragraph -->
@@ -32,4 +18,4 @@ const items: Skill[] = [
   </p>
 </div>
 <!-- Skills -->
-<SkillTopic skillTopic="Languages" items={items} />
+<SkillTopic skillTopic="Languages" items={skills} />

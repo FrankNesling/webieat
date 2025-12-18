@@ -1,0 +1,56 @@
+[
+  { 
+    "id": 1,
+    "color": "bg-red-500", 
+    "headline": "C++", 
+    "description": "SfM, Coding Exercises, OpenGL" 
+  },
+  { 
+    "id": 2,
+    "color": "bg-blue-500", 
+    "headline": "Python", 
+    "description": "Koordirainer, Compute Server, AI API, Data Processing, Text Adventure" 
+  },
+  { 
+    "id": 3,
+    "color": "bg-green-500", 
+    "headline": "Java", 
+    "description": "2D Games, Programming Exercises" 
+  },
+  { 
+    "id": 4,
+    "color": "bg-yellow-500", 
+    "headline": "C#", 
+    "description": "API, Image Processing" 
+  },
+  { 
+    "id": 5,
+    "color": "bg-purple-500", 
+    "headline": "JavaScript", 
+    "description": "React, Node.js, Typescript, Astro.js, Tools & Games, Babylon.js"
+  },
+  { 
+    "id": 6,
+    "color": "bg-pink-500", 
+    "headline": "Kotlin", 
+    "description": "WichtelUp, PraiseUp, AdventsUp, StructureUp" 
+  },
+  { 
+    "id": 7,
+    "color": "bg-orange-500", 
+    "headline": "Flutter", 
+    "description": "CollectyUp" 
+  },
+  { 
+    "id": 8,
+    "color": "bg-white", 
+    "headline": "php", 
+    "description": "Radtour Statistics, Authentication, CRM Integration"
+  },
+  { 
+    "id": 9,
+    "color": "bg-black", 
+    "headline": "Swift", 
+    "description": "iOS App"
+   }
+]
