@@ -5,7 +5,6 @@ const skills = defineCollection({
   loader: file("src/data/skills.json"),
   schema: z.object({
       id: z.number(),
-      color: z.string(),
       headline: z.string(),
       description: z.string(),
     }),
