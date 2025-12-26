@@ -1,74 +1,119 @@
 [
   { 
     "id": 1,
-    "headline": "C++", 
-    "isProject": false,
+    "topic": "Photogrammetry App", 
+    "description": "Structure-from-Motion and Multi-video stereo reconstruction",
+    "isProject": true,
     "isApplication": false,
     "isTask": false,
-    "description": "SfM, Coding Exercises, OpenGL" 
+    "professionell": true,
+    "languages": ["C#", "JavaScript", "Python", "Swift", "C++", "SQL", "php"],
+    "frameworks": ["Webpack", "Typescript", "Xamarin", "MAUI", "ASP.NET", "Razor", "Babylon.js", "MySQL", "Kubernetes"],
+    "tags": ["Visual Computing", "Web", "Mobile App", "API", "Database", "Computer Networks", "Computer Graphics", "DevOps", "Mathematics"],
+    "tools": ["MS Entra", "Pulumi", "Visual Studio", "XCode", "GitHub", "Azure", "Atlassian", "MS Teams", "Insomnia"]
   },
   { 
     "id": 2,
-    "headline": "Python",
-    "isProject": false,
+    "topic": "Content-driven finance website", 
+    "description": "",
+    "isProject": true,
     "isApplication": false,
     "isTask": false,
-    "description": "Koordirainer, Compute Server, AI API, Data Processing, Text Adventure" 
+    "professionell": true,
+    "languages": ["Javacript", "php"],
+    "frameworks": ["React"],
+    "tags": ["Web", "DevOps", "Database"],
+    "tools": ["CRM D365", "GitLab", "MS Teams", "Visual Studio Code", "Postman", "Squidex CMS", "Magnolia CMS"]
   },
   { 
     "id": 3,
-    "headline": "Java",
+    "topic": "Coding exercises", 
+    "description": "Learning algorithms and programming languages",
     "isProject": false,
     "isApplication": false,
     "isTask": false,
-    "description": "2D Games, Programming Exercises" 
+    "professionell": false,
+    "languages": ["C++", "C", "Python", "Haskell", "Rust", "Assembly"],
+    "frameworks": [],
+    "tags": ["Compiler", "Algorithms"],
+    "tools": ["Visual Studio"]
   },
   { 
     "id": 4,
-    "headline": "CS",
-    "isProject": false,
+    "topic": "LMS for negotiations & course registration", 
+    "description": "",
+    "isProject": true,
     "isApplication": false,
     "isTask": false,
-    "description": "API, Image Processing" 
+    "professionell": true,
+    "languages": ["Javascript", "Python", "SQL"],
+    "frameworks": ["Vite", "React", "NestJs", "PostgreSQL"],
+    "tags": ["Web", "Database", "API", "Machine Learning / AI", "Computer Networks", "DevOps"],
+    "tools": ["Clerk", "NeonDB", "Azure", "Visual Studio", "GitHub", "MS Teams", "Insomnia", "Wordpress", "Webflow", "Notion", "Power Apps", "CRM D365", "Make.com"]
   },
   { 
     "id": 5,
-    "headline": "JavaScript",
+    "topic": "Koordirainer", 
+    "description": "Coordinate system transformation for programs to display and use",
     "isProject": false,
-    "isApplication": false,
+    "isApplication": true,
     "isTask": false,
-    "description": "React, Node.js, Typescript, Astro.js, Tools & Games, Babylon.js"
+    "professionell": true,
+    "languages": ["Python"],
+    "frameworks": [],
+    "tags": ["Desktop Program", "Mathematics"],
+    "tools": ["Visual Studio", "GitHub"]
   },
   { 
     "id": 6,
-    "headline": "Kotlin",
+    "topic": "StructureUp", 
+    "description": "An App that aims to structurize your day in a better way",
     "isProject": false,
-    "isApplication": false,
+    "isApplication": true,
     "isTask": false,
-    "description": "WichtelUp, PraiseUp, AdventsUp, StructureUp" 
+    "professionell": false,
+    "languages": ["Kotlin"],
+    "frameworks": [],
+    "tags": ["Mobile App"],
+    "tools": ["Android Studio", "GitHub"]
   },
   { 
     "id": 7,
-    "headline": "Flutter",   
+    "topic": "CollectyUp", 
+    "description": "Collect your collections",
     "isProject": false,
-    "isApplication": false,
+    "isApplication": true,
     "isTask": false,
-    "description": "CollectyUp" 
+    "professionell": false,
+    "languages": ["Dart"],
+    "frameworks": ["Flutter"],
+    "tags": ["Mobile App"],
+    "tools": ["Android Studio"]
   },
   { 
     "id": 8,
-    "headline": "php",
+    "topic": "PraiseUp", 
+    "description": "Praise your taiwanese girlfriend",
     "isProject": false,
-    "isApplication": false,
-    "isTask": false, 
-    "description": "Radtour Statistics, Authentication, CRM Integration"
+    "isApplication": true,
+    "isTask": false,
+    "professionell": true,
+    "languages": ["Kotlin"],
+    "frameworks": [],
+    "tags": ["Mobile App", "Machine Learning / AI"],
+    "tools": ["Android Studio"]
   },
   { 
     "id": 9,
-    "headline": "Swift",
-    "isProject": false,
+    "topic": "Experiment with luminance-manipulated videos", 
+    "description": "The pupil size is an indicator for neuroenhancement",
+    "isProject": true,
     "isApplication": false,
-    "isTask": false, 
-    "description": "iOS App"
+    "isTask": false,
+    "professionell": true,
+    "languages": ["C#", "Python", "MATLAB"],
+    "frameworks": [],
+    "tags": ["Visual Computing", "Desktop Program", "Data science"],
+    "tools": ["Unity", "Visual Studio"]
    }
 ]

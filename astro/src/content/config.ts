@@ -8,7 +8,12 @@ const skills = defineCollection({
       isProject: z.boolean(),
       isApplication: z.boolean(),
       isTask: z.boolean(),
-      headline: z.string(),
+      professionell: z.boolean(),
+      languages: z.array(z.string()),
+      frameworks: z.array(z.string()),
+      tags: z.array(z.string()),
+      tools: z.array(z.string()),
+      topic: z.string(),
       description: z.string(),
     }),
 });
@@ -16,8 +21,9 @@ const skills = defineCollection({
 
 
 // Skill -> Project, Application (Mobile App or Program), Task (Script or Task), Concept
-// Tags -> Visual Computing, API, Database, Web, Mobile App, Machine Learning/AI, Authentication
+// Tags -> Visual Computing, API, Database, Desktop Program, Web, Mobile App, Machine Learning/AI, Network, Computer Graphics, DevOps, Data science, Compiler, Algorithms
 // Tools -> MS Entra, Clerk, D365, CMSes?, Wordpress, VS, VS Code, XCode, Eclipse, Postman, Insomnia
 
+// Tool "types" will be specified in the filter list of the index page, no other need
 
 export const collections = { skills };
