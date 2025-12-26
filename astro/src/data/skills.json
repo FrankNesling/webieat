@@ -23,7 +23,7 @@
     "languages": ["Javacript", "php"],
     "frameworks": ["React"],
     "tags": ["Web", "DevOps", "Database"],
-    "tools": ["CRM D365", "GitLab", "MS Teams", "Visual Studio Code", "Postman", "Squidex CMS", "Magnolia CMS"]
+    "tools": ["D365", "GitLab", "MS Teams", "Visual Studio Code", "Postman", "Squidex", "Magnolia"]
   },
   { 
     "id": 3,
@@ -49,7 +49,7 @@
     "languages": ["Javascript", "Python", "SQL"],
     "frameworks": ["Vite", "React", "NestJs", "PostgreSQL"],
     "tags": ["Web", "Database", "API", "Machine Learning / AI", "Computer Networks", "DevOps"],
-    "tools": ["Clerk", "NeonDB", "Azure", "Visual Studio", "GitHub", "MS Teams", "Insomnia", "Wordpress", "Webflow", "Notion", "Power Apps", "CRM D365", "Make.com"]
+    "tools": ["Clerk", "NeonDB", "Azure", "Visual Studio", "GitHub", "MS Teams", "Insomnia", "Wordpress", "Webflow", "Notion", "Power Apps", "D365", "Make.com"]
   },
   { 
     "id": 5,

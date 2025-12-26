@@ -25,5 +25,6 @@ const skills = defineCollection({
 // Tools -> MS Entra, Clerk, D365, CMSes?, Wordpress, VS, VS Code, XCode, Eclipse, Postman, Insomnia
 
 // Tool "types" will be specified in the filter list of the index page, no other need
+// Tool types -> IDE, Authentication, Networking, Versioning, Hosting, Database, CRM, CMS, Project management, Automation, Webdevelopment
 
 export const collections = { skills };
