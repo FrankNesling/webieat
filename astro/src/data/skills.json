@@ -2,46 +2,73 @@
   { 
     "id": 1,
     "headline": "C++", 
+    "isProject": false,
+    "isApplication": false,
+    "isTask": false,
     "description": "SfM, Coding Exercises, OpenGL" 
   },
   { 
     "id": 2,
-    "headline": "Python", 
+    "headline": "Python",
+    "isProject": false,
+    "isApplication": false,
+    "isTask": false,
     "description": "Koordirainer, Compute Server, AI API, Data Processing, Text Adventure" 
   },
   { 
     "id": 3,
-    "headline": "Java", 
+    "headline": "Java",
+    "isProject": false,
+    "isApplication": false,
+    "isTask": false,
     "description": "2D Games, Programming Exercises" 
   },
   { 
     "id": 4,
-    "headline": "CS", 
+    "headline": "CS",
+    "isProject": false,
+    "isApplication": false,
+    "isTask": false,
     "description": "API, Image Processing" 
   },
   { 
     "id": 5,
-    "headline": "JavaScript", 
+    "headline": "JavaScript",
+    "isProject": false,
+    "isApplication": false,
+    "isTask": false,
     "description": "React, Node.js, Typescript, Astro.js, Tools & Games, Babylon.js"
   },
   { 
     "id": 6,
-    "headline": "Kotlin", 
+    "headline": "Kotlin",
+    "isProject": false,
+    "isApplication": false,
+    "isTask": false,
     "description": "WichtelUp, PraiseUp, AdventsUp, StructureUp" 
   },
   { 
     "id": 7,
-    "headline": "Flutter", 
+    "headline": "Flutter",   
+    "isProject": false,
+    "isApplication": false,
+    "isTask": false,
     "description": "CollectyUp" 
   },
   { 
     "id": 8,
-    "headline": "php", 
+    "headline": "php",
+    "isProject": false,
+    "isApplication": false,
+    "isTask": false, 
     "description": "Radtour Statistics, Authentication, CRM Integration"
   },
   { 
     "id": 9,
-    "headline": "Swift", 
+    "headline": "Swift",
+    "isProject": false,
+    "isApplication": false,
+    "isTask": false, 
     "description": "iOS App"
    }
 ]
