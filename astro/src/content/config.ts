@@ -27,4 +27,6 @@ const skills = defineCollection({
 // Tool "types" will be specified in the filter list of the index page, no other need
 // Tool types -> IDE, Authentication, Networking, Versioning, Hosting, Database, CRM, CMS, Project management, Automation, Webdevelopment
 
+// somewhere I need to specify I am familiar with all Windows, MacOS and Linxu (Ubuntu, Fedora)
+
 export const collections = { skills };

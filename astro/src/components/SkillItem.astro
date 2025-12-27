@@ -24,21 +24,43 @@ function langMap(lang: string): string {
   }
 }
 
-const logoSVGs = import.meta.glob<ImageMetadata>('../assets/*.svg', {
+const languageSVGs = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg', {
   eager: true,
   import: 'default',
 });
-const logoSVG = logoSVGs[`../assets/CS.svg`];
+
+const toolSVGs = import.meta.glob<ImageMetadata>('../assets/Tools/*.svg', {
+  eager: true,
+  import: 'default',
+});
+const logoSVG = languageSVGs[`../assets/Languages/CS.svg`];
+const toolSVG = toolSVGs[`../assets/Tools/VisualStudio.svg`];
+
 ---
 
 <div class="flex flex-col items-center text-center p-4">
     <div class={`w-16 h-16 rounded-full mb-4`} style={`background-image: url(${logoSVG.src})`}></div>
     <h3 class="text-lg font-semibold mb-2">{item.data.topic}</h3>
+
+    <!-- Languages -->
     <div class="flex flex-wrap justify-center gap-2">   
-      {item.data.languages.map((lang: string) => (
-        <img class="w-8 h-8" style={`background-image: url(${logoSVGs[`../assets/${langMap(lang)}.svg`].src})`}/>
-      ))}
+    {item.data.languages.map((lang: string) => (
+      <img class="w-8 h-8" style={`background-image: url(${languageSVGs[`../assets/Languages/${langMap(lang)}.svg`].src})`}/>
+    ))}
+
+    <!-- Description -->
     <p class="text-sm text-gray-600 mb-2">{item.data.description}</p>
-   
+
+    <!-- Tags -->
+    <div class="flex flex-wrap justify-center gap-2">   
+    {item.data.tags.map((tag: string) => (
+       <div class="text-sm bg-gray-300 rounded-lg py-1 px-2">{tag}</div>
+    ))}
     </div>
+
+    <!-- Tools -->
+    <div class="flex flex-wrap justify-center gap-2">   
+    {item.data.tools.map((tool: string) => (
+      <div class="w-6 h-6 bg-no-repeat bg-center bg-contain" style={`background-image: url(${toolSVG.src})`}></div>
+    ))}
 </div>
