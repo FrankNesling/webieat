@@ -3,6 +3,27 @@ import type { ImageMetadata } from 'astro';
 
 const { item } = Astro.props;
 
+function langMap(lang: string): string {
+  switch(lang) {
+    case "C#": 
+      return "CS";
+    case "Haskell":
+      return "C++";
+    case "SQL":
+      return "C++";
+    case "MATLAB":
+      return "C++";
+    case "Rust":
+      return "C++";
+    case "Assembly":
+      return "C++";
+    case "C":
+      return "C++";
+    default:
+      return lang;
+  }
+}
+
 const logoSVGs = import.meta.glob<ImageMetadata>('../assets/*.svg', {
   eager: true,
   import: 'default',
@@ -13,9 +34,9 @@ const logoSVG = logoSVGs[`../assets/CS.svg`];
 <div class="flex flex-col items-center text-center p-4">
     <div class={`w-16 h-16 rounded-full mb-4`} style={`background-image: url(${logoSVG.src})`}></div>
     <h3 class="text-lg font-semibold mb-2">{item.data.topic}</h3>
-     <div class="flex flex-wrap justify-center gap-2">   
+    <div class="flex flex-wrap justify-center gap-2">   
       {item.data.languages.map((lang: string) => (
-        <div class="text-sm bg-gray-300 rounded-lg py-1 px-2">{lang}</div>
+        <img class="w-8 h-8" style={`background-image: url(${logoSVGs[`../assets/${langMap(lang)}.svg`].src})`}/>
       ))}
     <p class="text-sm text-gray-600 mb-2">{item.data.description}</p>
    

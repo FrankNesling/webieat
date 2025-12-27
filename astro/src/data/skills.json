@@ -2,7 +2,7 @@
   { 
     "id": 1,
     "topic": "Photogrammetry App", 
-    "description": "Structure-from-Motion and Multi-video stereo reconstruction",
+    "description": "An API with attached Web and two mobile apps, one active iOS App and an inactive Android App. A computing server that uses open-source Structure-From-Motion (SfM) and Multi-video stereo (MVS) to reconstruct 3D Models that are displayed in the web.",
     "isProject": true,
     "isApplication": false,
     "isTask": false,
@@ -14,13 +14,13 @@
   },
   { 
     "id": 2,
-    "topic": "Content-driven finance website", 
-    "description": "",
+    "topic": "Finance courses website", 
+    "description": "Content-driven finance website for course registrations",
     "isProject": true,
     "isApplication": false,
     "isTask": false,
     "professionell": true,
-    "languages": ["Javacript", "php"],
+    "languages": ["JavaScript", "php"],
     "frameworks": ["React"],
     "tags": ["Web", "DevOps", "Database"],
     "tools": ["D365", "GitLab", "MS Teams", "Visual Studio Code", "Postman", "Squidex", "Magnolia"]
@@ -28,7 +28,7 @@
   { 
     "id": 3,
     "topic": "Coding exercises", 
-    "description": "Learning algorithms and programming languages",
+    "description": "Studying algorithms and programming languages",
     "isProject": false,
     "isApplication": false,
     "isTask": false,
@@ -40,13 +40,13 @@
   },
   { 
     "id": 4,
-    "topic": "LMS for negotiations & course registration", 
-    "description": "",
+    "topic": "Negotiation LMS", 
+    "description": "Courses and training with AI for negotiations and the infrastructure for course registration",
     "isProject": true,
     "isApplication": false,
     "isTask": false,
     "professionell": true,
-    "languages": ["Javascript", "Python", "SQL"],
+    "languages": ["JavaScript", "Python", "SQL"],
     "frameworks": ["Vite", "React", "NestJs", "PostgreSQL"],
     "tags": ["Web", "Database", "API", "Machine Learning / AI", "Computer Networks", "DevOps"],
     "tools": ["Clerk", "NeonDB", "Azure", "Visual Studio", "GitHub", "MS Teams", "Insomnia", "Wordpress", "Webflow", "Notion", "Power Apps", "D365", "Make.com"]
@@ -54,7 +54,7 @@
   { 
     "id": 5,
     "topic": "Koordirainer", 
-    "description": "Coordinate system transformation for programs to display and use",
+    "description": "Coordinate system transformation for survey programs to display and use",
     "isProject": false,
     "isApplication": true,
     "isTask": false,
@@ -105,8 +105,8 @@
   },
   { 
     "id": 9,
-    "topic": "Experiment with luminance-manipulated videos", 
-    "description": "The pupil size is an indicator for neuroenhancement",
+    "topic": "Neuroscience Experiment", 
+    "description": "Probands watching luminance-manipulated videos while the pupil size, that is an indicator for neuroenhancement, is tracked",
     "isProject": true,
     "isApplication": false,
     "isTask": false,
