@@ -1,5 +1,6 @@
 ---
 import SkillTopic from '../components/SkillTopic.astro';
+import SearchBar from '../components/SearchBar.astro';
 
 import { getCollection } from "astro:content";
 const skills = await getCollection("skills");
@@ -7,7 +8,7 @@ const skills = await getCollection("skills");
 ---
 
 <!-- Initial paragraph -->
-<div class="max-w-xl mx-auto text-center px-4">
+<div class="max-w-xl mx-auto text-center px-4 mb-8">
   <h2 class="text-3xl font-bold mb-2">
     Welcome to my site!
   </h2>
@@ -17,5 +18,7 @@ const skills = await getCollection("skills");
     Feel free to contact me anytime!
   </p>
 </div>
+<!-- Search Bar -->
+<SearchBar />
 <!-- Skills -->
 <SkillTopic skillTopic="Languages" items={skills} />
