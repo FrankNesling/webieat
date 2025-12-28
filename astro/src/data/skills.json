@@ -572,5 +572,33 @@
     "frameworks": [],
     "tags": ["Machine Learning / AI"],
     "tools": []
+   },
+   { 
+    "id": 42,
+    "topic": "CRM Data Preparation", 
+    "description": "Working with the D365 API to get data duplicates and similar",
+    "isProject": false,
+    "isApplication": false,
+    "isTask": true,
+    "professionell": true,
+    "url": "",
+    "languages": ["Python"],
+    "frameworks": [],
+    "tags": ["Data science", "API"],
+    "tools": ["D365", "Visual Studio"]
+   },
+   { 
+    "id": 43,
+    "topic": "Terrorfence (WIP)", 
+    "description": "A 2D tower defence game",
+    "isProject": false,
+    "isApplication": true,
+    "isTask": false,
+    "professionell": false,
+    "url": "",
+    "languages": ["Java"],
+    "frameworks": ["JavaFX"],
+    "tags": ["Desktop Program", "Game"],
+    "tools": ["Eclipse"]
    }
 ]

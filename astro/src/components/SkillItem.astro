@@ -45,24 +45,26 @@ const toolSVG = toolSVGs[`../assets/Tools/VisualStudio.svg`];
     <h3 class="text-lg font-semibold mb-2">{item.data.topic}</h3>
 
     <!-- Languages -->
-    <div class="flex flex-wrap justify-center gap-2">   
-    {item.data.languages.map((lang: string) => (
-      <img class="w-8 h-8" style={`background-image: url(${languageSVGs[`../assets/Languages/${langMap(lang)}.svg`].src})`}/>
-    ))}
+    <div class="flex flex-wrap justify-center gap-2 mb-2">   
+      {item.data.languages.map((lang: string) => (
+        <img class="w-8 h-8" style={`background-image: url(${languageSVGs[`../assets/Languages/${langMap(lang)}.svg`].src})`}/>
+      ))}
+    </div>
 
     <!-- Description -->
     <p class="text-sm text-gray-600 mb-2">{item.data.description}</p>
 
     <!-- Tags -->
-    <div class="flex flex-wrap justify-center gap-2">   
-    {item.data.tags.map((tag: string) => (
-       <div class="text-sm bg-gray-300 rounded-lg py-1 px-2">{tag}</div>
-    ))}
+    <div class="flex flex-wrap justify-center gap-2 mb-2">   
+      {item.data.tags.map((tag: string) => (
+        <div class="text-sm bg-gray-300 rounded-lg py-1 px-2">{tag}</div>
+      ))}
     </div>
 
     <!-- Tools -->
     <div class="flex flex-wrap justify-center gap-2">   
-    {item.data.tools.map((tool: string) => (
-      <div class="w-6 h-6 bg-no-repeat bg-center bg-contain" style={`background-image: url(${toolSVG.src})`}></div>
-    ))}
+      {item.data.tools.map((tool: string) => (
+        <div class="w-6 h-6 bg-no-repeat bg-center bg-contain" style={`background-image: url(${toolSVG.src})`}></div>
+      ))}
+    </div>
 </div>
