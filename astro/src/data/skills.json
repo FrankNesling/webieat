@@ -27,7 +27,7 @@
     "languages": ["JavaScript", "php"],
     "frameworks": ["React"],
     "tags": ["Web", "DevOps", "Database"],
-    "tools": ["D365", "GitLab", "MS Teams", "Visual Studio Code", "Postman", "Squidex", "Magnolia"]
+    "tools": ["D365", "GitLab", "MS Teams", "VS Code", "Postman", "Squidex", "Magnolia"]
   },
   { 
     "id": 3,
@@ -42,7 +42,7 @@
     "languages": ["C++", "C", "Python", "Haskell", "Rust", "Assembly"],
     "frameworks": [],
     "tags": ["Compiler", "Algorithms"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
   },
   { 
     "id": 4,
@@ -55,9 +55,9 @@
     "url": "",
     "logo": "",
     "languages": ["JavaScript", "Python", "SQL"],
-    "frameworks": ["Vite", "React", "NestJs", "PostgreSQL", "Docker"],
+    "frameworks": ["Vite", "React", "NestJs", "Typescript", "PostgreSQL", "Docker"],
     "tags": ["Web", "Database", "API", "Machine Learning / AI", "Cloud Application", "Computer Networks", "DevOps"],
-    "tools": ["Clerk", "NeonDB", "Azure", "Visual Studio", "Docker Desktop", "pgAdmin", "GitHub", "MS Teams", "Insomnia", "Wordpress", "Webflow", "Notion", "Power Apps", "D365", "Make.com"]
+    "tools": ["Clerk", "NeonDB", "Azure", "Visual Studio", "Docker Desktop", "pgAdmin", "GitHub", "MS Teams", "Insomnia", "Wordpress", "Webflow", "Notion", "PowerApps", "D365", "Make.com"]
   },
   { 
     "id": 5,
@@ -162,7 +162,7 @@
     "languages": ["Kotlin"],
     "frameworks": ["Jetpack Compose"],
     "tags": ["Mobile App"],
-    "tools": ["Android Studio"]
+    "tools": ["Android Studio", "GitHub"]
    },
    { 
     "id": 12,
@@ -207,7 +207,7 @@
     "languages": ["C"],
     "frameworks": [],
     "tags": ["Desktop Program", "Game"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 15,
@@ -220,9 +220,9 @@
     "url": "",
     "logo": "",
     "languages": ["JavaScript", "Python"],
-    "frameworks": ["NestJs"],
+    "frameworks": ["NestJs", "Typescript"],
     "tags": ["Web", "Cloud Application"],
-    "tools": ["Visual Studio", "Visual Studio Code"]
+    "tools": ["Visual Studio", "VS Code", "GitHub"]
    },
    { 
     "id": 16,
@@ -237,7 +237,7 @@
     "languages": ["Python"],
     "frameworks": [],
     "tags": ["Computer Graphics", "Algorithms"],
-    "tools": ["Visual Studio", "Blender"]
+    "tools": ["Visual Studio", "Blender", "GitHub"]
    },
    { 
     "id": 17,
@@ -252,7 +252,7 @@
     "languages": ["C++"],
     "frameworks": [],
     "tags": ["Visual Computing", "Computer Graphics", "Mathematics"],
-    "tools": ["Visual Studio Code", "MeshLab"]
+    "tools": ["VS Code", "MeshLab", "GitHub"]
    },
    { 
     "id": 18,
@@ -267,7 +267,7 @@
     "languages": ["C++"],
     "frameworks": ["OpenGL"],
     "tags": ["Computer Graphics", "Desktop Program", "Game"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 19,
@@ -282,7 +282,7 @@
     "languages": ["php", "JavaScript", "SQL"],
     "frameworks": ["SQLite"],
     "tags": ["Database", "Data science", "Web"],
-    "tools": ["Visual Studio", "DB Browser"]
+    "tools": ["Visual Studio", "DB Browser", "GitHub"]
    },
    { 
     "id": 20,
@@ -295,9 +295,9 @@
     "url": "",
     "logo": "",
     "languages": ["JavaScript"],
-    "frameworks": ["Astro.js", "Gatsby.js"],
+    "frameworks": ["Astro.js", "Gatsby.js", "Typescript"],
     "tags": ["Web"],
-    "tools": ["Visual Studio Code"]
+    "tools": ["VS Code", "GitHub"]
    },
    { 
     "id": 21,
@@ -312,7 +312,7 @@
     "languages": ["JavaScript"],
     "frameworks": [],
     "tags": ["Web"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 22,
@@ -327,7 +327,7 @@
     "languages": ["C#"],
     "frameworks": [""],
     "tags": ["Mobile App"],
-    "tools": ["Unity"]
+    "tools": ["Unity", "GitHub"]
    },
    { 
     "id": 23,
@@ -342,7 +342,7 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 24,
@@ -357,7 +357,7 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 25,
@@ -372,7 +372,7 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 26,
@@ -387,7 +387,7 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Editor"]
+    "tools": ["Editor", "GitHub"]
    },
    { 
     "id": 27,
@@ -402,7 +402,7 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 28,
@@ -417,7 +417,7 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 29,
@@ -432,7 +432,7 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 30,
@@ -447,7 +447,7 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 31,
@@ -462,7 +462,7 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 32,
@@ -475,9 +475,9 @@
     "url": "",
     "logo": "",
     "languages": ["JavaScript"],
-    "frameworks": ["Babylon.Js"],
+    "frameworks": ["Babylon.js"],
     "tags": ["Web", "Computer Graphics"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 33,
@@ -492,7 +492,7 @@
     "languages": ["C#"],
     "frameworks": ["Xamarin", "MAUI"],
     "tags": ["Mobile App"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 34,
@@ -522,7 +522,7 @@
     "languages": ["C#", "Python"],
     "frameworks": ["ASP.NET", "Kubernetes"],
     "tags": ["API", "Cloud Application", "DevOps"],
-    "tools": ["Visual Studio", "Azure"]
+    "tools": ["Visual Studio", "Azure", "GitHub"]
    },
    { 
     "id": 36,
@@ -537,7 +537,7 @@
     "languages": ["Swift"],
     "frameworks": [""],
     "tags": ["Mobile App"],
-    "tools": ["XCode"]
+    "tools": ["XCode", "GitHub"]
    },
    { 
     "id": 37,
@@ -552,7 +552,7 @@
     "languages": ["JavaScript"],
     "frameworks": ["Babylon.js"],
     "tags": ["Web", "Computer Graphics", "Mathematics"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio", "GitHub"]
    },
    { 
     "id": 38,
@@ -642,6 +642,36 @@
     "languages": ["Java"],
     "frameworks": ["JavaFX"],
     "tags": ["Desktop Program", "Game"],
+    "tools": ["Eclipse", "GitHub"]
+   },
+   { 
+    "id": 44,
+    "topic": "Datastructures, Algorithms & Programming ETH", 
+    "description": "Many many exercises",
+    "isProject": false,
+    "isApplication": false,
+    "isTask": false,
+    "professionell": false,
+    "url": "",
+    "logo": "",
+    "languages": ["Java"],
+    "frameworks": [""],
+    "tags": ["Game", "Algorithms"],
     "tools": ["Eclipse"]
+   },
+   { 
+    "id": 45,
+    "topic": "OpenGL Tutorial", 
+    "description": "Playground and learning how to use it",
+    "isProject": false,
+    "isApplication": false,
+    "isTask": false,
+    "professionell": false,
+    "url": "",
+    "logo": "",
+    "languages": ["C++"],
+    "frameworks": ["OpenGL"],
+    "tags": ["Computer Graphics", "Desktop Program"],
+    "tools": ["Visual Studio", "GitHub"]
    }
 ]

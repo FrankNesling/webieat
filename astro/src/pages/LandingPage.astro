@@ -4,6 +4,15 @@ import SearchBar from '../components/SearchBar.astro';
 
 import { getCollection } from "astro:content";
 const skills = await getCollection("skills");
+
+const languages = ["Java", "JavaScript", "php", "C++", "C#", "C", "Python", "Kotlin", "Dart", "Rust", "Haskell", "OCaml", "Swift", "Assembly", "SQL"];
+const frameworks = ["React", "Astro.js", "Gatsby.js", "Webpack", "Typescript", "Vite", "JavaFX", "Xamarin", "MAUI", "ASP.NET", "Razor", "Babylon.js", "MYSQL", "Kubernetes", "Docker", "PostgreSQL", "SQLite", "NestJs", "Flutter", "Jetpack Compose", "OpenGL"];
+const tags = ["Visual Computing", "API", "Database", "Desktop Program", "Game", "Web", "Mobile App", "Cloud Application", "Machine Learning / AI", "Computer Networks", "Computer Graphics", "Parallel Programming", "DevOps", "Data science", "Compiler", "Algorithms", "Mathematics"];
+const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "Docker Desktop", "Blender", "MeshLab", "NERF Studio", "D365", "Editor", "Insomnia", "Postman", "Squidex", "Magnolia", "Pulumi", "Wordpress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "DB Browser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog"];
+
+
+// TODO typisize the lang, fw, tags, tools (also in json/zod)
+// TODO tag as component
 ---
 
 <!-- Initial paragraph -->
@@ -17,13 +26,36 @@ const skills = await getCollection("skills");
     Feel free to contact me anytime!
   </p>
 </div>
-<!-- Search Bar -->
-<SearchBar/>
+<!-- Search and Filter-->
+<SearchBar />
+<div class="flex flex-wrap justify-center gap-2 mt-4">   
+  {languages.map((lang: string) => (
+    <div class="lang-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer">{lang}</div>
+  ))}
+</div>
+<div class="flex flex-wrap justify-center gap-2 mt-4">   
+  {frameworks.map((fw: string) => (
+    <div class="fw-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer">{fw}</div>
+  ))}
+</div>
+<div class="flex flex-wrap justify-center gap-2 mt-4">   
+  {tags.map((tag: string) => (
+    <div class="tag-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer">{tag}</div>
+  ))}
+</div>
+<div class="flex flex-wrap justify-center gap-2 mt-4">   
+  {tools.map((tool: string) => (
+    <div class="tool-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer">{tool}</div>
+  ))}
+</div>
+
 <!-- Skills -->
 <SkillList items={skills} />
 
 
 <script>
+// TODO: oh boy make it cleaner, maybe think of using Vue.js / React for the search list
+
   const input = document.getElementById("search-input") as HTMLInputElement;
   const items = document.querySelectorAll(".skill-item");
 
@@ -36,4 +68,34 @@ const skills = await getCollection("skills");
         item.classList.toggle("hidden", matches);
     });
   });
+
+  const langs = document.querySelectorAll(".lang-tag");
+  const fws = document.querySelectorAll(".fw-tag");
+  const tags = document.querySelectorAll(".tag-tag");
+  const tools = document.querySelectorAll(".tool-tag");
+
+  langs.forEach(lang => {
+    lang.addEventListener("click", () => filter("lang", lang.innerHTML))
+  })
+
+  fws.forEach(fw => {
+    fw.addEventListener("click", () => filter("framework", fw.innerHTML))
+  })
+
+  tags.forEach(tag => {
+    tag.addEventListener("click", () => filter("tag", tag.innerHTML))
+  })
+
+  tools.forEach(tool => {
+    tool.addEventListener("click", () => filter("tool", tool.innerHTML))
+  })
+
+  function filter(type: string, filter: string) {
+    items.forEach(item => {
+      const el = item as HTMLElement;
+      const matches = !el.dataset[type + 's']?.split(',').includes(filter);
+      item.classList.toggle("hidden", matches);
+    });
+  }
+
 </script>
