@@ -40,7 +40,7 @@ const toolSVG = toolSVGs[`../assets/Tools/VisualStudio.svg`];
 
 ---
 
-<div class="flex flex-col items-center text-center p-4">
+<div class="skill-item flex flex-col items-center text-center p-4" data-search={`${item.data.topic} ${item.data.description} ${item.data.languages} ${item.data.frameworks} ${item.data.tags} ${item.data.tools}`.toLowerCase()}>
     <div class={`w-16 h-16 rounded-full mb-4`} style={`background-image: url(${logoSVG.src})`}></div>
     <h3 class="text-lg font-semibold mb-2">{item.data.topic}</h3>
 

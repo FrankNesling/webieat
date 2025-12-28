@@ -1,10 +1,9 @@
 ---
-import SkillTopic from '../components/SkillTopic.astro';
+import SkillList from '../components/SkillList.astro';
 import SearchBar from '../components/SearchBar.astro';
 
 import { getCollection } from "astro:content";
 const skills = await getCollection("skills");
-
 ---
 
 <!-- Initial paragraph -->
@@ -19,6 +18,22 @@ const skills = await getCollection("skills");
   </p>
 </div>
 <!-- Search Bar -->
-<SearchBar />
+<SearchBar/>
 <!-- Skills -->
-<SkillTopic skillTopic="Languages" items={skills} />
+<SkillList items={skills} />
+
+
+<script>
+  const input = document.getElementById("search-input") as HTMLInputElement;
+  const items = document.querySelectorAll(".skill-item");
+
+  input?.addEventListener("input", () => {
+    const query = input.value.toLowerCase().trim();
+
+    items.forEach(item => {
+        const el = item as HTMLElement;
+        const matches = !(el.dataset.search ?? "").includes(query);
+        item.classList.toggle("hidden", matches);
+    });
+  });
+</script>

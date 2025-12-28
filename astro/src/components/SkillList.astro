@@ -2,8 +2,7 @@
 import SkillItem from './SkillItem.astro';
 import type { CollectionEntry } from 'astro:content';
 
-const { skillTopic, items} = Astro.props as {
-  skillTopic: string;
+const { items} = Astro.props as {
   items: CollectionEntry<'skills'>[];
 };
 
