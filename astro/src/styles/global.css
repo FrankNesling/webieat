@@ -1,1 +1,6 @@
 @import "tailwindcss";
+@reference "tailwindcss";
+
+.blog-content h2 {
+  @apply text-lg font-semibold mb-1 mt-5;
+}
