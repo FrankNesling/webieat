@@ -4,21 +4,29 @@ import { file } from 'astro/loaders';
 const skills = defineCollection({
   loader: file("src/data/skills.json"),
   schema: z.object({
-      id: z.number(),
-      isProject: z.boolean(),
-      isApplication: z.boolean(),
-      isTask: z.boolean(),
-      professionell: z.boolean(),
-      languages: z.array(z.string()),
-      frameworks: z.array(z.string()),
-      tags: z.array(z.string()),
-      tools: z.array(z.string()),
-      topic: z.string(),
-      description: z.string(),
-      url: z.string(),
-      logo: z.string()
-    }),
+    id: z.number(),
+    isProject: z.boolean(),
+    isApplication: z.boolean(),
+    isTask: z.boolean(),
+    professionell: z.boolean(),
+    languages: z.array(z.string()),
+    frameworks: z.array(z.string()),
+    tags: z.array(z.string()),
+    tools: z.array(z.string()),
+    topic: z.string(),
+    description: z.string(),
+    url: z.string(),
+    logo: z.string()
+  }),
 });
+
+const blog = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.date(),
+  }),
+})
 
 
 
@@ -31,4 +39,4 @@ const skills = defineCollection({
 
 // somewhere I need to specify I am familiar with all Windows, MacOS and Linxu (Ubuntu, Fedora)
 
-export const collections = { skills };
+export const collections = { skills, blog };
