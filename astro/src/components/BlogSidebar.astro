@@ -14,19 +14,19 @@ const topicEntries = entries.filter(entry =>
 ---
 
 <aside class="bg-[#FDD8C8] pl-5 pt-5 border-r border-r-[1px] border-r-[#FFFFFF]">
-  <h2 class="font-bold"><a href="/">Home</a></h2>
-  <h2 class="font-bold"><a href="/blog">Blog</a></h2>
+  <h2 class="font-bold text-lg"><a href="/">Home</a></h2>
+  <h2 class="font-bold text-lg"><a href="/blog">Blog</a></h2>
   <ul>
     {topics
       .map(topic => (
         <li>
-          <a href={`/blog/${topic.slug}/`}>
+          <a class="font-bold" href={`/blog/${topic.slug}/`}>
             {topic.data.title}
           </a>
           <ul>
             {topic.slug === topicName && topicEntries.map(topicEntry => (
               <li>
-                <a class="italic" href={`/blog/${topicEntry.slug}/`}>
+                <a class={`${slug === topicEntry.slug ? 'italic' : ''}`} href={`/blog/${topicEntry.slug}/`}>
                   {topicEntry.data.title}
                 </a>
               </li>
