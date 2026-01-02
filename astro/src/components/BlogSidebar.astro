@@ -1,20 +1,39 @@
 ---
 import { getCollection } from 'astro:content';
 
-const posts = await getCollection('blog');
+const entries = await getCollection('blog');
+
+// topics
+const topics = entries.filter(e => e.id.endsWith('index.md'));
+
+// entries for topic
+const { slug } = Astro.params;
+const topicName = slug?.split('/')[0];
+const topicEntries = entries.filter(entry => 
+  !entry.id.endsWith('index.md') && entry.slug.startsWith(`${topicName}`));
 ---
 
 <aside class="bg-[#FDD8C8] pl-5 pt-5 border-r border-r-[1px] border-r-[#FFFFFF]">
   <h2 class="font-bold"><a href="/">Home</a></h2>
-  <h2 class="font-bold">Blog</h2>
+  <h2 class="font-bold"><a href="/blog">Blog</a></h2>
   <ul>
-    {posts
-      .map(post => (
+    {topics
+      .map(topic => (
         <li>
-          <a href={`/blog/${post.slug}/`}>
-            {post.data.title}
+          <a href={`/blog/${topic.slug}/`}>
+            {topic.data.title}
           </a>
+          <ul>
+            {topic.slug === topicName && topicEntries.map(topicEntry => (
+              <li>
+                <a class="italic" href={`/blog/${topicEntry.slug}/`}>
+                  {topicEntry.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
         </li>
       ))}
   </ul>
 </aside>
+

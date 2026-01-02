@@ -55,7 +55,7 @@
     "url": "",
     "logo": "",
     "languages": ["JavaScript", "Python", "SQL"],
-    "frameworks": ["Vite", "React", "NestJs", "Typescript", "PostgreSQL", "Docker"],
+    "frameworks": ["Vite", "React", "NestJs", "Typescript", "PostgreSQL", "Docker", "Prisma"],
     "tags": ["Web", "Database", "API", "Machine Learning / AI", "Cloud Application", "Computer Networks", "DevOps"],
     "tools": ["Clerk", "NeonDB", "Azure", "Visual Studio", "Docker Desktop", "pgAdmin", "GitHub", "MS Teams", "Insomnia", "Wordpress", "Webflow", "Notion", "PowerApps", "D365", "Make.com"]
   },
@@ -86,7 +86,7 @@
     "logo": "",
     "languages": ["Kotlin"],
     "frameworks": [],
-    "tags": ["Mobile App"],
+    "tags": ["Mobile App", "Database"],
     "tools": ["Android Studio", "GitHub"]
   },
   { 
@@ -100,8 +100,8 @@
     "url": "",
     "logo": "",
     "languages": ["Dart"],
-    "frameworks": ["Flutter"],
-    "tags": ["Mobile App"],
+    "frameworks": ["Flutter", "Room"],
+    "tags": ["Mobile App", "Database"],
     "tools": ["Android Studio"]
   },
   { 
