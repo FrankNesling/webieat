@@ -11,6 +11,8 @@ const { slug } = Astro.params;
 const topicName = slug?.split('/')[0];
 const topicEntries = entries.filter(entry => 
   !entry.id.endsWith('index.md') && entry.slug.startsWith(`${topicName}`));
+
+  console.log(entries)
 ---
 
 <aside class="bg-[#FDD8C8] pl-5 pt-5 border-r border-r-[1px] border-r-[#FFFFFF]">

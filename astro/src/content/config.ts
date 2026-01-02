@@ -25,6 +25,7 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.date(),
+    lastEdit: z.date(),
   }),
 })
 

@@ -2,6 +2,7 @@
 title: "Favourite Races & Seasons"
 description: "A list of my favourite races or season, or races that I like in general"
 pubDate: 2025-12-31
+lastEdit: 2026-01-02
 ---
 
 _Everything 1994 onwards_
