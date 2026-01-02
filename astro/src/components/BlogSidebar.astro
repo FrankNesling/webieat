@@ -2,38 +2,61 @@
 import { getCollection } from 'astro:content';
 
 const entries = await getCollection('blog');
+const { slug } = Astro.params;
 
 // topics
-const topics = entries.filter(e => e.id.endsWith('index.md'));
+const topics = entries.filter(e => e.id.endsWith('index.md') && e.slug.split('/').length == 1);
 
-// entries for topic
-const { slug } = Astro.params;
-const topicName = slug?.split('/')[0];
-const topicEntries = entries.filter(entry => 
-  !entry.id.endsWith('index.md') && entry.slug.startsWith(`${topicName}`));
+// entries of current topic
+const navStructure = slug?.split('/') ?? []
+const topicName = navStructure ? navStructure[0] : '';
+const topicEntries = entries.filter(entry =>
+  !entry.id.endsWith('index.md') && entry.slug.split('/')[1].startsWith(`${topicName}`));
 
-  console.log(entries)
+// subtopics and their entries
+const subTopics = entries.filter(e => e.id.endsWith('index.md') && e.slug.split('/').length >= 2 && e.slug.split('/')[0] == (navStructure ? navStructure[0] : ''));
+const subTopicName = navStructure?.length >= 2 ? navStructure[1] : '';
+const subTopicEntries = entries.filter(entry => navStructure.length > 1 &&
+     !entry.id.endsWith('index.md') && entry.slug.split('/')[1].startsWith(`${subTopicName}`));
 ---
 
 <aside class="bg-[#FDD8C8] pl-5 pt-5 border-r border-r-[1px] border-r-[#FFFFFF]">
   <h2 class="font-bold text-lg"><a href="/">Home</a></h2>
-  <h2 class="font-bold text-lg"><a href="/blog">Blog</a></h2>
+  <h2 class="font-bold text-lg italic"><a href="/blog">Blog</a></h2>
   <ul>
     {topics
       .map(topic => (
         <li>
-          <a class="font-bold" href={`/blog/${topic.slug}/`}>
+          <a class={`font-bold underline ${topic.slug == topicName ? 'italic' : ''}`} href={`/blog/${topic.slug}/`}>
             {topic.data.title}
           </a>
           <ul>
-            {topic.slug === topicName && topicEntries.map(topicEntry => (
-              <li>
+            {topic.slug === topicName && subTopics.map(subTopic => (
+              <li class="ml-2">
+                <a class={`font-bold ${subTopic.slug.split('/')[1] == subTopicName ? 'italic' : ''}`} href={`/blog/${subTopic.slug}/`}>
+                  {subTopic.data.title}
+                </a>
+              </li>
+              <ul>
+                {subTopic.slug.split('/')[1] == subTopicName && subTopicEntries.map(subTopicEntry => (
+                  <li class="ml-4">
+                    <a class={`${slug === subTopicEntry.slug ? 'italic' : ''}`} href={`/blog/${subTopicEntry.slug}/`}>
+                      {subTopicEntry.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </ul>
+          {topic.slug === topicName && topicEntries.map(topicEntry => (
+            <ul>
+              <li class="ml-2">
                 <a class={`${slug === topicEntry.slug ? 'italic' : ''}`} href={`/blog/${topicEntry.slug}/`}>
                   {topicEntry.data.title}
                 </a>
               </li>
-            ))}
-          </ul>
+            </ul>
+          ))}
         </li>
       ))}
   </ul>
