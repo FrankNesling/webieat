@@ -4,7 +4,8 @@ import { getCollection } from 'astro:content';
 const posts = await getCollection('blog');
 ---
 
-<aside class="bg-[#FDD8C8] pl-5 pt-5">
+<aside class="bg-[#FDD8C8] pl-5 pt-5 border-r border-r-[1px] border-r-[#FFFFFF]">
+  <h2 class="font-bold"><a href="/">Home</a></h2>
   <h2 class="font-bold">Blog</h2>
   <ul>
     {posts

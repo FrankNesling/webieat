@@ -35,9 +35,9 @@ _I don't have that much memory of 2010 and 2011, so they might be underrepresent
 
 2013 Germany, Britain, Australia, Malaysia, Spain, Japan
 
-2014 Hungary, Canada, Bahrain, Australia
+2014 Hungary, Canada, Bahrain, Australia, Austria
 
-2015 Malaysia, Hungary
+2015 Malaysia, Hungary, Britain, USA
 
 2016 Spain, Austria, Malaysia, Monaco, Abu Dhabi, Brazil
 
