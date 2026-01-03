@@ -10,8 +10,8 @@ const topics = entries.filter(e => e.id.endsWith('index.md') && e.slug.split('/'
 // entries of current topic
 const navStructure = slug?.split('/') ?? []
 const topicName = navStructure ? navStructure[0] : '';
-const topicEntries = entries.filter(entry =>
-  !entry.id.endsWith('index.md') && entry.slug.split('/')[1].startsWith(`${topicName}`));
+const topicEntries = entries.filter(entry => entry.slug.split('/').length <= 2 &&
+  !entry.id.endsWith('index.md') && entry.slug.split('/')[0].startsWith(`${topicName}`));
 
 // subtopics and their entries
 const subTopics = entries.filter(e => e.id.endsWith('index.md') && e.slug.split('/').length >= 2 && e.slug.split('/')[0] == (navStructure ? navStructure[0] : ''));
