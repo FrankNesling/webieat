@@ -20,7 +20,7 @@ const { Content } = await post.render();
   <p class="text-lg mb-5 italic">{post.data.description}</p>
   <p class="text-sm">Published: {post.data.pubDate.toLocaleDateString("de-AT")} (AT time)</p>
   <p class="text-sm">Last Edit: {post.data.lastEdit.toLocaleDateString("de-AT")} (AT time)</p>
-  <article class="blog-content mt-5">
+  <article class="blog-content mt-5 mb-5">
     <Content />
   </article>
 </BlogLayout>
