@@ -18,7 +18,9 @@ const { Content } = await post.render();
 <BlogLayout>
   <h1 class="text-3xl font-bold mb-1">{post.data.title}</h1>
   <p class="text-lg mb-5 italic">{post.data.description}</p>
-  <article class="blog-content">
+  <p class="text-sm">Published: {post.data.pubDate.toLocaleDateString("de-AT")} (AT time)</p>
+  <p class="text-sm">Last Edit: {post.data.lastEdit.toLocaleDateString("de-AT")} (AT time)</p>
+  <article class="blog-content mt-5">
     <Content />
   </article>
 </BlogLayout>
