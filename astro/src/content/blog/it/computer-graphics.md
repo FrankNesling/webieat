@@ -27,21 +27,25 @@ Executed per fragment.
 
 Smallest elements of rasterization, with final visible fragments become pixels on the screen.
 
+Each pixel can initially have several fragments.
+
 ## Graphics Pipeline
 
-1.) Vertex shader 
+1.) Vertex shader: Transform vertices into the screen space.
 
-2.) Primitive Assembly: Connect vertices into shapes (usually triangles)
+2.) Primitive Assembly: Connect vertices into shapes (usually triangles).
 
-3.) Rasterization: Convert the shapes into fragments
+3.) Rasterization: Convert the shapes into fragments (candidate pixels).
 
-4.) Fragment shader
+4.) Fragment shader: Determine final color of fragment.
 
-5.) Depth test: Find for each pixel the closest fragment
+5.) Depth test (opaque): Find for each pixel the closest opaque fragment.
 
-6.) Alpha blending
+6.) Write to frame buffer: Store the color of the closest opaque fragment in the corresponding pixel in the frame buffer. Pixels without a fragment get the background color.
 
-7.) Write to frame buffer
+7.) Alpha blending (transparent): Blend transparent fragments (even further behind ones) for each pixel with the exisiting color in the frame buffer and update the frame buffer.
+
+8.) Display: The final frame buffer is served onto the screen.
 
 ## Material
 
@@ -69,7 +73,7 @@ A collection of vertices and faces to build a 3D model.
 
 ## Z-Buffer
 
-Saves depth of closest (to screen) fragment for each pixel (z-buffer dimension = screen resolution), computed by GPU.
+Saves depth of closest (to screen) fragment for each pixel (z-buffer dimension = screen resolution), computed by GPU. Transparent fragments are usually skipped. If pixel has no fragment, sets it to infinity.
 
 ## Z-Prepass or Depth-Pre-Pass
 
@@ -95,3 +99,4 @@ Similar to RAM, just for GPU.
 
 Final array of pixel colors to be displayed on the screen (dimension = screen resolution).
 
+Frame buffer is cleared at the start of each frame.
