@@ -2,7 +2,7 @@
 title: "Computer Graphics"
 description: ""
 pubDate: 2026-01-04
-lastEdit: 2026-01-04
+lastEdit: 2026-01-05
 ---
 
 ## Shader
