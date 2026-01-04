@@ -1,11 +1,11 @@
 ---
-title: "France UNESCO sites"
+title: "France"
 description: ""
 pubDate: 2026-01-03
-lastEdit: 2026-01-03
+lastEdit: 2026-01-05
 ---
 
-## Places I've visited
+## UNESCO sites I've visited
 - [ ] Abbey Church of Saint-Savin-sur-Gartempe (near Poitiers)
 - [ ] Cistercian Abbey of Fontenay (near Dijon)
 - [ ] Roman and Romanesque Monuments (Arles, near Montpellier)
