@@ -241,7 +241,7 @@
    },
    { 
     "id": 17,
-    "topic": "Sparse point cloud accuracy visualization (WIP)", 
+    "topic": "Sparse point cloud accuracy visualization", 
     "description": "Color sparse points depending on their (median) accuracy",
     "isProject": false,
     "isApplication": false,
