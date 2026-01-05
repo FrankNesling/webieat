@@ -5,6 +5,23 @@ pubDate: 2026-01-03
 lastEdit: 2026-01-05
 ---
 
+## Metropolian Regions I've been to
+
+- [X] Auvergne-Rhône-Alpes: Lyon
+- [X] Bourgogne-Franche-Comté: Hiking
+- [X] Bretagne: Saint Malo
+- [ ] Centre-Val de Loire
+- [X] Grand Est: Strasbourg
+- [ ] Hauts-de-France
+- [X] Île-de-France: Paris
+- [ ] Corse
+- [X] Normandie: near Mont Saint-Michel
+- [X] Nouvelle-Aquitaine: Bordeaux
+- [X] Occitanie: Toulouse, Montpellier
+- [ ] Pays de Loire
+- [X] Provence-Alpes-Côte d'Azur: Marseille
+
+
 ## UNESCO sites I've visited
 - [ ] Abbey Church of Saint-Savin-sur-Gartempe (near Poitiers)
 - [ ] Cistercian Abbey of Fontenay (near Dijon)
