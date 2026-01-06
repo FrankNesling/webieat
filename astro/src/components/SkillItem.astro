@@ -1,5 +1,6 @@
 ---
 import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
 
 const { item } = Astro.props;
 
@@ -7,26 +8,14 @@ function langMap(lang: string): string {
   switch(lang) {
     case "C#": 
       return "CS";
-    case "Haskell":
-      return "C++";
-    case "SQL":
-      return "C++";
-    case "MATLAB":
-      return "C++";
-    case "Rust":
-      return "C++";
-    case "Assembly":
-      return "C++";
-    case "C":
-      return "C++";
-    case "OCaml":
-      return "C++";
+    case "C++":
+      return "Cpp";
     default:
       return lang;
   }
 }
 
-const languageSVGs = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg', {
+const languageIcos = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg', {
   eager: true,
   import: 'default',
 });
@@ -35,9 +24,8 @@ const toolSVGs = import.meta.glob<ImageMetadata>('../assets/Tools/*.svg', {
   eager: true,
   import: 'default',
 });
-const logoSVG = languageSVGs[`../assets/Languages/CS.svg`];
 const toolSVG = toolSVGs[`../assets/Tools/VisualStudio.svg`];
-
+const logoSVG = toolSVG;
 ---
 
 <div class="skill-item flex flex-col items-center text-center p-4" data-tags={item.data.tags} data-tools={item.data.tools} data-frameworks={item.data.frameworks} data-langs={item.data.languages} data-search={`${item.data.topic} ${item.data.description} ${item.data.languages} ${item.data.frameworks} ${item.data.tags} ${item.data.tools}`.toLowerCase()}>
@@ -47,7 +35,7 @@ const toolSVG = toolSVGs[`../assets/Tools/VisualStudio.svg`];
     <!-- Languages -->
     <div class="flex flex-wrap justify-center gap-2 mb-2">   
       {item.data.languages.map((lang: string) => (
-        <img class="w-8 h-8" style={`background-image: url(${languageSVGs[`../assets/Languages/${langMap(lang)}.svg`].src})`}/>
+        <Image height="32" width="32" alt="descriptive text" src={languageIcos[`../assets/Languages/${langMap(lang)}.svg`]}/>
       ))}
     </div>
 
