@@ -1,19 +1,9 @@
 ---
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
+import { langMap} from '../pages/LandingPage.astro'
 
 const { item } = Astro.props;
-
-function langMap(lang: string): string {
-  switch(lang) {
-    case "C#": 
-      return "CS";
-    case "C++":
-      return "Cpp";
-    default:
-      return lang;
-  }
-}
 
 const languageIcos = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg', {
   eager: true,
@@ -35,7 +25,7 @@ const logoSVG = toolSVG;
     <!-- Languages -->
     <div class="flex flex-wrap justify-center gap-2 mb-2">   
       {item.data.languages.map((lang: string) => (
-        <Image height="32" width="32" alt="descriptive text" src={languageIcos[`../assets/Languages/${langMap(lang)}.svg`]}/>
+        <Image height="32" width="32" title={lang} alt="descriptive text" src={languageIcos[`../assets/Languages/${langMap(lang)}.svg`]}/>
       ))}
     </div>
 

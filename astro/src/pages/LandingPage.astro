@@ -3,9 +3,30 @@ import SkillList from '../components/SkillList.astro';
 import SearchBar from '../components/SearchBar.astro';
 
 import { getCollection } from "astro:content";
+import { Image } from 'astro:assets';
+
 const skills = await getCollection("skills");
 
+// LANGUAGES
+export function langMap(lang: string): string {
+  switch(lang) {
+    case "C#": 
+      return "CS";
+    case "C++":
+      return "Cpp";
+    default:
+      return lang;
+  }
+}
+
+const languageIcos = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg', {
+  eager: true,
+  import: 'default',
+});
+
 const languages = ["Java", "JavaScript", "php", "C++", "C#", "C", "Python", "Kotlin", "Dart", "Rust", "Haskell", "OCaml", "MATLAB", "Swift", "Assembly", "SQL"];
+
+// FRAMEWORKS
 const frameworks = ["React", "Astro.js", "Gatsby.js", "Webpack", "Typescript", "Vite", "JavaFX", "Xamarin", "MAUI", "ASP.NET", "Razor", "Babylon.js", "MySQL", "Kubernetes", "Docker", "PostgreSQL", "SQLite", "NestJs", "Flutter", "Jetpack Compose", "OpenGL", "Room", "Database"];
 const tags = ["Visual Computing", "API", "Database", "Desktop Program", "Game", "Web", "Mobile App", "Cloud Application", "Machine Learning / AI", "Computer Networks", "Computer Graphics", "Parallel Programming", "DevOps", "Data science", "Compiler", "Algorithms", "Mathematics"];
 const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "Docker Desktop", "Blender", "MeshLab", "NERF Studio", "D365", "Editor", "Insomnia", "Postman", "Squidex", "Magnolia", "Pulumi", "Wordpress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "DB Browser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog"];
@@ -28,9 +49,12 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
 </div>
 <!-- Search and Filter-->
 <SearchBar />
-<div class="flex flex-wrap justify-center gap-2 mt-4">   
+<div class="flex flex-wrap justify-center align gap-4 mt-4 mb-8">   
   {languages.map((lang: string) => (
-    <div class="lang-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer">{lang}</div>
+    <div class="lang-tag flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+      <Image class="h-8 w-8" height="32" width="32" title={lang} alt="descriptive text" src={languageIcos[`../assets/Languages/${langMap(lang)}.svg`]}/>
+      <p class="text-sm mt-2">{lang}</p>
+    </div> 
   ))}
 </div>
 <div class="flex flex-wrap justify-center gap-2 mt-4">   
@@ -75,7 +99,7 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
   const tools = document.querySelectorAll(".tool-tag");
 
   langs.forEach(lang => {
-    lang.addEventListener("click", () => filter("lang", lang.innerHTML))
+    lang.addEventListener("click", () => filter("lang", lang.children[1].innerHTML))
   })
 
   fws.forEach(fw => {
