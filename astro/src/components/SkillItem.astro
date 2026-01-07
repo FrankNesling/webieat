@@ -25,7 +25,7 @@ const logoSVG = toolSVG;
     <!-- Languages -->
     <div class="flex flex-wrap justify-center gap-2 mb-2">   
       {item.data.languages.map((lang: string) => (
-        <Image height="32" width="32" title={lang} alt="descriptive text" src={languageIcos[`../assets/Languages/${langMap(lang)}.svg`]}/>
+        <Image class="h-8 w-8" height="32" width="32" title={lang} alt="descriptive text" src={languageIcos[`../assets/Languages/${langMap(lang)}.svg`]}/>
       ))}
     </div>
 
