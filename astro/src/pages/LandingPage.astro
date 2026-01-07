@@ -61,9 +61,9 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
 </div>
 <!-- Search and Filter-->
 <SearchBar />
-<div class="flex flex-wrap justify-center align gap-4 mt-4 mb-8">   
+<div class="flex flex-wrap justify-center align gap-3 mt-4 mb-8">   
   {languages.map((lang: string) => (
-    <div class="lang-tag flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+    <div class="lang-tag p-1 flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
       <Image class="h-8 w-8" height="32" width="32" title={lang} alt={lang} src={languageIcos[`../assets/Languages/${langMap(lang)}.svg`]}/>
       <p class="text-sm mt-2">{lang}</p>
     </div> 
@@ -71,7 +71,7 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
 </div>
 <div class="flex flex-wrap justify-center gap-2 mt-4">   
   {frameworks.map((fw: string) => (
-    <div class="fw-tag hidden flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+    <div class="fw-tag p-1 hidden flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
       <Image class="h-8 w-8" height="32" width="32" title={fw} alt={fw} src={frameworkIcons[`../assets/Frameworks/${fw}.svg`]}/>
       <p class="text-sm mt-2">{fw}</p>
     </div>   ))}
@@ -161,13 +161,17 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
 
   langs.forEach(lang => {
     lang.addEventListener("click", () => {
+      highlight("lang", lang as HTMLElement)
       filter("lang", lang.children[1].innerHTML)
       displayFW(lang.children[1].innerHTML)
     })
   })
 
   fws.forEach(fw => {
-    fw.addEventListener("click", () => filter("framework", fw.children[1].innerHTML))
+    fw.addEventListener("click", () => {
+      highlight("fw", fw as HTMLElement)
+      filter("framework", fw.children[1].innerHTML)
+    })
   })
 
   tags.forEach(tag => {
@@ -186,6 +190,15 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
     });
   }
 
+  function highlight(type: string, el: HTMLElement) {
+    const highlighted = document.querySelectorAll(`.highlighted${type == "fw" ? ".fw-tag" : ""}`);
+    highlighted.forEach(h => {
+      h.classList.remove("outline", "outline-dashed", "outline-[#C10A49]", "highlighted")
+    })
+
+    el.classList.add("outline", "outline-dashed", "outline-[#C10A49]", "highlighted")
+  }
+  
   function displayFW(lang: string) {
     fws.forEach((fw) => {
       if(!(fwMap(fw.children[1].innerHTML) === lang)) {
