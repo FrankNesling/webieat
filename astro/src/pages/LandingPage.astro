@@ -71,7 +71,7 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
 </div>
 <div class="flex flex-wrap justify-center gap-2 mt-4">   
   {frameworks.map((fw: string) => (
-    <div class="fw-tag flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+    <div class="fw-tag hidden flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
       <Image class="h-8 w-8" height="32" width="32" title={fw} alt={fw} src={frameworkIcons[`../assets/Frameworks/${fw}.svg`]}/>
       <p class="text-sm mt-2">{fw}</p>
     </div>   ))}
@@ -93,6 +93,53 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
 
 <script>
 // TODO: oh boy make it cleaner, maybe think of using Vue.js / React for the search list
+  function fwMap(fw: string): string {
+    switch(fw) {
+      case "React": 
+        return "JavaScript";
+      case "Astro.js":
+        return "JavaScript";
+      case "Gatsby.js":
+        return "JavaScript";
+      case "Webpack":
+        return "JavaScript";
+      case "Typescript":
+        return "JavaScript";
+      case "Vite":
+        return "JavaScript";
+      case "JavaFX":
+        return "Java";
+      case "Xamarin":
+        return "C#";
+      case "MAUI":
+        return "C#";
+      case "ASP.NET":
+        return "JavaScript";
+      case "Razor":
+        return "C#";
+      case "Babylon.js":
+        return "JavaScript";
+      case "MySQL":
+        return "SQL";
+      case "PostgreSQL":
+        return "SQL";
+      case "SQLite":
+        return "SQL";
+      case "NestJs":
+        return "JavaScript";
+      case "Flutter":
+        return "Dart";
+      case "Jetpack Compose":
+        return "Kotlin";
+      case "OpenGL":
+        return "C++";
+      case "Room":
+        return "Dart";
+      default:
+        return "";
+    }
+  }
+
 
   const input = document.getElementById("search-input") as HTMLInputElement;
   const items = document.querySelectorAll(".skill-item");
@@ -113,7 +160,10 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
   const tools = document.querySelectorAll(".tool-tag");
 
   langs.forEach(lang => {
-    lang.addEventListener("click", () => filter("lang", lang.children[1].innerHTML))
+    lang.addEventListener("click", () => {
+      filter("lang", lang.children[1].innerHTML)
+      displayFW(lang.children[1].innerHTML)
+    })
   })
 
   fws.forEach(fw => {
@@ -134,6 +184,16 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
       const matches = !el.dataset[type + 's']?.split(',').includes(filter);
       item.classList.toggle("hidden", matches);
     });
+  }
+
+  function displayFW(lang: string) {
+    fws.forEach((fw) => {
+      if(!(fwMap(fw.children[1].innerHTML) === lang)) {
+          fw.classList.add("hidden");
+      } else {
+          fw.classList.remove("hidden");
+      }
+    })
   }
 
 </script>
