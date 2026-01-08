@@ -20,3 +20,9 @@ A virtual machine (VM) on a random computer in the cloud (in a random datacenter
 ## Cluster
 
 A collection of nodes that share attributes.
+
+## skaffold
+
+## helm
+
+## Docker compose

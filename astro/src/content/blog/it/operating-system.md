@@ -10,3 +10,9 @@ Takes care of memory management, CPU & Processes scheduling, drivers, the file s
 
 ## Operating System (OS)
 The kernel plus the user interaction (UI, I/O via Shell). An example is Linux (kernel) + GNU (user space tools).
+
+## GNOME
+
+## X11
+
+## GNU?

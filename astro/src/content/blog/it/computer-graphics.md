@@ -23,6 +23,18 @@ Determines the final color based on texture, lightning and other effects.
 
 Executed per fragment.
 
+## uniform
+
+Constants for one draw call, best example is current time. Both in fragment and vertex shader. Useful to pass constants to compiled shaders without the need to recompile the shader.
+
+## attribute
+
+Only in vertex shader. Data that differs per vertex.
+
+## varying
+
+Data from vertex shader to fragment shader.
+
 ## Fragment
 
 Smallest elements of rasterization, with final visible fragments become pixels on the screen.
@@ -100,3 +112,9 @@ Similar to RAM, just for GPU.
 Final array of pixel colors to be displayed on the screen (dimension = screen resolution).
 
 Frame buffer is cleared at the start of each frame.
+
+## DirectX
+
+## Voodoo
+
+## 3D acceleration
