@@ -16,7 +16,8 @@ const skills = defineCollection({
     topic: z.string(),
     description: z.string(),
     url: z.string(),
-    logo: z.string()
+    logo: z.string(),
+    codebase: z.string().optional()
   }),
 });
 

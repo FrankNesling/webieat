@@ -42,7 +42,8 @@
     "languages": ["C++", "C", "Python", "Haskell", "Rust", "Assembly"],
     "frameworks": [],
     "tags": ["Compiler", "Algorithms"],
-    "tools": ["Visual Studio", "GitHub"]
+    "tools": ["Visual Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/coding-exercises"
   },
   { 
     "id": 4,
@@ -87,7 +88,8 @@
     "languages": ["Kotlin"],
     "frameworks": [],
     "tags": ["Mobile App", "Database"],
-    "tools": ["Android Studio", "GitHub"]
+    "tools": ["Android Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/structureup"
   },
   { 
     "id": 7,
@@ -162,7 +164,8 @@
     "languages": ["Kotlin"],
     "frameworks": ["Jetpack Compose"],
     "tags": ["Mobile App"],
-    "tools": ["Android Studio", "GitHub"]
+    "tools": ["Android Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/adventsup"
    },
    { 
     "id": 12,
@@ -207,7 +210,8 @@
     "languages": ["C"],
     "frameworks": [],
     "tags": ["Desktop Program", "Game"],
-    "tools": ["Visual Studio", "GitHub"]
+    "tools": ["Visual Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/coding-exercises/blob/main/C/TicTacToe.c"
    },
    { 
     "id": 15,
@@ -267,7 +271,8 @@
     "languages": ["C++"],
     "frameworks": ["OpenGL"],
     "tags": ["Computer Graphics", "Desktop Program", "Game"],
-    "tools": ["Visual Studio", "GitHub"]
+    "tools": ["Visual Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/walk-the-model"
    },
    { 
     "id": 19,
@@ -297,7 +302,8 @@
     "languages": ["JavaScript"],
     "frameworks": ["Astro.js", "Gatsby.js", "Typescript"],
     "tags": ["Web"],
-    "tools": ["VS Code", "GitHub"]
+    "tools": ["VS Code", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/webieat"
    },
    { 
     "id": 21,
@@ -342,7 +348,8 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio", "GitHub"]
+    "tools": ["Visual Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/knack-the-Gno"
    },
    { 
     "id": 24,
@@ -357,7 +364,8 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio", "GitHub"]
+    "tools": ["Visual Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/projectwarrior"
    },
    { 
     "id": 25,
@@ -372,7 +380,8 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio", "GitHub"]
+    "tools": ["Visual Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/escapeisland"
    },
    { 
     "id": 26,
@@ -387,7 +396,8 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Editor", "GitHub"]
+    "tools": ["Editor", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/fledermaus"
    },
    { 
     "id": 27,
@@ -402,7 +412,8 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio", "GitHub"]
+    "tools": ["Visual Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/maze'ya'up"
    },
    { 
     "id": 28,
@@ -417,7 +428,8 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio", "GitHub"]
+    "tools": ["Visual Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/hangman"
    },
    { 
     "id": 29,
@@ -432,7 +444,8 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio", "GitHub"]
+    "tools": ["Visual Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/paytaxes"
    },
    { 
     "id": 30,
@@ -447,7 +460,8 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio", "GitHub"]
+    "tools": ["Visual Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/pong"
    },
    { 
     "id": 31,
@@ -462,7 +476,8 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Visual Studio", "GitHub"]
+    "tools": ["Visual Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/starwars"
    },
    { 
     "id": 32,
@@ -672,6 +687,7 @@
     "languages": ["C++"],
     "frameworks": ["OpenGL"],
     "tags": ["Computer Graphics", "Desktop Program"],
-    "tools": ["Visual Studio", "GitHub"]
+    "tools": ["Visual Studio", "GitHub"],
+    "codebase": "https://github.com/FrankNesling/OpenGL-Playground"
    }
 ]

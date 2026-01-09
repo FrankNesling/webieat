@@ -39,6 +39,8 @@ const logoSVG = toolSVG;
       ))}
     </div>
 
+    {item.data.codebase ? <a href={item.data.codebase} target="_blank" class="italic underline">Link to Codebase</a> : null}
+
     <!-- Tools -->
     <div class="flex flex-wrap justify-center gap-2">   
       {item.data.tools.map((tool: string) => (
