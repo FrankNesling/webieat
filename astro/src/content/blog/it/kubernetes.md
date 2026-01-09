@@ -2,7 +2,7 @@
 title: "Kubernetes"
 description: ""
 pubDate: 2026-01-03
-lastEdit: 2026-01-03
+lastEdit: 2026-01-08
 ---
 
 ## Docker container

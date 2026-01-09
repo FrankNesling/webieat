@@ -2,7 +2,7 @@
 title: "Computer Graphics"
 description: ""
 pubDate: 2026-01-04
-lastEdit: 2026-01-05
+lastEdit: 2026-01-09
 ---
 
 ## Shader
@@ -23,15 +23,15 @@ Determines the final color based on texture, lightning and other effects.
 
 Executed per fragment.
 
-## uniform
+### uniform
 
 Constants for one draw call, best example is current time. Both in fragment and vertex shader. Useful to pass constants to compiled shaders without the need to recompile the shader.
 
-## attribute
+### attribute
 
 Only in vertex shader. Data that differs per vertex.
 
-## varying
+### varying
 
 Data from vertex shader to fragment shader.
 

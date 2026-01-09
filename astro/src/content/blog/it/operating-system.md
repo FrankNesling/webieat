@@ -2,7 +2,7 @@
 title: "Operating System"
 description: ""
 pubDate: 2026-01-03
-lastEdit: 2026-01-03
+lastEdit: 2026-01-08
 ---
 
 ## Kernel
