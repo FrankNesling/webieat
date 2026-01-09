@@ -5,7 +5,7 @@ import { langMap} from '../pages/LandingPage.astro'
 
 const { item } = Astro.props;
 
-const languageIcos = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg', {
+const languageIcons = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg', {
   eager: true,
   import: 'default',
 });
@@ -18,33 +18,43 @@ const toolSVG = toolSVGs[`../assets/Tools/VisualStudio.svg`];
 const logoSVG = toolSVG;
 ---
 
-<div class="skill-item flex flex-col items-center text-center p-4" data-tags={item.data.tags} data-tools={item.data.tools} data-frameworks={item.data.frameworks} data-langs={item.data.languages} data-search={`${item.data.topic} ${item.data.description} ${item.data.languages} ${item.data.frameworks} ${item.data.tags} ${item.data.tools}`.toLowerCase()}>
-    <div class={`w-16 h-16 rounded-full mb-4`} style={`background-image: url(${logoSVG.src})`}></div>
-    <h3 class="text-lg font-semibold mb-2">{item.data.topic}</h3>
+<div class={`skill-item relative px-4 py-6 group ${item.data.url ? "cursor-pointer hover:rounded hover:outline hover:outline-[#C10A49]" : null}`} data-tags={item.data.tags} data-tools={item.data.tools} data-frameworks={item.data.frameworks} data-langs={item.data.languages} data-search={`${item.data.topic} ${item.data.description} ${item.data.languages} ${item.data.frameworks} ${item.data.tags} ${item.data.tools}`.toLowerCase()}>
+    <!-- DL -->
+    {item.data.url ? <div class="absolute top-0 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 text-[#C10A49] italic font-bold">CLICK TO DOWNLOAD / OPEN</div> : null}
+    
+    <!-- Item content -->
+    <div class="flex flex-col items-center text-center">
+      <!-- Logo and Name -->
+      <Image class="h-12 w-12" height="16" width="16" title={item.data.topic} alt={item.data.topic} src={logoSVG}/>
+      <h3 class="text-lg font-semibold mb-2">{item.data.topic}</h3>
 
-    <!-- Languages -->
-    <div class="flex flex-wrap justify-center gap-2 mb-2">   
-      {item.data.languages.map((lang: string) => (
-        <Image class="h-8 w-8" height="32" width="32" title={lang} alt="descriptive text" src={languageIcos[`../assets/Languages/${langMap(lang)}.svg`]}/>
-      ))}
+      <!-- Languages -->
+      <div class="flex flex-wrap justify-center gap-2 mb-2">   
+        {item.data.languages.map((lang: string) => (
+          <Image class="h-8 w-8" height="32" width="32" title={lang} alt={lang} src={languageIcons[`../assets/Languages/${langMap(lang)}.svg`]}/>
+        ))}
+      </div>
+
+      <!-- Description -->
+      <p class="text-sm text-gray-600 mb-2">{item.data.description}</p>
+
+      <!-- Tags -->
+      <div class="flex flex-wrap justify-center gap-2 mb-2">   
+        {item.data.tags.map((tag: string) => (
+          <div class="text-sm bg-gray-300 rounded-lg py-1 px-2">{tag}</div>
+        ))}
+      </div>
+
+      {item.data.codebase ? <a href={item.data.codebase} target="_blank" class="italic underline">Link to Codebase</a> : null}
+
+      <!-- Tools -->
+      <div class="flex flex-wrap justify-center gap-2">   
+        {item.data.tools.map((tool: string) => (
+          <div class="w-6 h-6 bg-no-repeat bg-center bg-contain" style={`background-image: url(${toolSVG.src})`}></div>
+        ))}
+      </div>
     </div>
 
-    <!-- Description -->
-    <p class="text-sm text-gray-600 mb-2">{item.data.description}</p>
-
-    <!-- Tags -->
-    <div class="flex flex-wrap justify-center gap-2 mb-2">   
-      {item.data.tags.map((tag: string) => (
-        <div class="text-sm bg-gray-300 rounded-lg py-1 px-2">{tag}</div>
-      ))}
-    </div>
-
-    {item.data.codebase ? <a href={item.data.codebase} target="_blank" class="italic underline">Link to Codebase</a> : null}
-
-    <!-- Tools -->
-    <div class="flex flex-wrap justify-center gap-2">   
-      {item.data.tools.map((tool: string) => (
-        <div class="w-6 h-6 bg-no-repeat bg-center bg-contain" style={`background-image: url(${toolSVG.src})`}></div>
-      ))}
-    </div>
+    <!-- DL -->
+    {item.data.url ? <div class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 text-[#C10A49] italic font-bold">CLICK TO DOWNLOAD / OPEN</div> : null}
 </div>
