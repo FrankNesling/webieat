@@ -37,14 +37,17 @@ const frameworks = ["React", "Astro.js", "Gatsby.js", "Webpack", "Typescript", "
 // TAGS
 
 const tags = ["Visual Computing", "API", "Database", "Desktop Program", "Game", "Web", "Mobile App", "Cloud Application", "Machine Learning / AI", "Computer Networks", "Computer Graphics", "Parallel Programming", "DevOps", "Data science", "Compiler", "Algorithms", "Mathematics"];
-const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "Docker Desktop", "Blender", "MeshLab", "NERF Studio", "D365", "Editor", "Insomnia", "Postman", "Squidex", "Magnolia", "Pulumi", "Wordpress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "Kubernetes", "Docker","MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "DB Browser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog"];
+const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "Docker Desktop", "Blender", "MeshLab", "NERF Studio", "D365", "Editor", "Insomnia", "Postman", "Squidex", "Magnolia", "Pulumi", "Wordpress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench","MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "DB Browser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog"];
 
+const knowHow = ["Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS"];
 
 // TODO typisize the lang, fw, tags, tools (also in json/zod)
 // TODO tag as component
+// TODO deselect / all selector
+// TODO all logos
+// TODO programmed apps logos if available
 
-// TODO define Git, Docker, Kubernets 
-// TODO add Linux? Ubuntu/Fedora somwhere?
+
 // TODO tutorials? OpenGL Tutorial, Parallel Programming, ETH courses? as IsTheory?
 ---
 
@@ -61,7 +64,7 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
 </div>
 <!-- Search and Filter-->
 <SearchBar />
-<div class="flex flex-wrap justify-center align gap-3 mt-4 mb-8">   
+<div class="flex flex-wrap justify-center align gap-3 mt-4 mb-2">   
   {languages.map((lang: string) => (
     <div class="lang-tag p-1 flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
       <Image class="h-8 w-8" height="32" width="32" title={lang} alt={lang} src={languageIcos[`../assets/Languages/${langMap(lang)}.svg`]}/>
@@ -69,7 +72,7 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
     </div> 
   ))}
 </div>
-<div class="flex flex-wrap justify-center gap-2 mt-4">   
+<div class="flex flex-wrap justify-center gap-2 mt-2">   
   {frameworks.map((fw: string) => (
     <div class="fw-tag p-1 hidden flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
       <Image class="h-8 w-8" height="32" width="32" title={fw} alt={fw} src={frameworkIcons[`../assets/Frameworks/${fw}.svg`]}/>
@@ -84,6 +87,12 @@ const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode",
 <div class="flex flex-wrap justify-center gap-2 mt-4">   
   {tools.map((tool: string) => (
     <div class="tool-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer">{tool}</div>
+  ))}
+</div>
+<p class="mt-4 mb-1 text-center font-bold">Additional (basic) Know-How:</p>
+<div class="flex flex-wrap justify-center gap-2">
+  {knowHow.map((kh: string) => (
+    <div class="text-sm bg-gray-300 rounded-lg py-1 px-2 italic">{kh}</div>
   ))}
 </div>
 
