@@ -18,7 +18,7 @@ const toolSVG = toolSVGs[`../assets/Tools/VisualStudio.svg`];
 const logoSVG = toolSVG;
 ---
 
-<div class={`skill-item relative px-4 py-6 group ${item.data.url ? "cursor-pointer hover:rounded hover:outline hover:outline-[#C10A49]" : null}`} data-tags={item.data.tags} data-tools={item.data.tools} data-frameworks={item.data.frameworks} data-langs={item.data.languages} data-search={`${item.data.topic} ${item.data.description} ${item.data.languages} ${item.data.frameworks} ${item.data.tags} ${item.data.tools}`.toLowerCase()}>
+<div onclick={item.data.url ? `window.location.href='${item.data.url}'` : null} class={`skill-item relative px-4 py-6 group ${item.data.url ? "cursor-pointer hover:rounded hover:outline hover:outline-[#C10A49]" : null}`} data-tags={item.data.tags} data-tools={item.data.tools} data-frameworks={item.data.frameworks} data-langs={item.data.languages} data-search={`${item.data.topic} ${item.data.description} ${item.data.languages} ${item.data.frameworks} ${item.data.tags} ${item.data.tools}`.toLowerCase()}>
     <!-- DL -->
     {item.data.url ? <div class="absolute top-0 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 text-[#C10A49] italic font-bold">CLICK TO DOWNLOAD / OPEN</div> : null}
     
