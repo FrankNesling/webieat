@@ -37,8 +37,90 @@ const frameworks = ["React", "Astro.js", "Gatsby.js", "Webpack", "Typescript", "
 // TAGS
 
 const tags = ["Visual Computing", "API", "Database", "Desktop Program", "Game", "Web", "Mobile App", "Cloud Application", "Machine Learning / AI", "Computer Networks", "Computer Graphics", "Parallel Programming", "DevOps", "Data science", "Compiler", "Algorithms", "Mathematics"];
-const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "Docker Desktop", "Blender", "MeshLab", "NERF Studio", "D365", "Editor", "Insomnia", "Postman", "Squidex", "Magnolia", "Pulumi", "Wordpress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench","MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "DB Browser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog"];
 
+// TOOLS
+export function toolMap(tool: string): string {
+  switch(tool) {
+    case "Visual Studio": 
+      return "IDE";
+    case "Android Studio":
+      return "IDE";
+    case "VS Code": 
+      return "IDE";
+    case "Eclipse":
+      return "IDE";
+    case "XCode": 
+      return "IDE";
+    case "GitLab":
+      return "Version Control";
+    case "GitHub": 
+      return "Version Control";
+    case "Docker Desktop":
+      return "Containerization";
+    case "Blender": 
+      return "3D Modelviewer";
+    case "MeshLab":
+      return "3D Modelviewer";
+    case "NERF Studio": 
+      return "3D Modelviewer";
+    case "D365":
+      return "CRM";
+    case "Editor": 
+      return "IDE";
+    case "Insomnia":
+      return "Networking";
+    case "Postman": 
+      return "Networking";
+    case "Squidex":
+      return "CMS";
+    case "Magnolia": 
+      return "CMS";
+    case "Pulumi":
+      return "CMS";
+    case "Wordpress": 
+      return "Webdevelopment";
+    case "Webflow":
+      return "Webdevelopment";
+    case "Make.com": 
+      return "Low Code Automation";
+    case "NeonDB":
+      return "Database Administration";
+    case "MySQLWorkbench": 
+      return "Database Administration";
+    case "phpAdmin":
+      return "Database Administration";
+    case "MS Entra": 
+      return "User Authorization";
+    case "Clerk":
+      return "User Authorization";
+    case "Power Apps": 
+      return "Low Code Automation";
+    case "Unity":
+      return "IDE";
+    case "pgAdmin": 
+      return "Database Administration";
+    case "DB Browser":
+      return "Database Administration";
+    case "Notion": 
+      return "Work Management";
+    case "Azure":
+      return "Cloud";
+    case "MS Teams":
+      return "Work Management";
+    case "Atlassian": 
+      return "Work Management";
+    case "DataDog":
+      return "Monitoring";
+    default:
+      return tool;
+  }
+}
+
+
+const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "Docker Desktop", "Blender", "MeshLab", "NERF Studio", "D365", "Editor", "Insomnia", "Postman", "Squidex", "Magnolia", "Pulumi", "Wordpress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "phpAdmin", "MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "DB Browser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog"];
+const toolTypes = ["IDE", "Version Control", "Containerization", "3D Modelviewer", "CRM", "Networking", "CMS", "Webdevelopment", "Low Code Automation", "Database Administration", "User Authorization", "Cloud", "Work Management", "Monitoring"];
+
+// KNOW HOW
 const knowHow = ["Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS"];
 
 // TODO typisize the lang, fw, tags, tools (also in json/zod)
@@ -85,8 +167,8 @@ const knowHow = ["Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Wi
   ))}
 </div>
 <div class="flex flex-wrap justify-center gap-2 mt-4">   
-  {tools.map((tool: string) => (
-    <div class="tool-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer">{tool}</div>
+  {toolTypes.map((tt: string) => (
+    <div class="tool-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer">{tt}</div>
   ))}
 </div>
 <p class="mt-4 mb-1 text-center font-bold">Additional (basic) Know-How:</p>
