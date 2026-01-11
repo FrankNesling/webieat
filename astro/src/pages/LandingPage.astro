@@ -146,6 +146,12 @@ const knowHow = ["Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Wi
 </div>
 <!-- Search and Filter-->
 <SearchBar />
+<div class="flex flex-wrap justify-center gap-2 mt-4">   
+  {tags.map((tag: string) => (
+    <div class="tag-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">{tag}</div>
+  ))}
+</div>
+<p class="mt-4 mb-1 text-center font-bold">Programming Languages:</p>
 <div class="flex flex-wrap justify-center align gap-3 mt-4 mb-2">   
   {languages.map((lang: string) => (
     <div class="lang-tag p-1 flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
@@ -161,14 +167,10 @@ const knowHow = ["Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Wi
       <p class="text-sm mt-2">{fw}</p>
     </div>   ))}
 </div>
-<div class="flex flex-wrap justify-center gap-2 mt-4">   
-  {tags.map((tag: string) => (
-    <div class="tag-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer">{tag}</div>
-  ))}
-</div>
+<p class="mt-4 mb-1 text-center font-bold">Programs, Tools and Apps:</p>
 <div class="flex flex-wrap justify-center gap-2 mt-4">   
   {toolTypes.map((tt: string) => (
-    <div class="tool-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer">{tt}</div>
+    <div class="tool-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">{tt}</div>
   ))}
 </div>
 <p class="mt-4 mb-1 text-center font-bold">Additional (basic) Know-How:</p>
