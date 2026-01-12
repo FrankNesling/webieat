@@ -10,7 +10,7 @@ lastEdit: 2026-01-05
 - [X] Auvergne-Rhône-Alpes: Lyon
 - [X] Bourgogne-Franche-Comté: Hiking
 - [X] Bretagne: Saint Malo
-- [ ] Centre-Val de Loire
+- [X] Centre-Val de Loire
 - [X] Grand Est: Strasbourg
 - [ ] Hauts-de-France
 - [X] Île-de-France: Paris
@@ -18,7 +18,7 @@ lastEdit: 2026-01-05
 - [X] Normandie: near Mont Saint-Michel
 - [X] Nouvelle-Aquitaine: Bordeaux
 - [X] Occitanie: Toulouse, Montpellier
-- [ ] Pays de Loire
+- [X] Pays de Loire
 - [X] Provence-Alpes-Côte d'Azur: Marseille
 
 
@@ -30,9 +30,10 @@ lastEdit: 2026-01-05
 - [x] Port of the Moon (Bordeaux)
 - [ ] Canal du Midi (near Toulouse)
 - [ ] Notre-Dame d'Amiens (north-east France)
-- [ ] Bourges Cathedral (center France)
+- [X] Bourges Cathedral (center France)
 - [ ] Chartres Cathedral (near Paris)
 - [ ] Cathedral of Notre-Dame, Former Abbey of Saint-Remi, and Palace of Tau (Reims, east of Paris)
 - [x] Papal palace (Avignon, southern France)
 - [x] Mont Saint-Michel (northwest France)
 - [x] Palace and Park of Versailles (near Paris)
+- [X] Dijon city center

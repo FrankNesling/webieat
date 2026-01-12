@@ -115,6 +115,28 @@ Frame buffer is cleared at the start of each frame.
 
 ## DirectX
 
-## Voodoo
+Tools to communicate with graphic cards. Focus on Windows, in contrast to OpenGL's cross platform.
+
+## 3dfx Voodoo graphics
+
+Voodo graphic modules by the company 3dfx were popular 3D accelerators in the 1990s.
 
 ## 3D acceleration
+
+Specialized hardware to perform 3D computations faster than using the CPU alone.
+
+## CUDA
+
+Communicate to GPU for many parallel calculations (eg. Machine Learning), but not for graphics rendering.
+
+## Vulkan
+
+Same as OpenGL, just lower level (memory management, etc.).
+
+## OpenGL
+
+Cross-platform API specification to communicate with the GPU, for graphics, created by the Khronos Group. Every graphics card vendor has their own implementation of OpenGL.
+
+## GLSL (OpenGL Shading Language)
+
+The programming language for the shaders used by OpenGL.
