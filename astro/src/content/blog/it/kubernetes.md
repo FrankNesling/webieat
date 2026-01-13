@@ -21,8 +21,14 @@ A virtual machine (VM) on a random computer in the cloud (in a random datacenter
 
 A collection of nodes that share attributes.
 
-## skaffold
+## Skaffold
 
-## helm
+Defined in a .yaml file and used for the CI/CD or local pipeline that orchestrates the build and deploy process, eg. in GitHub Actions.
+
+## Helm
+
+Package manager for Kubernetes. Allows to download configuration templates.
 
 ## Docker compose
+
+Similar concept as Kubernetes, in a more lightweight and simple way. Mainly for local setups.
