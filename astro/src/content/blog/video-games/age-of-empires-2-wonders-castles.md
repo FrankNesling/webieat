@@ -1,5 +1,5 @@
 ---
-title: "Age of Empires II - Wonders (WIP)"
+title: "Age of Empires II - Wonders & Castles (WIP)"
 description: "A list of the wonders and castles and their real location. Currently without AoE and Chronicles"
 pubDate: 2026-01-03
 lastEdit: 2026-01-03
@@ -10,6 +10,9 @@ lastEdit: 2026-01-03
 ## Aztecs (The Conquerors)
 
 ## Bengalis (Dynasties of India)
+
+- [ ] Castle: Lottan Masjid (Gaur, West Bengal, East India)
+- [ ] Castle: Fort gates (Bishnupur (Kolkata), West Bengal, East India)
 
 ## Berbers (The African Kingdoms)
 
@@ -53,6 +56,8 @@ lastEdit: 2026-01-03
 
 ## Georgians (The Mountain Royals)
 
+- [ ] Castle: Akhaltsikhe Castle (South-West Georgia)
+
 ## Goths (Age of Kings)
 
 - [x] Wonder: Theodoric Mausoleum (Ravenna, near Bologna)
@@ -74,6 +79,8 @@ lastEdit: 2026-01-03
 - [x] Wonder: Cattedrale di San Lorenzo (Genoa)
 
 ## Japanese (Age of Kings)
+
+- [ ] Castle: Osaka Castle (Osaka)
 
 ## Jurchens (The Three Kingdoms)
 
@@ -112,12 +119,15 @@ lastEdit: 2026-01-03
 ## Romans (Return of Rome)
 
 - [x] Wonder: Colosseum (Rome)
+- [ ] Castle: Gate house of the castra (various across the Roman empire)
 
 ## Saracens (Age of Kings)
 
 ## Shu (The Three Kingdoms)
 
 ## Sicilians (Lords of the West)
+
+- [ ] Castle: Castello Ursino (Catania)
 
 ## Slavs (The Forgotten)
 
