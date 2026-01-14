@@ -41,7 +41,13 @@ Smallest elements of rasterization, with final visible fragments become pixels o
 
 Each pixel can initially have several fragments.
 
+## Rasterization
+
+Split a primitive (usually triangle) into fragments.
+
 ## Graphics Pipeline
+
+The GPU's job is to determine the final pixel colors. 
 
 1.) Vertex shader: Transform vertices into the screen space.
 
@@ -65,7 +71,17 @@ A reusable set of shaders.
 
 ## Draw Call
 
-A call to the GPU from the CPU which a specified shader and a state. One frame can have several draw calls.
+A call to the GPU from the CPU which a specified shader and a state. One frame can have several draw calls. The later draw calls might overwrite previous draw call results in the frame buffer.
+
+First opaque meshes, then transparent ones. The transparent ones need to be sorted back to front, otherwise the final alpha blended color is incorrect.
+
+## Rendering
+
+The process to create one frame.
+
+## Frame
+
+The final result, ie. each pixel has a color.
 
 ## Face
 
@@ -97,7 +113,7 @@ Transparency of a fragment (0 = fully transparent, 1 = fully opaque). Computed b
 
 ## Alpha Index
 
-Back-to-front sorting for transparent meshes, ensuring correct blending when fragments of those meshes have the same depth on the same pixel.
+Back-to-front sorting for transparent meshes, ensuring correct blending when fragments of those meshes have the same depth on the same pixel. 
 
 ## Alpha blending
 
@@ -112,6 +128,26 @@ Similar to RAM, just for GPU.
 Final array of pixel colors to be displayed on the screen (dimension = screen resolution).
 
 Frame buffer is cleared at the start of each frame.
+
+## Coordinate systems
+
+**Local/Object**: Coordinates determine the position of the vertices in regard to the object's origin
+
+**World**: Coordinate determines where the local origin of the object is placed in the world
+
+**View**: Coordinate determines the origin of an object relative to the camera, when the camera is in the origin
+
+**Projection**: Coordinate determines a 4D vertex in clip space
+
+## Spaces & Matrices
+
+**Local space** w. World Matrix (one for each object) => World space (3D)
+
+**World space** w. View Matrix (one for each camera) => View/Camera space (3D)
+
+**View space** w. Projection Matrix  (one for each camere) => Clip space (4D)
+
+**Clip space** w. some transform (NDC, Divide) => Screen space (2D)
 
 ## DirectX
 
