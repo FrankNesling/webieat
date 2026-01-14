@@ -65,7 +65,7 @@ A reusable set of shaders.
 
 ## Draw Call
 
-A call to the GPU from the CPU.
+A call to the GPU from the CPU which a specified shader and a state. One frame can have several draw calls.
 
 ## Face
 
