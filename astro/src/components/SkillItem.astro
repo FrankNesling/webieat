@@ -10,11 +10,11 @@ const languageIcons = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg
   import: 'default',
 });
 
-const toolSVGs = import.meta.glob<ImageMetadata>('../assets/Tools/*.svg', {
+const toolIcons = import.meta.glob<ImageMetadata>('../assets/Tools/*.svg', {
   eager: true,
   import: 'default',
 });
-const toolSVG = toolSVGs[`../assets/Tools/VisualStudio.svg`];
+const toolSVG = toolIcons[`../assets/Tools/Visual Studio.svg`];
 const logoSVG = toolSVG;
 ---
 
@@ -50,7 +50,7 @@ const logoSVG = toolSVG;
       <!-- Tools -->
       <div class="flex flex-wrap justify-center gap-2">   
         {item.data.tools.map((tool: string) => (
-          <div class="w-6 h-6 bg-no-repeat bg-center bg-contain" style={`background-image: url(${toolSVG.src})`}></div>
+          <Image class="h-8 w-8" height="32" width="32" title={tool} alt={tool} src={toolIcons[`../assets/Tools/${tool}.svg`]}/>
         ))}
       </div>
     </div>

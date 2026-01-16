@@ -12,3 +12,13 @@ Crash - fallende Kurse
 ## Bullenmarkt
 
 Rally - steigende Kurse
+
+## REIT
+
+## Dividente
+
+## Derivate
+
+## Fond
+
+## ETF

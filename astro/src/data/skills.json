@@ -12,7 +12,7 @@
     "languages": ["C#", "JavaScript", "Python", "Swift", "C++", "SQL", "php"],
     "frameworks": ["Webpack", "Typescript", "Xamarin", "MAUI", "ASP.NET", "Razor", "Babylon.js", "MySQL", "Kubernetes", "Docker"],
     "tags": ["Visual Computing", "Web", "Mobile App", "API", "Database", "Computer Networks", "Cloud Application", "Computer Graphics", "DevOps", "Mathematics"],
-    "tools": ["MS Entra", "Pulumi", "Visual Studio", "MeshLab", "Blender", "Docker Desktop", "MySQLWorkbench", "XCode", "GitHub", "Azure", "Atlassian", "DataDog", "MS Teams", "Insomnia"]
+    "tools": ["MS Entra", "Pimcore", "Visual Studio", "Blender", "Docker Desktop", "MySQLWorkbench", "XCode", "GitHub", "Azure", "Atlassian", "DataDog", "MS Teams", "Insomnia"]
   },
   { 
     "id": 2,
@@ -58,7 +58,7 @@
     "languages": ["JavaScript", "Python", "SQL"],
     "frameworks": ["Vite", "React", "NestJs", "Typescript", "PostgreSQL", "Docker", "Prisma"],
     "tags": ["Web", "Database", "API", "Machine Learning / AI", "Cloud Application", "Computer Networks", "DevOps"],
-    "tools": ["Clerk", "NeonDB", "Azure", "Visual Studio", "Docker Desktop", "pgAdmin", "GitHub", "MS Teams", "Insomnia", "Wordpress", "Webflow", "Notion", "PowerApps", "D365", "Make.com"]
+    "tools": ["Clerk", "NeonDB", "Azure", "Visual Studio", "Docker Desktop", "pgAdmin", "GitHub", "MS Teams", "Insomnia", "WordPress", "Webflow", "phpMyAdmin", "Notion", "PowerApps", "D365", "Make.com"]
   },
   { 
     "id": 5,
@@ -256,7 +256,7 @@
     "languages": ["C++"],
     "frameworks": [],
     "tags": ["Visual Computing", "Computer Graphics", "Mathematics"],
-    "tools": ["VS Code", "MeshLab", "GitHub"]
+    "tools": ["VS Code", "GitHub"]
    },
    { 
     "id": 18,
@@ -287,7 +287,7 @@
     "languages": ["php", "JavaScript", "SQL"],
     "frameworks": ["SQLite"],
     "tags": ["Database", "Data science", "Web"],
-    "tools": ["Visual Studio", "DB Browser", "GitHub"]
+    "tools": ["Visual Studio", "SQLiteBrowser", "GitHub"]
    },
    { 
     "id": 20,
@@ -396,7 +396,7 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web", "Game"],
-    "tools": ["Editor", "GitHub"],
+    "tools": ["GitHub"],
     "codebase": "https://github.com/FrankNesling/webieat/tree/main/fledermaus"
    },
    { 
@@ -522,7 +522,7 @@
     "languages": ["JavaScript"],
     "frameworks": [""],
     "tags": ["Web"],
-    "tools": ["Visual Studio", "NERF Studio"]
+    "tools": ["Visual Studio"]
    },
    { 
     "id": 35,

@@ -19,7 +19,7 @@ export function langMap(lang: string): string {
   }
 }
 
-const languageIcos = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg', {
+const languageIcons = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg', {
   eager: true,
   import: 'default', 
 });
@@ -39,7 +39,8 @@ const frameworks = ["React", "Astro.js", "Gatsby.js", "Webpack", "Typescript", "
 const tags = ["Visual Computing", "API", "Database", "Desktop Program", "Game", "Web", "Mobile App", "Cloud Application", "Machine Learning / AI", "Computer Networks", "Computer Graphics", "Parallel Programming", "DevOps", "Data science", "Compiler", "Algorithms", "Mathematics"];
 
 // TOOLS
-export function toolMap(tool: string): string {
+
+export function toolMapToTopic(tool: string): string {
   switch(tool) {
     case "Visual Studio": 
       return "IDE";
@@ -75,9 +76,9 @@ export function toolMap(tool: string): string {
       return "CMS";
     case "Magnolia": 
       return "CMS";
-    case "Pulumi":
+    case "Pimcore":
       return "CMS";
-    case "Wordpress": 
+    case "WordPress": 
       return "Webdevelopment";
     case "Webflow":
       return "Webdevelopment";
@@ -87,7 +88,7 @@ export function toolMap(tool: string): string {
       return "Database Administration";
     case "MySQLWorkbench": 
       return "Database Administration";
-    case "phpAdmin":
+    case "phpMyAdmin":
       return "Database Administration";
     case "MS Entra": 
       return "User Authorization";
@@ -99,7 +100,7 @@ export function toolMap(tool: string): string {
       return "IDE";
     case "pgAdmin": 
       return "Database Administration";
-    case "DB Browser":
+    case "SQLiteBrowser":
       return "Database Administration";
     case "Notion": 
       return "Work Management";
@@ -111,17 +112,44 @@ export function toolMap(tool: string): string {
       return "Work Management";
     case "DataDog":
       return "Monitoring";
+    case "Docker":
+      return "Containerization";
+    case "Kubernetes":
+      return "Containerization";
+    case "Git":
+      return "Versioning";
+    case "Linux":
+      return "Operating System";
+    case "Ubuntu":
+      return "Operating System";
+    case "Fedora":
+      return "Operating System"; 
+    case "Windows":
+      return "Operating System"; 
+    case "MS DOS":
+      return "Operating System"; 
+    case "MacOS":
+      return "Operating System"; 
+    case "Android":
+      return "Operating System"; 
+    case "iOS":
+      return "Operating System";
+    case "MS Office":
+      return "Office";
+    case "Gimp":
+      return "Office";
     default:
       return tool;
   }
 }
 
+const toolIcons = import.meta.glob<ImageMetadata>('../assets/Tools/*.svg', {
+  eager: true,
+  import: 'default', 
+});
 
-const tools = ["Visual Studio", "Android Studio", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "Docker Desktop", "Blender", "MeshLab", "NERF Studio", "D365", "Editor", "Insomnia", "Postman", "Squidex", "Magnolia", "Pulumi", "Wordpress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "phpAdmin", "MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "DB Browser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog"];
-const toolTypes = ["IDE", "Version Control", "Containerization", "3D Modelviewer", "CRM", "Networking", "CMS", "Webdevelopment", "Low Code Automation", "Database Administration", "User Authorization", "Cloud", "Work Management", "Monitoring"];
-
-// KNOW HOW
-const knowHow = ["Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS"];
+const tools = ["Visual Studio", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "Docker Desktop", "MS Office", "Blender", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "SQLiteBrowser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS"];
+const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "CRM", "Networking", "CMS", "Webdevelopment", "Low Code Automation", "Database Administration", "User Authorization", "Cloud", "Work Management", "Monitoring", "Operating System", "Office"];
 
 // TODO typisize the lang, fw, tags, tools (also in json/zod)
 // TODO tag as component
@@ -131,6 +159,8 @@ const knowHow = ["Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Wi
 
 
 // TODO tutorials? OpenGL Tutorial, Parallel Programming, ETH courses? as IsTheory?
+
+// TODO: accept both png or svg
 ---
 
 <!-- Initial paragraph -->
@@ -155,7 +185,7 @@ const knowHow = ["Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Wi
 <div class="flex flex-wrap justify-center align gap-3 mt-4 mb-2">   
   {languages.map((lang: string) => (
     <div class="lang-tag p-1 flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
-      <Image class="h-8 w-8" height="32" width="32" title={lang} alt={lang} src={languageIcos[`../assets/Languages/${langMap(lang)}.svg`]}/>
+      <Image class="h-8 w-8" height="32" width="32" title={lang} alt={lang} src={languageIcons[`../assets/Languages/${langMap(lang)}.svg`]}/>
       <p class="text-sm mt-2">{lang}</p>
     </div> 
   ))}
@@ -173,10 +203,12 @@ const knowHow = ["Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Wi
     <div class="tool-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">{tt}</div>
   ))}
 </div>
-<p class="mt-4 mb-1 text-center font-bold">Additional (basic) Know-How:</p>
-<div class="flex flex-wrap justify-center gap-2">
-  {knowHow.map((kh: string) => (
-    <div class="text-sm bg-gray-300 rounded-lg py-1 px-2 italic">{kh}</div>
+<div class="flex flex-wrap justify-center gap-2 mt-2">   
+  {tools.map((tool: string) => (
+    <div class="lang-tag p-1 flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+      <Image class="h-8 w-8" height="32" width="32" title={tool} alt={tool} src={toolIcons[`../assets/Tools/${tool}.svg`]}/>
+      <p class="text-sm mt-2">{tool}</p>
+    </div> 
   ))}
 </div>
 
