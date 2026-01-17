@@ -21,27 +21,27 @@ lastEdit: 2026-01-09
 
 - [ ] [N64] Beetle Adventure Racing
 
-- [x] [N64] Donkey Kong 64
+- [x] ~~[N64] Donkey Kong 64~~
 
 - [ ] [N64] The Legend of Zelda: Majora's Mask
 
-- [x] [N64] Diddy Kong Racing
+- [x] ~~[N64] Diddy Kong Racing~~
 
-- [x] [N64] Super Mario 64
+- [x] ~~[N64] Super Mario 64~~
 
-- [x] [N64] Mario Kart 64
+- [x] ~~[N64] Mario Kart 64~~
 
-- [x] [N64] Mario Golf
+- [x] ~~[N64] Mario Golf~~
 
-- [x] [N64] F-Zero X
+- [x] ~~[N64] F-Zero X~~
 
-- [x] [N64] Star Wars Rogue Squadron
+- [x] ~~[N64] Star Wars Rogue Squadron~~
 
-- [x] [N64] Goldeneye 007
+- [x] ~~[N64] Goldeneye 007~~
 
 ## Nintendo DS
 
-- [x] [Nintendo DS] Animal Crossing: Wild World
+- [x] ~~[Nintendo DS] Animal Crossing: Wild World~~
 
 - [ ] [Nintendo DS] Professor Layton and the Unwound Future
 
