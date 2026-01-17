@@ -41,7 +41,7 @@ const subTopicEntries = entries.filter(entry => navStructure.length > 1 &&
               <ul>
                 {subTopic.slug.split('/')[1] == subTopicName && subTopicEntries.map(subTopicEntry => (
                   <li class="ml-4">
-                    <a class={`${slug === subTopicEntry.slug ? 'italic' : ''}`} href={`/blog/${subTopicEntry.slug}/`}>
+                    <a class={`${slug === subTopicEntry.slug ? 'italic' : ''} block truncate`} title={subTopicEntry.data.title} href={`/blog/${subTopicEntry.slug}/`}>
                       {subTopicEntry.data.title}
                     </a>
                   </li>
@@ -52,7 +52,7 @@ const subTopicEntries = entries.filter(entry => navStructure.length > 1 &&
           {topic.slug === topicName && topicEntries.map(topicEntry => (
             <ul>
               <li class="ml-2">
-                <a class={`${slug === topicEntry.slug ? 'italic' : ''}`} href={`/blog/${topicEntry.slug}/`}>
+                <a class={`${slug === topicEntry.slug ? 'italic' : ''} block truncate`} title={topicEntry.data.title} href={`/blog/${topicEntry.slug}/`}>
                   {topicEntry.data.title}
                 </a>
               </li>
