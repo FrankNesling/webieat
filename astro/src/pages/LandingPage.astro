@@ -40,7 +40,7 @@ const tags = ["Visual Computing", "API", "Database", "Desktop Program", "Game", 
 
 // TOOLS
 
-export function toolMapToTopic(tool: string): string {
+export function toolMap(tool: string): string {
   switch(tool) {
     case "Visual Studio": 
       return "IDE";
@@ -138,6 +138,14 @@ export function toolMapToTopic(tool: string): string {
       return "Office";
     case "Gimp":
       return "Office";
+    case "ChatGPT":
+      return "LLM";
+    case "DeepSeek":
+      return "LLM";
+    case "Mistral":
+      return "LLM";
+    case "Gemini":
+      return "LLM";
     default:
       return tool;
   }
@@ -148,19 +156,20 @@ const toolIcons = import.meta.glob<ImageMetadata>('../assets/Tools/*.svg', {
   import: 'default', 
 });
 
-const tools = ["Visual Studio", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "Docker Desktop", "MS Office", "Blender", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "SQLiteBrowser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS"];
-const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "CRM", "Networking", "CMS", "Webdevelopment", "Low Code Automation", "Database Administration", "User Authorization", "Cloud", "Work Management", "Monitoring", "Operating System", "Office"];
+const tools = ["Visual Studio", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "Docker Desktop", "MS Office", "Blender", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "SQLiteBrowser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS", "DeepSeek", "ChatGPT", "Gemini", "Mistral"];
+const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "CRM", "Networking", "CMS", "Webdevelopment", "Low Code Automation", "Database Administration", "User Authorization", "Cloud", "Work Management", "Monitoring", "Operating System", "Office", "LLM"];
 
 // TODO typisize the lang, fw, tags, tools (also in json/zod)
 // TODO tag as component
 // TODO deselect / all selector
-// TODO all logos
+// TODO all logos -> or round circle for skils w/o logo (different color based on isProject, isTask, isApplication)
 // TODO programmed apps logos if available
+// TODO add LLMs -> ChatGPT / Copilot, Gemini, DeepSeek, Mistral
 
 
 // TODO tutorials? OpenGL Tutorial, Parallel Programming, ETH courses? as IsTheory?
 
-// TODO: accept both png or svg
+// TODO: accept both png or svg -> nope?
 ---
 
 <!-- Initial paragraph -->
@@ -195,17 +204,18 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
     <div class="fw-tag p-1 hidden flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
       <Image class="h-8 w-8" height="32" width="32" title={fw} alt={fw} src={frameworkIcons[`../assets/Frameworks/${fw}.svg`]}/>
       <p class="text-sm mt-2">{fw}</p>
-    </div>   ))}
+    </div>   
+  ))}
 </div>
 <p class="mt-4 mb-1 text-center font-bold">Programs, Tools and Apps:</p>
 <div class="flex flex-wrap justify-center gap-2 mt-4">   
   {toolTypes.map((tt: string) => (
-    <div class="tool-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">{tt}</div>
+    <div class="tt-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">{tt}</div>
   ))}
 </div>
 <div class="flex flex-wrap justify-center gap-2 mt-2">   
   {tools.map((tool: string) => (
-    <div class="lang-tag p-1 flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+    <div class="tool-tag p-1 hidden flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
       <Image class="h-8 w-8" height="32" width="32" title={tool} alt={tool} src={toolIcons[`../assets/Tools/${tool}.svg`]}/>
       <p class="text-sm mt-2">{tool}</p>
     </div> 
@@ -265,6 +275,117 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
     }
   }
 
+  export function toolMap(tool: string): string {
+  switch(tool) {
+    case "Visual Studio": 
+      return "IDE";
+    case "Android Studio":
+      return "IDE";
+    case "VS Code": 
+      return "IDE";
+    case "Eclipse":
+      return "IDE";
+    case "XCode": 
+      return "IDE";
+    case "GitLab":
+      return "Version Control";
+    case "GitHub": 
+      return "Version Control";
+    case "Docker Desktop":
+      return "Containerization";
+    case "Blender": 
+      return "3D Viewer";
+    case "MeshLab":
+      return "3D Viewer";
+    case "NERF Studio": 
+      return "3D Viewer";
+    case "D365":
+      return "CRM";
+    case "Editor": 
+      return "IDE";
+    case "Insomnia":
+      return "Networking";
+    case "Postman": 
+      return "Networking";
+    case "Squidex":
+      return "CMS";
+    case "Magnolia": 
+      return "CMS";
+    case "Pimcore":
+      return "CMS";
+    case "WordPress": 
+      return "Webdevelopment";
+    case "Webflow":
+      return "Webdevelopment";
+    case "Make.com": 
+      return "Low Code Automation";
+    case "NeonDB":
+      return "Database Administration";
+    case "MySQLWorkbench": 
+      return "Database Administration";
+    case "phpMyAdmin":
+      return "Database Administration";
+    case "MS Entra": 
+      return "User Authorization";
+    case "Clerk":
+      return "User Authorization";
+    case "Power Apps": 
+      return "Low Code Automation";
+    case "Unity":
+      return "IDE";
+    case "pgAdmin": 
+      return "Database Administration";
+    case "SQLiteBrowser":
+      return "Database Administration";
+    case "Notion": 
+      return "Work Management";
+    case "Azure":
+      return "Cloud";
+    case "MS Teams":
+      return "Work Management";
+    case "Atlassian": 
+      return "Work Management";
+    case "DataDog":
+      return "Monitoring";
+    case "Docker":
+      return "Containerization";
+    case "Kubernetes":
+      return "Containerization";
+    case "Git":
+      return "Version Control";
+    case "Linux":
+      return "Operating System";
+    case "Ubuntu":
+      return "Operating System";
+    case "Fedora":
+      return "Operating System"; 
+    case "Windows":
+      return "Operating System"; 
+    case "MS DOS":
+      return "Operating System"; 
+    case "MacOS":
+      return "Operating System"; 
+    case "Android":
+      return "Operating System"; 
+    case "iOS":
+      return "Operating System";
+    case "MS Office":
+      return "Office";
+    case "Gimp":
+      return "Office";
+    case "ChatGPT":
+      return "LLM";
+    case "DeepSeek":
+      return "LLM";
+    case "Mistral":
+      return "LLM";
+    case "Gemini":
+      return "LLM";
+    default:
+      return "";
+  }
+}
+
 
   const input = document.getElementById("search-input") as HTMLInputElement;
   const items = document.querySelectorAll(".skill-item");
@@ -283,10 +404,18 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
   const fws = document.querySelectorAll(".fw-tag");
   const tags = document.querySelectorAll(".tag-tag");
   const tools = document.querySelectorAll(".tool-tag");
+  const toolTypes = document.querySelectorAll(".tt-tag");
 
+  // tags
+
+  tags.forEach(tag => {
+    tag.addEventListener("click", () => filter("tag", tag.innerHTML))
+  })
+
+  // langs
   langs.forEach(lang => {
     lang.addEventListener("click", () => {
-      highlight("lang", lang as HTMLElement)
+      highlightLang("lang", lang as HTMLElement)
       filter("lang", lang.children[1].innerHTML)
       displayFW(lang.children[1].innerHTML)
     })
@@ -294,17 +423,24 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
 
   fws.forEach(fw => {
     fw.addEventListener("click", () => {
-      highlight("fw", fw as HTMLElement)
+      highlightLang("fw", fw as HTMLElement)
       filter("framework", fw.children[1].innerHTML)
     })
   })
 
-  tags.forEach(tag => {
-    tag.addEventListener("click", () => filter("tag", tag.innerHTML))
+  // tools
+  toolTypes.forEach(tt => {
+    tt.addEventListener("click", () => {
+      highlightTool("tt", tt as HTMLElement)
+      displayTT(tt.innerHTML)
+    })
   })
 
   tools.forEach(tool => {
-    tool.addEventListener("click", () => filter("tool", tool.innerHTML))
+    tool.addEventListener("click", () => {
+      highlightTool("tool", tool as HTMLElement)
+      filter("tool", tool.children[1].innerHTML)
+    })
   })
 
   function filter(type: string, filter: string) {
@@ -315,7 +451,16 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
     });
   }
 
-  function highlight(type: string, el: HTMLElement) {
+  function highlightTool(type: string, el: HTMLElement) {
+    const highlighted = document.querySelectorAll(`.highlighted${type == "tool" ? ".tool-tag" : ""}`);
+    highlighted.forEach(h => {
+      h.classList.remove("outline", "outline-dashed", "outline-[#C10A49]", "highlighted")
+    })
+
+    el.classList.add("outline", "outline-dashed", "outline-[#C10A49]", "highlighted")
+  }
+
+  function highlightLang(type: string, el: HTMLElement) {
     const highlighted = document.querySelectorAll(`.highlighted${type == "fw" ? ".fw-tag" : ""}`);
     highlighted.forEach(h => {
       h.classList.remove("outline", "outline-dashed", "outline-[#C10A49]", "highlighted")
@@ -330,6 +475,17 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
           fw.classList.add("hidden");
       } else {
           fw.classList.remove("hidden");
+      }
+    })
+  }
+
+  function displayTT(tt: string) {
+    tools.forEach((tool) => {
+      console.log(toolMap(tool.children[1].innerHTML))
+      if(!(toolMap(tool.children[1].innerHTML) === tt)) {
+          tool.classList.add("hidden");
+      } else {
+          tool.classList.remove("hidden");
       }
     })
   }
