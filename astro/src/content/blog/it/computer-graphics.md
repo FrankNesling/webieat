@@ -176,3 +176,11 @@ Cross-platform API specification to communicate with the GPU, for graphics, crea
 ## GLSL (OpenGL Shading Language)
 
 The programming language for the shaders used by OpenGL.
+
+## Sprite
+
+A sprite maps image data (texture or parts of it) to a screen position.
+
+## Graphics Memory (VRAM)
+
+Saves images or textures, sprites, color palettes and often the frame buffer.
