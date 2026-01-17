@@ -21,27 +21,27 @@ const subTopicEntries = entries.filter(entry => navStructure.length > 1 &&
 ---
 
 <aside class="bg-[#FDD8C8] pl-5 pt-5 border-r border-r-[1px] border-r-[#FFFFFF]">
-  <h2 class="font-bold text-lg"><a href="/">Home</a></h2>
-  <h2 class="font-bold text-lg"><a href="/about">About</a></h2>
-  <h2 class="font-bold text-lg italic"><a href="/blog">Blog</a></h2>
+  <h2 class="font-bold text-lg"><a href="/webieat">Home</a></h2>
+  <h2 class="font-bold text-lg"><a href="/webieat/about">About</a></h2>
+  <h2 class="font-bold text-lg italic"><a href="/webieat/blog">Blog</a></h2>
   <ul>
     {topics
       .map(topic => (
         <li>
-          <a class={`font-bold underline ${topic.slug == topicName ? 'italic' : ''}`} href={`/blog/${topic.slug}/`}>
+          <a class={`font-bold underline ${topic.slug == topicName ? 'italic' : ''}`} href={`/webieat/blog/${topic.slug}/`}>
             {topic.data.title}
           </a>
           <ul>
             {topic.slug === topicName && subTopics.map(subTopic => (
               <li class="ml-2">
-                <a class={`font-bold ${subTopic.slug.split('/')[1] == subTopicName ? 'italic' : ''}`} href={`/blog/${subTopic.slug}/`}>
+                <a class={`font-bold ${subTopic.slug.split('/')[1] == subTopicName ? 'italic' : ''}`} href={`/webieat/blog/${subTopic.slug}/`}>
                   {subTopic.data.title}
                 </a>
               </li>
               <ul>
                 {subTopic.slug.split('/')[1] == subTopicName && subTopicEntries.map(subTopicEntry => (
                   <li class="ml-4">
-                    <a class={`${slug === subTopicEntry.slug ? 'italic' : ''} block truncate`} title={subTopicEntry.data.title} href={`/blog/${subTopicEntry.slug}/`}>
+                    <a class={`${slug === subTopicEntry.slug ? 'italic' : ''} block truncate`} title={subTopicEntry.data.title} href={`/webieat/blog/${subTopicEntry.slug}/`}>
                       {subTopicEntry.data.title}
                     </a>
                   </li>
@@ -52,7 +52,7 @@ const subTopicEntries = entries.filter(entry => navStructure.length > 1 &&
           {topic.slug === topicName && topicEntries.map(topicEntry => (
             <ul>
               <li class="ml-2">
-                <a class={`${slug === topicEntry.slug ? 'italic' : ''} block truncate`} title={topicEntry.data.title} href={`/blog/${topicEntry.slug}/`}>
+                <a class={`${slug === topicEntry.slug ? 'italic' : ''} block truncate`} title={topicEntry.data.title} href={`/webieat/blog/${topicEntry.slug}/`}>
                   {topicEntry.data.title}
                 </a>
               </li>
