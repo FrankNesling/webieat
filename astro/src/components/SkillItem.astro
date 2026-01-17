@@ -39,20 +39,20 @@ const logoSVG = toolSVG;
       <p class="text-sm text-gray-600 mb-2">{item.data.description}</p>
 
       <!-- Tags -->
-      <div class="flex flex-wrap justify-center gap-2 mb-2">   
+      <!-- <div class="flex flex-wrap justify-center gap-2 mb-2">   
         {item.data.tags.map((tag: string) => (
           <div class="text-sm bg-gray-300 rounded-lg py-1 px-2">{tag}</div>
         ))}
-      </div>
+      </div> -->
 
       {item.data.codebase ? <a href={item.data.codebase} onclick="event.stopPropagation()" target="_blank" class="italic underline mb-1 cursor-pointer">Link to Codebase</a> : null}
 
       <!-- Tools -->
-      <div class="flex flex-wrap justify-center gap-2">   
+      <!-- <div class="flex flex-wrap justify-center gap-2">   
         {item.data.tools.map((tool: string) => (
           <Image class="h-8 w-8" height="32" width="32" title={tool} alt={tool} src={toolIcons[`../assets/Tools/${tool}.svg`]}/>
         ))}
-      </div>
+      </div> -->
     </div>
 
     <!-- DL -->
