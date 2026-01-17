@@ -391,6 +391,13 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
       return "";
   }
 }
+
+  const langs = document.querySelectorAll(".lang-tag");
+  const fws = document.querySelectorAll(".fw-tag");
+  const tags = document.querySelectorAll(".tag-tag");
+  const tools = document.querySelectorAll(".tool-tag");
+  const toolTypes = document.querySelectorAll(".tt-tag");
+
   // reset button
   document.getElementById("reset-button")?.addEventListener("click", () => {
     const highlighted = document.querySelectorAll('.highlighted');
@@ -399,6 +406,14 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
     })
     items.forEach(item => {
       item.classList.remove("hidden");
+    })
+
+    fws.forEach(fw => {
+      fw.classList.add("hidden")
+    })
+
+    tools.forEach(tool => {
+      tool.classList.add("hidden")
     })
   })
 
@@ -415,12 +430,6 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
         item.classList.toggle("hidden", matches);
     });
   });
-
-  const langs = document.querySelectorAll(".lang-tag");
-  const fws = document.querySelectorAll(".fw-tag");
-  const tags = document.querySelectorAll(".tag-tag");
-  const tools = document.querySelectorAll(".tool-tag");
-  const toolTypes = document.querySelectorAll(".tt-tag");
 
   // tags
   tags.forEach(tag => {
