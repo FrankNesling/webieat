@@ -7,7 +7,7 @@ export default defineConfig({
   site: 'https://franknesling.github.io/webieat',
   base: '',
   build: {
-    assetsPrefix: './',
+    assetsPrefix: './webieat',
   },
   vite: {
     plugins: [tailwindcss()]
