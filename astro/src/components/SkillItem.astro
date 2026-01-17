@@ -10,12 +10,17 @@ const languageIcons = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg
   import: 'default',
 });
 
-const toolIcons = import.meta.glob<ImageMetadata>('../assets/Tools/*.svg', {
+const logosSVG = import.meta.glob<ImageMetadata>('../assets/Logos/*.svg', {
   eager: true,
   import: 'default',
 });
-const toolSVG = toolIcons[`../assets/Tools/Visual Studio.svg`];
-const logoSVG = toolSVG;
+
+const logosPNG = import.meta.glob<ImageMetadata>('../assets/Logos/*.png', {
+  eager: true,
+  import: 'default',
+});
+
+let logoIcon = logosSVG[`../assets/Logos/${item.data.id}.svg`] ?? logosPNG[`../assets/Logos/${item.data.id}.png`];
 ---
 
 <div onclick={item.data.url ? `window.location.href='${item.data.url}'` : null} class={`skill-item relative px-4 py-6 group ${item.data.url ? "cursor-grab hover:rounded hover:outline hover:outline-[#C10A49]" : null}`} data-tags={item.data.tags} data-tools={item.data.tools} data-frameworks={item.data.frameworks} data-langs={item.data.languages} data-search={`${item.data.topic} ${item.data.description} ${item.data.languages} ${item.data.frameworks} ${item.data.tags} ${item.data.tools}`.toLowerCase()}>
@@ -25,7 +30,10 @@ const logoSVG = toolSVG;
     <!-- Item content -->
     <div class="flex flex-col items-center text-center">
       <!-- Logo and Name -->
-      <Image class="h-12 w-12" height="16" width="16" title={item.data.topic} alt={item.data.topic} src={logoSVG}/>
+      {logoIcon ? 
+        <Image class="h-12 w-12 rounded-full" title={item.data.topic} alt={item.data.topic} src={logoIcon}/>
+        : <div class={`w-12 h-12 rounded-full ${item.data.isProject ? 'bg-red-300' : (item.data.isApplication ? 'bg-blue-300' : 'bg-green-300')} mb-4`}></div>
+      }
       <h3 class="text-lg font-semibold mb-2">{item.data.topic}</h3>
 
       <!-- Languages -->

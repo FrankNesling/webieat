@@ -289,116 +289,116 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
     }
   }
 
-  export function toolMap(tool: string): string {
-  switch(tool) {
-    case "Visual Studio": 
-      return "IDE";
-    case "Android Studio":
-      return "IDE";
-    case "VS Code": 
-      return "IDE";
-    case "Eclipse":
-      return "IDE";
-    case "XCode": 
-      return "IDE";
-    case "GitLab":
-      return "Version Control";
-    case "GitHub": 
-      return "Version Control";
-    case "Docker Desktop":
-      return "Containerization";
-    case "Blender": 
-      return "3D Viewer";
-    case "MeshLab":
-      return "3D Viewer";
-    case "NERF Studio": 
-      return "3D Viewer";
-    case "D365":
-      return "CRM";
-    case "Editor": 
-      return "IDE";
-    case "Insomnia":
-      return "Networking";
-    case "Postman": 
-      return "Networking";
-    case "Squidex":
-      return "CMS";
-    case "Magnolia": 
-      return "CMS";
-    case "Pimcore":
-      return "CMS";
-    case "WordPress": 
-      return "Webdevelopment";
-    case "Webflow":
-      return "Webdevelopment";
-    case "Make.com": 
-      return "Low Code Automation";
-    case "NeonDB":
-      return "Database Administration";
-    case "MySQLWorkbench": 
-      return "Database Administration";
-    case "phpMyAdmin":
-      return "Database Administration";
-    case "MS Entra": 
-      return "User Authorization";
-    case "Clerk":
-      return "User Authorization";
-    case "Power Apps": 
-      return "Low Code Automation";
-    case "Unity":
-      return "IDE";
-    case "pgAdmin": 
-      return "Database Administration";
-    case "SQLiteBrowser":
-      return "Database Administration";
-    case "Notion": 
-      return "Work Management";
-    case "Azure":
-      return "Cloud";
-    case "MS Teams":
-      return "Work Management";
-    case "Atlassian": 
-      return "Work Management";
-    case "DataDog":
-      return "Monitoring";
-    case "Docker":
-      return "Containerization";
-    case "Kubernetes":
-      return "Containerization";
-    case "Git":
-      return "Version Control";
-    case "Linux":
-      return "Operating System";
-    case "Ubuntu":
-      return "Operating System";
-    case "Fedora":
-      return "Operating System"; 
-    case "Windows":
-      return "Operating System"; 
-    case "MS DOS":
-      return "Operating System"; 
-    case "MacOS":
-      return "Operating System"; 
-    case "Android":
-      return "Operating System"; 
-    case "iOS":
-      return "Operating System";
-    case "MS Office":
-      return "Office";
-    case "Gimp":
-      return "Office";
-    case "ChatGPT":
-      return "LLM";
-    case "DeepSeek":
-      return "LLM";
-    case "Mistral":
-      return "LLM";
-    case "Gemini":
-      return "LLM";
-    default:
-      return "";
+  function toolMap(tool: string): string {
+    switch(tool) {
+      case "Visual Studio": 
+        return "IDE";
+      case "Android Studio":
+        return "IDE";
+      case "VS Code": 
+        return "IDE";
+      case "Eclipse":
+        return "IDE";
+      case "XCode": 
+        return "IDE";
+      case "GitLab":
+        return "Version Control";
+      case "GitHub": 
+        return "Version Control";
+      case "Docker Desktop":
+        return "Containerization";
+      case "Blender": 
+        return "3D Viewer";
+      case "MeshLab":
+        return "3D Viewer";
+      case "NERF Studio": 
+        return "3D Viewer";
+      case "D365":
+        return "CRM";
+      case "Editor": 
+        return "IDE";
+      case "Insomnia":
+        return "Networking";
+      case "Postman": 
+        return "Networking";
+      case "Squidex":
+        return "CMS";
+      case "Magnolia": 
+        return "CMS";
+      case "Pimcore":
+        return "CMS";
+      case "WordPress": 
+        return "Webdevelopment";
+      case "Webflow":
+        return "Webdevelopment";
+      case "Make.com": 
+        return "Low Code Automation";
+      case "NeonDB":
+        return "Database Administration";
+      case "MySQLWorkbench": 
+        return "Database Administration";
+      case "phpMyAdmin":
+        return "Database Administration";
+      case "MS Entra": 
+        return "User Authorization";
+      case "Clerk":
+        return "User Authorization";
+      case "Power Apps": 
+        return "Low Code Automation";
+      case "Unity":
+        return "IDE";
+      case "pgAdmin": 
+        return "Database Administration";
+      case "SQLiteBrowser":
+        return "Database Administration";
+      case "Notion": 
+        return "Work Management";
+      case "Azure":
+        return "Cloud";
+      case "MS Teams":
+        return "Work Management";
+      case "Atlassian": 
+        return "Work Management";
+      case "DataDog":
+        return "Monitoring";
+      case "Docker":
+        return "Containerization";
+      case "Kubernetes":
+        return "Containerization";
+      case "Git":
+        return "Version Control";
+      case "Linux":
+        return "Operating System";
+      case "Ubuntu":
+        return "Operating System";
+      case "Fedora":
+        return "Operating System"; 
+      case "Windows":
+        return "Operating System"; 
+      case "MS DOS":
+        return "Operating System"; 
+      case "MacOS":
+        return "Operating System"; 
+      case "Android":
+        return "Operating System"; 
+      case "iOS":
+        return "Operating System";
+      case "MS Office":
+        return "Office";
+      case "Gimp":
+        return "Office";
+      case "ChatGPT":
+        return "LLM";
+      case "DeepSeek":
+        return "LLM";
+      case "Mistral":
+        return "LLM";
+      case "Gemini":
+        return "LLM";
+      default:
+        return "";
+    }
   }
-}
 
   const langs = document.querySelectorAll(".lang-tag");
   const fws = document.querySelectorAll(".fw-tag");
