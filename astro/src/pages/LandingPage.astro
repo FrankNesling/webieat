@@ -180,6 +180,12 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
 */
 
 // TODO: add years (as CV?)
+
+// TODO: mobile download link extra (no hover)
+// TODO: mobile more space between fws and langs
+// TODO: add HTML/css
+// TODO: working dl links = host somewhere?
+// TODO: reoi restructure
 ---
 
 <!-- Initial paragraph -->
@@ -224,9 +230,9 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
   ))}
 </div>
 <p class="mt-4 mb-1 text-center font-bold">Programs, Tools and Apps:</p>
-<div class="flex flex-wrap justify-center gap-2 mt-4">   
+<div class="mt-4">   
   {toolTypes.map((tt: string) => (
-    <div class="tt-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">{tt}</div>
+    <div class="tt-tag my-2 text-sm">{tt}</div>
   ))}
 </div>
 <div class="flex flex-wrap justify-center gap-2 mt-2">   
