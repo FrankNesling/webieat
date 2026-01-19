@@ -120,7 +120,7 @@ function toolMap(tool: string): string {
     case "Docker":
       return "Containerization";
     case "Kubernetes":
-      return "Containerization";
+      return "Cloud";
     case "Git":
       return "Version Control";
     case "Linux":
@@ -140,9 +140,9 @@ function toolMap(tool: string): string {
     case "iOS":
       return "Operating System";
     case "MS Office":
-      return "Office";
+      return "Office & Design";
     case "Gimp":
-      return "Office";
+      return "Office & Design";
     case "ChatGPT":
       return "LLM";
     case "DeepSeek":
@@ -151,13 +151,17 @@ function toolMap(tool: string): string {
       return "LLM";
     case "Gemini":
       return "LLM";
+    case "Outlook":
+      return "Office & Design";
+    case "Figma":
+      return "Office & Design";
     default:
       return "";
   }
 }
 
-const tools = ["Visual Studio", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "MS Office", "Blender", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "Power Apps", "Unity", "pgAdmin", "SQLiteBrowser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS", "DeepSeek", "ChatGPT", "Gemini", "Mistral"];
-const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Administration", "CRM", "Networking", "Operating System", "Containerization", "Webdevelopment", "Low Code Automation", "User Authorization", "Cloud", "Work Management", "Monitoring", "Office", "", "LLM"];
+const tools = ["Visual Studio", "Figma", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "MS Office", "Blender", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Outlook", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "Power Apps", "Unity", "pgAdmin", "SQLiteBrowser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS", "DeepSeek", "ChatGPT", "Gemini", "Mistral"];
+const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Administration", "CRM", "Networking", "Operating System", "Cloud", "Webdevelopment", "Low Code Automation", "User Authorization", "Containerization", "Work Management", "Monitoring", "Office & Design", "", "LLM"];
 
 // TODO typisize the lang, fw, tags, tools (also in json/zod)
 // TODO tag as component
