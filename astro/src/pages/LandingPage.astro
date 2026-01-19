@@ -156,147 +156,6 @@ const toolIcons = import.meta.glob<ImageMetadata>('../assets/Tools/*.svg', {
   import: 'default', 
 });
 
-const tools = ["Visual Studio", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "Docker Desktop", "MS Office", "Blender", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "SQLiteBrowser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS", "DeepSeek", "ChatGPT", "Gemini", "Mistral"];
-const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "CRM", "Networking", "CMS", "Webdevelopment", "Low Code Automation", "Database Administration", "User Authorization", "Cloud", "Work Management", "Monitoring", "Operating System", "Office", "LLM"];
-
-// TODO typisize the lang, fw, tags, tools (also in json/zod)
-// TODO tag as component
-// TODO all logos -> or round circle for skils w/o logo (different color based on isProject, isTask, isApplication)
-// TODO programmed apps logos if available
-
-
-// TODO tutorials? OpenGL Tutorial, Parallel Programming, ETH courses? as IsTheory?
-
-// TODO: accept both png or svg -> nope?
-/*
-  TODO:
-  programs, tools, apps is collapsable
-  a list like this:
-  IDE: Android Studio, Eclipse, ...
-  Version Control: GitHub, GitLab, ...
-  ...
-
-  maybe not even filterable/clickable
-*/
-
-// TODO: add years (as CV?)
-
-// TODO: mobile download link extra (no hover)
-// TODO: mobile more space between fws and langs
-// TODO: add HTML/css
-// TODO: working dl links = host somewhere?
-// TODO: reoi restructure
----
-
-<!-- Initial paragraph -->
-<div class="max-w-xl mx-auto text-center px-4 mb-8">
-  <h2 class="text-3xl font-bold mb-2">
-    Welcome to my site!
-  </h2>
-  <p class="text-gray-600 text-base italic">
-    This website is the greatest I've ever seen, some say the greatest of the world. Tremendous!
-    Please explore what I have written here, look around and I am sure you find something interesting.
-    Feel free to contact me anytime!
-  </p>
-</div>
-<!-- Search and Filter-->
-
-
-<div class="flex justify-center gap-4 flex-row mt-2 mb-4">
-  <SearchBar />
-  <div id="reset-button" class="flex font-bold items-center bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer">Reset filter</div>
-</div>
-
-<div class="flex flex-wrap justify-center gap-2 mt-4">   
-  {tags.map((tag: string) => (
-    <div class="tag-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">{tag}</div>
-  ))}
-</div>
-<p class="mt-4 mb-1 text-center font-bold">Programming Languages:</p>
-<div class="flex flex-wrap justify-center align gap-3 mt-4 mb-2">   
-  {languages.map((lang: string) => (
-    <div class="lang-tag p-1 flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
-      <Image class="h-8 w-8" height="32" width="32" title={lang} alt={lang} src={languageIcons[`../assets/Languages/${langMap(lang)}.svg`]}/>
-      <p class="text-sm mt-2">{lang}</p>
-    </div> 
-  ))}
-</div>
-<div class="flex flex-wrap justify-center gap-2 mt-2">   
-  {frameworks.map((fw: string) => (
-    <div class="fw-tag p-1 hidden flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
-      <Image class="h-8 w-8" height="32" width="32" title={fw} alt={fw} src={frameworkIcons[`../assets/Frameworks/${fw}.svg`]}/>
-      <p class="text-sm mt-2">{fw}</p>
-    </div>   
-  ))}
-</div>
-<p class="mt-4 mb-1 text-center font-bold">Programs, Tools and Apps:</p>
-<div class="mt-4">   
-  {toolTypes.map((tt: string) => (
-    <div class="tt-tag my-2 text-sm">{tt}</div>
-  ))}
-</div>
-<div class="flex flex-wrap justify-center gap-2 mt-2">   
-  {tools.map((tool: string) => (
-    <div class="tool-tag p-1 hidden flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
-      <Image class="h-8 w-8" height="32" width="32" title={tool} alt={tool} src={toolIcons[`../assets/Tools/${tool}.svg`]}/>
-      <p class="text-sm mt-2">{tool}</p>
-    </div> 
-  ))}
-</div>
-
-<!-- Skills -->
-<SkillList items={skills} />
-
-
-<script>
-// TODO: oh boy make it cleaner, maybe think of using Vue.js / React for the search list
-  function fwMap(fw: string): string {
-    switch(fw) {
-      case "React": 
-        return "JavaScript";
-      case "Astro.js":
-        return "JavaScript";
-      case "Gatsby.js":
-        return "JavaScript";
-      case "Webpack":
-        return "JavaScript";
-      case "Typescript":
-        return "JavaScript";
-      case "Vite":
-        return "JavaScript";
-      case "JavaFX":
-        return "Java";
-      case "Xamarin":
-        return "C#";
-      case "MAUI":
-        return "C#";
-      case "ASP.NET":
-        return "C#";
-      case "Razor":
-        return "C#";
-      case "Babylon.js":
-        return "JavaScript";
-      case "MySQL":
-        return "SQL";
-      case "PostgreSQL":
-        return "SQL";
-      case "SQLite":
-        return "SQL";
-      case "NestJs":
-        return "JavaScript";
-      case "Flutter":
-        return "Dart";
-      case "Jetpack Compose":
-        return "Kotlin";
-      case "OpenGL":
-        return "C++";
-      case "Room":
-        return "Dart";
-      default:
-        return "";
-    }
-  }
-
   function toolMap(tool: string): string {
     switch(tool) {
       case "Visual Studio": 
@@ -408,11 +267,155 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
     }
   }
 
+const tools = ["Visual Studio", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "MS Office", "Blender", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "SQLiteBrowser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS", "DeepSeek", "ChatGPT", "Gemini", "Mistral"];
+const toolTypes = ["IDE", "Database Administration", "Version Control", "Containerization", "3D Viewer", "CRM", "Networking", "CMS", "Webdevelopment", "Low Code Automation", "User Authorization", "Cloud", "Work Management", "Monitoring", "Operating System", "Office", "LLM"];
+
+// TODO typisize the lang, fw, tags, tools (also in json/zod)
+// TODO tag as component
+// TODO all logos -> or round circle for skils w/o logo (different color based on isProject, isTask, isApplication)
+// TODO programmed apps logos if available
+
+
+// TODO tutorials? OpenGL Tutorial, Parallel Programming, ETH courses? as IsTheory?
+
+// TODO: accept both png or svg -> nope?
+/*
+  TODO:
+  programs, tools, apps is collapsable
+  a list like this:
+  IDE: Android Studio, Eclipse, ...
+  Version Control: GitHub, GitLab, ...
+  ...
+
+  maybe not even filterable/clickable
+*/
+
+// TODO: add years (as CV?)
+
+// TODO: mobile download link extra (no hover)
+// TODO: mobile more space between fws and langs
+// TODO: add HTML/css
+// TODO: working dl links = host somewhere?
+// TODO: reoi restructure
+---
+
+<!-- Initial paragraph -->
+<div class="max-w-xl mx-auto text-center px-4 mb-8">
+  <h2 class="text-3xl font-bold mb-2">
+    Welcome to my site!
+  </h2>
+  <p class="text-gray-600 text-base italic">
+    This website is the greatest I've ever seen, some say the greatest of the world. Tremendous!
+    Please explore what I have written here, look around and I am sure you find something interesting.
+    Feel free to contact me anytime!
+  </p>
+</div>
+<!-- Search and Filter-->
+
+
+<div class="flex justify-center gap-4 flex-row mt-2 mb-4">
+  <SearchBar />
+  <div id="reset-button" class="flex font-bold items-center bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer">Reset filter</div>
+</div>
+
+<div class="flex flex-wrap justify-center gap-2 mt-4">   
+  {tags.map((tag: string) => (
+    <div class="tag-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">{tag}</div>
+  ))}
+</div>
+<p class="mt-4 mb-1 text-center text-lg font-bold">Programming Languages:</p>
+<div class="flex flex-wrap justify-center align gap-3 mt-4 mb-2">   
+  {languages.map((lang: string) => (
+    <div class="lang-tag p-1 flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+      <Image class="h-8 w-8" height="32" width="32" title={lang} alt={lang} src={languageIcons[`../assets/Languages/${langMap(lang)}.svg`]}/>
+      <p class="text-sm mt-2">{lang}</p>
+    </div> 
+  ))}
+</div>
+<div class="flex flex-wrap justify-center gap-2 mt-2">   
+  {frameworks.map((fw: string) => (
+    <div class="fw-tag p-1 hidden flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+      <Image class="h-8 w-8" height="32" width="32" title={fw} alt={fw} src={frameworkIcons[`../assets/Frameworks/${fw}.svg`]}/>
+      <p class="text-sm mt-2">{fw}</p>
+    </div>   
+  ))}
+</div>
+<p class="mt-4 mb-1 text-center text-lg font-bold">Programs, Tools and Apps:</p>
+<div class="mt-4 grid grid-cols-2">   
+  {toolTypes.map((tt: string) => (
+    <div>
+      <div class="tt-tag my-2 text-md font-bold">{tt}</div>
+      <div class="flex flex-row">
+        {tools.filter(tool => toolMap(tool) == tt).map((tool: string) => (
+            <div class="tool-tag p-1 flex flex-col justify-center items-center">
+              <Image class="h-8 w-8" height="32" width="32" title={tool} alt={tool} src={toolIcons[`../assets/Tools/${tool}.svg`]}/>
+              <p class="text-sm mt-2">{tool}</p>
+            </div> 
+          ))}
+      </div>
+    </div>
+  ))}
+</div>
+<div class="flex flex-wrap justify-center gap-2 mt-2">   
+  
+</div>
+
+<!-- Skills -->
+<SkillList items={skills} />
+
+
+<script>
+// TODO: oh boy make it cleaner, maybe think of using Vue.js / React for the search list
+  function fwMap(fw: string): string {
+    switch(fw) {
+      case "React": 
+        return "JavaScript";
+      case "Astro.js":
+        return "JavaScript";
+      case "Gatsby.js":
+        return "JavaScript";
+      case "Webpack":
+        return "JavaScript";
+      case "Typescript":
+        return "JavaScript";
+      case "Vite":
+        return "JavaScript";
+      case "JavaFX":
+        return "Java";
+      case "Xamarin":
+        return "C#";
+      case "MAUI":
+        return "C#";
+      case "ASP.NET":
+        return "C#";
+      case "Razor":
+        return "C#";
+      case "Babylon.js":
+        return "JavaScript";
+      case "MySQL":
+        return "SQL";
+      case "PostgreSQL":
+        return "SQL";
+      case "SQLite":
+        return "SQL";
+      case "NestJs":
+        return "JavaScript";
+      case "Flutter":
+        return "Dart";
+      case "Jetpack Compose":
+        return "Kotlin";
+      case "OpenGL":
+        return "C++";
+      case "Room":
+        return "Dart";
+      default:
+        return "";
+    }
+  }
+
   const langs = document.querySelectorAll(".lang-tag");
   const fws = document.querySelectorAll(".fw-tag");
   const tags = document.querySelectorAll(".tag-tag");
-  const tools = document.querySelectorAll(".tool-tag");
-  const toolTypes = document.querySelectorAll(".tt-tag");
 
   // reset button
   document.getElementById("reset-button")?.addEventListener("click", () => {
@@ -426,10 +429,6 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
 
     fws.forEach(fw => {
       fw.classList.add("hidden")
-    })
-
-    tools.forEach(tool => {
-      tool.classList.add("hidden")
     })
   })
 
@@ -468,36 +467,12 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
     })
   })
 
-  // tools
-  toolTypes.forEach(tt => {
-    tt.addEventListener("click", () => {
-      highlightTool("tt", tt as HTMLElement)
-      displayTT(tt.innerHTML)
-    })
-  })
-
-  tools.forEach(tool => {
-    tool.addEventListener("click", () => {
-      highlightTool("tool", tool as HTMLElement)
-      filter("tool", tool.children[1].innerHTML)
-    })
-  })
-
   function filter(type: string, filter: string) {
     items.forEach(item => {
       const el = item as HTMLElement;
       const matches = !el.dataset[type + 's']?.split(',').includes(filter);
       item.classList.toggle("hidden", matches);
     });
-  }
-
-  function highlightTool(type: string, el: HTMLElement) {
-    const highlighted = document.querySelectorAll(`.highlighted${type == "tool" ? ".tool-tag" : ""}`);
-    highlighted.forEach(h => {
-      h.classList.remove("outline", "outline-dashed", "outline-[#C10A49]", "highlighted")
-    })
-
-    el.classList.add("outline", "outline-dashed", "outline-[#C10A49]", "highlighted")
   }
 
   function highlightLang(type: string, el: HTMLElement) {
@@ -515,17 +490,6 @@ const toolTypes = ["IDE", "Version Control", "Containerization", "3D Viewer", "C
           fw.classList.add("hidden");
       } else {
           fw.classList.remove("hidden");
-      }
-    })
-  }
-
-  function displayTT(tt: string) {
-    tools.forEach((tool) => {
-      console.log(toolMap(tool.children[1].innerHTML))
-      if(!(toolMap(tool.children[1].innerHTML) === tt)) {
-          tool.classList.add("hidden");
-      } else {
-          tool.classList.remove("hidden");
       }
     })
   }
