@@ -200,18 +200,12 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
   </p>
 </div>
 <!-- Search and Filter-->
-
-
 <div class="flex justify-center gap-4 flex-row mt-2 mb-4">
   <SearchBar />
   <div id="reset-button" class="flex font-bold items-center bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer">Reset filter</div>
 </div>
 
-<div class="flex flex-wrap justify-center gap-2 mt-4">   
-  {tags.map((tag: string) => (
-    <div class="tag-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">{tag}</div>
-  ))}
-</div>
+<!-- Programming Languages -->
 <p class="mt-4 mb-1 text-center text-lg font-bold">Programming Languages:</p>
 <div class="flex flex-wrap justify-center align gap-3 mt-4 mb-2">   
   {languages.map((lang: string) => (
@@ -229,8 +223,21 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
     </div>   
   ))}
 </div>
-<p class="mt-4 mb-1 text-center text-lg font-bold">Programs, Tools and Apps:</p>
-<div class="mt-4 grid grid-cols-3 h-[200px] overflow-scroll border-b border-black px-4">   
+
+<!-- Tags -->
+<div class="flex flex-wrap justify-center gap-2 mt-4">   
+  {tags.map((tag: string) => (
+    <div class="tag-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">{tag}</div>
+  ))}
+</div>
+
+<!-- Skills -->
+ <p class="mt-6 text-center text-lg font-bold">Projects, Applications & Tasks:</p>
+<SkillList items={skills} />
+
+<!-- Tools -->
+<p class="mt-12 mb-1 text-center text-lg font-bold">Programs, Tools and Apps:</p>
+<div class="my-4 grid grid-cols-3">   
   {toolTypes.map((tt: string, idx: number) => (
     <div class={`mb-6 ${idx % 3 == 0 ? "text-left" : (idx % 3 == 1 ? "text-center": "text-right")}`}>
       <div class="tt-tag my-2 text-md font-bold">{tt}</div>
@@ -245,10 +252,6 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
     </div>
   ))}
 </div>
-
-<!-- Skills -->
- <p class="mt-6 text-center text-lg font-bold">Projects, Applications & Tasks:</p>
-<SkillList items={skills} />
 
 
 <script>
