@@ -164,7 +164,7 @@ function toolMap(tool: string): string {
   }
 }
 
-const tools = ["Visual Studio", "Figma", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "MS Office", "Blender", "CSS", "HTML", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Outlook", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "Power Apps", "Unity", "pgAdmin", "SQLiteBrowser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS", "DeepSeek", "ChatGPT", "Gemini", "Mistral"];
+const tools = ["Visual Studio", "Figma", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "MS Office", "Blender", "CSS", "HTML", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Outlook", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "Power Apps", "Unity", "pgAdmin", "SQLiteBrowser", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Azure", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS", "DeepSeek", "ChatGPT", "Gemini", "Mistral"];
 const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Administration", "CRM", "Networking", "Operating System", "Low Code Automation", "User Authorization", "Webdevelopment", "Cloud", "Containerization", "Work Management", "Monitoring", "Office & Design", "", "LLM"];
 
 // TODO typisize the lang, fw, tags, tools (also in json/zod)
@@ -210,7 +210,7 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
 <!-- Search and Filter-->
 <div class="flex justify-center gap-4 flex-row mt-2 mb-4">
   <SearchBar />
-  <div id="reset-button" class="flex font-bold items-center bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer">Reset filter</div>
+  <div id="reset-button" class="flex font-bold items-center bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">Reset filter</div>
 </div>
 
 <!-- Programming Languages -->
@@ -239,26 +239,33 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
   ))}
 </div>
 
+<!-- Tool Scroll Button -->
+<div class="flex justify-center">
+  <div id="tool-scroll-button" onclick="location.href='#tools'"class="mt-4 font-bold bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">Show Tools</div>
+</div>
+
 <!-- Skills -->
 <SkillList items={skills} />
 
 <!-- Tools -->
-<p class="mt-8 mb-1 text-center text-lg font-bold border-t border-black pt-8">Programs, Tools and Apps:</p>
-<div class="my-4 grid grid-cols-3">   
-  {toolTypes.map((tt: string, idx: number) => (
-    <div class={`mb-6 ${idx % 3 == 0 ? "text-left" : (idx % 3 == 1 ? "text-center": "text-right")}`}>
-      <div class="tt-tag my-2 text-md font-bold">{tt}</div>
-      <div class={`flex flex-row ${idx % 3 == 0 ? "justify-start" : (idx % 3 == 1 ? "justify-center": "justify-end")}`}>
-        {tools.filter(tool => toolMap(tool) == tt).map((tool: string) => (
-            <div class="tool-tag p-1 flex flex-col whitespace-nowrap justify-center items-center">
-              <Image class="h-8 w-8" height="32" width="32" title={tool} alt={tool} src={toolIcons[`../assets/Tools/${tool}.svg`]}/>
-              <p class="text-sm mt-2">{tool}</p>
-            </div> 
-          ))}
+ <section id="tools">
+  <p class="mt-8 mb-1 text-center text-lg font-bold border-t border-black pt-8">Programs, Tools and Apps:</p>
+  <div class="my-4 grid grid-cols-3">   
+    {toolTypes.map((tt: string, idx: number) => (
+      <div class={`mb-6 ${idx % 3 == 0 ? "text-left" : (idx % 3 == 1 ? "text-center": "text-right")}`}>
+        <div class="tt-tag my-2 text-md font-bold">{tt}</div>
+        <div class={`flex flex-row ${idx % 3 == 0 ? "justify-start" : (idx % 3 == 1 ? "justify-center": "justify-end")}`}>
+          {tools.filter(tool => toolMap(tool) == tt).map((tool: string) => (
+              <div class="tool-tag p-1 flex flex-col whitespace-nowrap justify-center items-center">
+                <Image class="h-8 w-8" height="32" width="32" title={tool} alt={tool} src={toolIcons[`../assets/Tools/${tool}.svg`]}/>
+                <p class="text-sm mt-2">{tool}</p>
+              </div> 
+            ))}
+        </div>
       </div>
-    </div>
-  ))}
-</div>
+    ))}
+  </div>
+</section>
 
 
 <script>
