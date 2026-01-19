@@ -230,7 +230,7 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
   ))}
 </div>
 <p class="mt-4 mb-1 text-center text-lg font-bold">Programs, Tools and Apps:</p>
-<div class="mt-4 grid grid-cols-3 ">   
+<div class="mt-4 grid grid-cols-3 h-[200px] overflow-scroll border-b border-black px-4">   
   {toolTypes.map((tt: string, idx: number) => (
     <div class={`mb-6 ${idx % 3 == 0 ? "text-left" : (idx % 3 == 1 ? "text-center": "text-right")}`}>
       <div class="tt-tag my-2 text-md font-bold">{tt}</div>
@@ -245,11 +245,9 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
     </div>
   ))}
 </div>
-<div class="flex flex-wrap justify-center gap-2 mt-2">   
-  
-</div>
 
 <!-- Skills -->
+ <p class="mt-6 text-center text-lg font-bold">Projects, Applications & Tasks:</p>
 <SkillList items={skills} />
 
 
