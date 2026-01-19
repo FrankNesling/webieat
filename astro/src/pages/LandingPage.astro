@@ -236,7 +236,7 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
       <div class="tt-tag my-2 text-md font-bold">{tt}</div>
       <div class={`flex flex-row ${idx % 3 == 0 ? "justify-start" : (idx % 3 == 1 ? "justify-center": "justify-end")}`}>
         {tools.filter(tool => toolMap(tool) == tt).map((tool: string) => (
-            <div class="tool-tag p-1 flex flex-col justify-center items-center">
+            <div class="tool-tag p-1 flex flex-col whitespace-nowrap justify-center items-center">
               <Image class="h-8 w-8" height="32" width="32" title={tool} alt={tool} src={toolIcons[`../assets/Tools/${tool}.svg`]}/>
               <p class="text-sm mt-2">{tool}</p>
             </div> 
