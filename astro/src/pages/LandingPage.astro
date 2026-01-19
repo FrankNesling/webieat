@@ -155,13 +155,17 @@ function toolMap(tool: string): string {
       return "Office & Design";
     case "Figma":
       return "Office & Design";
+    case "HTML":
+      return "Webdevelopment";
+    case "CSS":
+      return "Webdevelopment";
     default:
       return "";
   }
 }
 
-const tools = ["Visual Studio", "Figma", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "MS Office", "Blender", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Outlook", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "Power Apps", "Unity", "pgAdmin", "SQLiteBrowser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS", "DeepSeek", "ChatGPT", "Gemini", "Mistral"];
-const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Administration", "CRM", "Networking", "Operating System", "Cloud", "Webdevelopment", "Low Code Automation", "User Authorization", "Containerization", "Work Management", "Monitoring", "Office & Design", "", "LLM"];
+const tools = ["Visual Studio", "Figma", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "MS Office", "Blender", "CSS", "HTML", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Outlook", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "Power Apps", "Unity", "pgAdmin", "SQLiteBrowser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS", "DeepSeek", "ChatGPT", "Gemini", "Mistral"];
+const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Administration", "CRM", "Networking", "Operating System", "Low Code Automation", "User Authorization", "Webdevelopment", "Cloud", "Containerization", "Work Management", "Monitoring", "Office & Design", "", "LLM"];
 
 // TODO typisize the lang, fw, tags, tools (also in json/zod)
 // TODO tag as component
