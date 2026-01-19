@@ -156,8 +156,8 @@ function toolMap(tool: string): string {
   }
 }
 
-const tools = ["Visual Studio", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "MS Office", "Blender", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "PowerApps", "Unity", "pgAdmin", "SQLiteBrowser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS", "DeepSeek", "ChatGPT", "Gemini", "Mistral"];
-const toolTypes = ["IDE", "Database Administration", "Version Control", "Containerization", "3D Viewer", "CRM", "Networking", "CMS", "Webdevelopment", "Low Code Automation", "User Authorization", "Cloud", "Work Management", "Monitoring", "Operating System", "Office", "LLM"];
+const tools = ["Visual Studio", "Android Studio", "Gimp", "VS Code", "Eclipse", "XCode", "GitLab", "GitHub", "MS Office", "Blender", "D365", "Insomnia", "Postman", "Squidex", "Magnolia", "Pimcore", "WordPress", "Webflow", "Make.com", "NeonDB", "MySQLWorkbench", "phpMyAdmin", "MS Entra", "Clerk", "Power Apps", "Unity", "pgAdmin", "SQLiteBrowser", "Azure", "Notion", "MS Teams", "Atlassian", "DataDog", "Docker", "Kubernetes", "Git", "Linux", "Ubuntu", "Fedora", "Windows", "MS DOS", "MacOS", "Android", "iOS", "DeepSeek", "ChatGPT", "Gemini", "Mistral"];
+const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Administration", "CRM", "Networking", "Operating System", "Containerization", "Webdevelopment", "Low Code Automation", "User Authorization", "Cloud", "Work Management", "Monitoring", "Office", "", "LLM"];
 
 // TODO typisize the lang, fw, tags, tools (also in json/zod)
 // TODO tag as component
@@ -230,11 +230,11 @@ const toolTypes = ["IDE", "Database Administration", "Version Control", "Contain
   ))}
 </div>
 <p class="mt-4 mb-1 text-center text-lg font-bold">Programs, Tools and Apps:</p>
-<div class="mt-4 grid grid-cols-2">   
-  {toolTypes.map((tt: string) => (
-    <div>
+<div class="mt-4 grid grid-cols-3 ">   
+  {toolTypes.map((tt: string, idx: number) => (
+    <div class={`mb-6 ${idx % 3 == 0 ? "text-left" : (idx % 3 == 1 ? "text-center": "text-right")}`}>
       <div class="tt-tag my-2 text-md font-bold">{tt}</div>
-      <div class="flex flex-row">
+      <div class={`flex flex-row ${idx % 3 == 0 ? "justify-start" : (idx % 3 == 1 ? "justify-center": "justify-end")}`}>
         {tools.filter(tool => toolMap(tool) == tt).map((tool: string) => (
             <div class="tool-tag p-1 flex flex-col justify-center items-center">
               <Image class="h-8 w-8" height="32" width="32" title={tool} alt={tool} src={toolIcons[`../assets/Tools/${tool}.svg`]}/>
