@@ -236,11 +236,10 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
 </div>
 
 <!-- Skills -->
- <p class="mt-6 text-center text-lg font-bold">Projects, Applications & Tasks:</p>
 <SkillList items={skills} />
 
 <!-- Tools -->
-<p class="mt-12 mb-1 text-center text-lg font-bold">Programs, Tools and Apps:</p>
+<p class="mt-8 mb-1 text-center text-lg font-bold border-t border-black pt-8">Programs, Tools and Apps:</p>
 <div class="my-4 grid grid-cols-3">   
   {toolTypes.map((tt: string, idx: number) => (
     <div class={`mb-6 ${idx % 3 == 0 ? "text-left" : (idx % 3 == 1 ? "text-center": "text-right")}`}>
