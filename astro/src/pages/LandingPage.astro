@@ -208,7 +208,7 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
   </p>
 </div>
 <!-- Search and Filter-->
-<section id="search">
+<section id="search" class="scroll-mt-24">
   <div class="flex justify-center gap-4 flex-row mt-2 mb-4">
     <SearchBar />
     <div id="reset-button" class="flex font-bold items-center bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">Reset filter</div>
@@ -250,7 +250,7 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
 <SkillList items={skills} />
 
 <!-- Tools -->
-<section id="tools">
+<section id="tools" class="scroll-mt-24">
   <p class="mt-8 mb-1 text-center text-lg font-bold border-t border-black pt-8">Programs, Tools and Apps:</p>
   <div class="my-4 grid grid-cols-3">   
     {toolTypes.map((tt: string, idx: number) => (
