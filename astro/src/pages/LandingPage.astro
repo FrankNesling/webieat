@@ -208,10 +208,12 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
   </p>
 </div>
 <!-- Search and Filter-->
-<div class="flex justify-center gap-4 flex-row mt-2 mb-4">
-  <SearchBar />
-  <div id="reset-button" class="flex font-bold items-center bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">Reset filter</div>
-</div>
+<section id="search">
+  <div class="flex justify-center gap-4 flex-row mt-2 mb-4">
+    <SearchBar />
+    <div id="reset-button" class="flex font-bold items-center bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">Reset filter</div>
+  </div>
+</section>
 
 <!-- Programming Languages -->
 <p class="mt-4 mb-1 text-center text-lg font-bold">Programming Languages:</p>
@@ -248,7 +250,7 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
 <SkillList items={skills} />
 
 <!-- Tools -->
- <section id="tools">
+<section id="tools">
   <p class="mt-8 mb-1 text-center text-lg font-bold border-t border-black pt-8">Programs, Tools and Apps:</p>
   <div class="my-4 grid grid-cols-3">   
     {toolTypes.map((tt: string, idx: number) => (
@@ -267,6 +269,8 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
   </div>
 </section>
 
+<!-- Scroll up button -->
+<div onclick="location.href='#search'" class="fixed bottom-0 right-4 mb-4 font-bold text-lg bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">↑</div>
 
 <script>
 // TODO: oh boy make it cleaner, maybe think of using Vue.js / React for the search list
