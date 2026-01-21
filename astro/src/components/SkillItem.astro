@@ -23,7 +23,7 @@ const logosPNG = import.meta.glob<ImageMetadata>('../assets/Logos/*.png', {
 let logoIcon = logosSVG[`../assets/Logos/${item.data.id}.svg`] ?? logosPNG[`../assets/Logos/${item.data.id}.png`];
 ---
 
-<div onclick={item.data.url ? `window.location.href='${item.data.url}'` : null} class={`skill-item relative px-4 py-6 group ${item.data.url ? "cursor-grab hover:rounded hover:outline hover:outline-[#C10A49]" : null}`} data-tags={item.data.tags} data-tools={item.data.tools} data-frameworks={item.data.frameworks} data-langs={item.data.languages} data-search={`${item.data.topic} ${item.data.description} ${item.data.languages} ${item.data.frameworks} ${item.data.tags} ${item.data.tools}`.toLowerCase()}>
+<div onclick={item.data.url ? `window.location.href='${item.data.url}'` : null} class={`skill-item relative px-4 py-6 group ${item.data.url ? "cursor-grab hover:rounded hover:outline hover:outline-[#C10A49]" : null}`} data-tags={item.data.tags} data-tools={item.data.tools} data-frameworks={item.data.frameworks} data-langs={item.data.languages} data-types={item.data.type} data-search={`${item.data.topic} ${item.data.description} ${item.data.languages} ${item.data.frameworks} ${item.data.tags} ${item.data.tools}`.toLowerCase()}>
     <!-- DL -->
     {item.data.url ? <div class="absolute top-0 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 text-[#C10A49] italic font-bold">CLICK TO DOWNLOAD / OPEN</div> : null}
     
@@ -32,7 +32,7 @@ let logoIcon = logosSVG[`../assets/Logos/${item.data.id}.svg`] ?? logosPNG[`../a
       <!-- Logo and Name -->
       {logoIcon ? 
         <Image class="h-12 w-12 rounded-full" title={item.data.topic} alt={item.data.topic} src={logoIcon}/>
-        : <div class={`w-12 h-12 rounded-full ${item.data.isProject ? 'bg-red-300' : (item.data.isApplication ? 'bg-blue-300' : 'bg-green-300')} mb-4`}></div>
+        : <div class={`w-12 h-12 rounded-full ${item.data.type == "project" ? 'bg-red-300' : (item.data.type == "application" ? 'bg-blue-300' : (item.data.type == "task" ? 'bg-green-300' : 'bg-orange-300'))} mb-4`}></div>
       }
       <h3 class="text-lg font-semibold mb-2">{item.data.topic}</h3>
 

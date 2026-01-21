@@ -5,9 +5,7 @@ const skills = defineCollection({
   loader: file("src/data/skills.json"),
   schema: z.object({
     id: z.number(),
-    isProject: z.boolean(),
-    isApplication: z.boolean(),
-    isTask: z.boolean(),
+    type: z.string(), // only "project", "task", "application", "theory"
     professionell: z.boolean(),
     languages: z.array(z.string()),
     frameworks: z.array(z.string()),

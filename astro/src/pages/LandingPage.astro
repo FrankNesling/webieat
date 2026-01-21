@@ -241,9 +241,29 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
   ))}
 </div>
 
+<!-- Skill Type -->
+ <div class="flex justify-center gap-8 my-4">
+  <div id="project-filter" class="flex flex-col items-center gap-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+    <div class="w-12 h-12 rounded-full bg-red-300"></div>
+    <p>Project</p>
+  </div>
+  <div id="application-filter" class="flex flex-col items-center gap-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+    <div class="w-12 h-12 rounded-full bg-blue-300"></div>
+    <p>Application</p>
+  </div>
+  <div id="task-filter" class="flex flex-col items-center gap-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+    <div class="w-12 h-12 rounded-full bg-green-300"></div>
+    <p>Task</p>
+  </div>
+  <div id="theory-filter" class="flex flex-col items-center gap-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">
+    <div class="w-12 h-12 rounded-full bg-orange-300"></div>
+    <p>Theory</p>
+  </div>
+</div>
+
 <!-- Tool Scroll Button -->
 <div class="flex justify-center">
-  <div id="tool-scroll-button" onclick="location.href='#tools'"class="mt-4 font-bold bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">Show Tools</div>
+  <div id="tool-scroll-button" onclick="location.href='#tools'"class="font-bold bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">Show Tools</div>
 </div>
 
 <!-- Skills -->
@@ -374,6 +394,32 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
       filter("framework", fw.children[1].innerHTML)
     })
   })
+
+  // types
+  const projectBtn = document.getElementById("project-filter");
+  const applicationBtn = document.getElementById("application-filter");
+  const taskBtn = document.getElementById("task-filter");
+  const theoryBtn = document.getElementById("theory-filter");
+
+  projectBtn?.addEventListener("click", () => {
+      filter("type", projectBtn.children[1].innerHTML.toLowerCase())
+  })
+
+  applicationBtn?.addEventListener("click", () => {
+      filter("type", applicationBtn.children[1].innerHTML.toLowerCase())
+  })
+
+  taskBtn?.addEventListener("click", () => {
+      filter("type", taskBtn.children[1].innerHTML.toLowerCase())
+  })
+
+  theoryBtn?.addEventListener("click", () => {
+      filter("type", theoryBtn.children[1].innerHTML.toLowerCase())
+  })
+
+
+
+  // filter
 
   function filter(type: string, filter: string) {
     items.forEach(item => {
