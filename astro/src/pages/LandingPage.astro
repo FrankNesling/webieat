@@ -173,27 +173,15 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
 // TODO programmed apps logos if available
 
 
-// TODO tutorials? OpenGL Tutorial, Parallel Programming, ETH courses? as IsTheory?
-
 // TODO: accept both png or svg -> nope?
-/*
-  TODO:
-  programs, tools, apps is collapsable
-  a list like this:
-  IDE: Android Studio, Eclipse, ...
-  Version Control: GitHub, GitLab, ...
-  ...
-
-  maybe not even filterable/clickable
-*/
 
 // TODO: add years (as CV?)
 
 // TODO: mobile download link extra (no hover)
-// TODO: mobile more space between fws and langs
 // TODO: add HTML/css
 // TODO: working dl links = host somewhere?
 // TODO: reoi restructure
+
 ---
 
 <!-- Initial paragraph -->
@@ -209,7 +197,7 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
 </div>
 <!-- Search and Filter-->
 <section id="search" class="scroll-mt-24">
-  <div class="flex justify-center gap-4 flex-row mt-2 mb-4">
+  <div class="flex justify-center items-center flex-col md:flex-row gap-4 mt-2 mb-4">
     <SearchBar />
     <div id="reset-button" class="flex font-bold items-center bg-[#C10A49] rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">Reset filter</div>
   </div>
@@ -272,7 +260,7 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
 <!-- Tools -->
 <section id="tools" class="scroll-mt-24">
   <p class="mt-8 mb-1 text-center text-lg font-bold border-t border-black pt-8">Programs, Tools and Apps:</p>
-  <div class="my-4 grid grid-cols-3">   
+  <div class="my-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">   
     {toolTypes.map((tt: string, idx: number) => (
       <div class={`mb-6 ${idx % 3 == 0 ? "text-left" : (idx % 3 == 1 ? "text-center": "text-right")}`}>
         <div class="tt-tag my-2 text-md font-bold">{tt}</div>
