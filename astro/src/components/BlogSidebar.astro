@@ -20,7 +20,16 @@ const subTopicEntries = entries.filter(entry => navStructure.length > 1 &&
      !entry.id.endsWith('index.md') && entry.slug.split('/')[1].startsWith(`${subTopicName}`));
 ---
 
-<aside class="bg-[#FDD8C8] pl-5 pt-5 border-r border-r-[1px] border-r-[#FFFFFF]">
+<div id="blog-sidebar-button" class="absolute block md:hidden border-black border w-[28px] h-[28px] ml-2 mt-2">
+  <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three horizontal bars">
+    <rect x="2" y="4" width="23" height="4"/>
+    <rect x="4" y="12" width="19" height="4" />
+    <rect x="2" y="20" width="23" height="4" />
+  </svg>
+
+</div>
+
+<aside id="blog-sidebar" class="bg-[#FDD8C8] pl-5 pt-5 pb-5 border-r border-r-[1px] border-r-[#FFFFFF] hidden md:block">
   <h2 class="font-bold text-lg"><a href="/">Home</a></h2>
   <h2 class="font-bold text-lg"><a href="/about">About</a></h2>
   <h2 class="font-bold text-lg italic"><a href="/blog">Blog</a></h2>
@@ -63,3 +72,20 @@ const subTopicEntries = entries.filter(entry => navStructure.length > 1 &&
   </ul>
 </aside>
 
+<script>
+  const navButton = document.getElementById("blog-sidebar-button");
+
+  navButton?.addEventListener("click", () => {
+    const sidebar = document.getElementById("blog-sidebar")
+    const content = document.getElementById("blog-content");
+
+    if (sidebar && content) {
+      sidebar.classList.remove('hidden')
+      navButton.classList.add('hidden')
+      content.classList.add('hidden')
+    }
+  })
+
+
+
+</script>

@@ -2,7 +2,7 @@
 title: "Finanzlexikon"
 description: ""
 pubDate: 2026-01-16
-lastEdit: 2026-01-15
+lastEdit: 2026-01-23
 ---
 
 ## Bärenmarkt
@@ -22,3 +22,7 @@ Rally - steigende Kurse
 ## Fond
 
 ## ETF
+
+## Bausparvertrag
+
+Gemeinsam mit anderen Familien / Einzelpersonen sparen, sodass die durchschnittliche Wartezeit auf das Haus reduziert wird. Einer kann das Haus sogar schon im ersten Jahr kaufen.

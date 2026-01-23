@@ -5,9 +5,9 @@ import Layout from './Layout.astro';
 ---
 
 <Layout>
-    <div class="grid grid-cols-[200px_1fr] gap-8 h-full mr-5">
+    <div class="grid md:grid-cols-[200px_1fr] gap-8 h-full mr-5">
         <BlogSidebar />
-        <main class="pt-5">
+        <main id="blog-content" class="pt-5 ml-5 md:ml-0 mt-[28px] md:mt-0">
             <slot />
         </main>
     </div>
