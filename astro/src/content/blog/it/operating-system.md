@@ -29,6 +29,12 @@ Rebrand 86-DOS and propiertary of Microsoft for 8086 processors, inspired by CP/
 
 ## GNOME
 
+GUI for Linux.
+
 ## X11
 
-## GNU?
+Draws and manages the windows, used often as the base for GNOME. Low-level system.
+
+## GNU
+
+Core tools (shell commands, compilers, ...) that together with the Linux kernel form a complete OS.
