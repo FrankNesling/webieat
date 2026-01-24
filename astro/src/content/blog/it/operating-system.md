@@ -35,6 +35,10 @@ GUI for Linux.
 
 Draws and manages the windows, used often as the base for GNOME. Low-level system.
 
+## Wayland
+
+Same purpose as X11 with a more modern design and simpler architecture.
+
 ## GNU
 
 Core tools (shell commands, compilers, ...) that together with the Linux kernel form a complete OS.
