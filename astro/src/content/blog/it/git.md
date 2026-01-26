@@ -2,7 +2,7 @@
 title: "Git"
 description: ""
 pubDate: 2026-01-05
-lastEdit: 2026-01-05
+lastEdit: 2026-01-26
 ---
 
 ## Head branch
@@ -40,3 +40,7 @@ Mark an important commit, often a release.
 ## Head
 
 Pointer to the commit currently on.
+
+## Piper
+
+Google's versioning control. There is only one code base for almost all Google products and developers usually don't use branches but directly commit after a code review.
