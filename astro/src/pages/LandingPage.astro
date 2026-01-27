@@ -1,6 +1,7 @@
 ---
 import SkillList from '../components/SkillList.astro';
 import SearchBar from '../components/SearchBar.astro';
+import Tag from '../components/Tag.astro';
 
 import { getCollection } from "astro:content";
 import { Image } from 'astro:assets';
@@ -168,7 +169,6 @@ const tools = ["Visual Studio", "Figma", "Android Studio", "Gimp", "VS Code", "E
 const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Administration", "CRM", "Networking", "Operating System", "Low Code Automation", "User Authorization", "Webdevelopment", "Cloud", "Containerization", "Work Management", "Monitoring", "Office", "LLM", "Design"];
 
 // TODO typisize the lang, fw, tags, tools (also in json/zod)
-// TODO tag as component
 // TODO all logos -> or round circle for skils w/o logo (different color based on isProject, isTask, isApplication)
 // TODO programmed apps logos if available
 
@@ -225,7 +225,7 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
 <!-- Tags -->
 <div class="flex flex-wrap justify-center gap-2 mt-4">   
   {tags.map((tag: string) => (
-    <div class="tag-tag text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">{tag}</div>
+    <Tag class="tag-tag" tagName={tag}/>
   ))}
 </div>
 
