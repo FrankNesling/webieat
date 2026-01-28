@@ -1,7 +1,7 @@
 ---
 
-const { tagName } = Astro.props;
+const { tagName, className } = Astro.props;
 
 ---
 
-<div class="text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200">{tagName}</div>
+<div class={`${className} text-sm bg-gray-300 rounded-lg py-1 px-2 cursor-pointer hover:-translate-y-1 transition-transform duration-200`}>{tagName}</div>

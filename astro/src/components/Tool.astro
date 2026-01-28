@@ -1,0 +1,11 @@
+---
+import { Image } from 'astro:assets';
+const { toolName, icon, hoverable, className } = Astro.props;
+
+
+---
+
+<div class={`${className} p-1 flex flex-col whitespace-nowrap justify-center items-center ${hoverable ? "cursor-pointer hover:-translate-y-1 transition-transform duration-200" : ""}`}>
+    <Image class="h-8 w-8" height="32" width="32" title={toolName} alt={toolName} src={icon}/>
+    <p class="text-sm mt-2">{toolName}</p>
+</div> 

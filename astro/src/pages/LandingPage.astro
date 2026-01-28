@@ -2,6 +2,8 @@
 import SkillList from '../components/SkillList.astro';
 import SearchBar from '../components/SearchBar.astro';
 import Tag from '../components/Tag.astro';
+import Tool from '../components/Tool.astro';
+
 
 import { getCollection } from "astro:content";
 import { Image } from 'astro:assets';
@@ -169,7 +171,6 @@ const tools = ["Visual Studio", "Figma", "Android Studio", "Gimp", "VS Code", "E
 const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Administration", "CRM", "Networking", "Operating System", "Low Code Automation", "User Authorization", "Webdevelopment", "Cloud", "Containerization", "Work Management", "Monitoring", "Office", "LLM", "Design"];
 
 // TODO typisize the lang, fw, tags, tools (also in json/zod)
-// TODO all logos -> or round circle for skils w/o logo (different color based on isProject, isTask, isApplication)
 // TODO programmed apps logos if available
 
 
@@ -207,18 +208,12 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
 <p class="mt-4 mb-1 text-center text-lg font-bold">Programming Languages:</p>
 <div class="flex flex-wrap justify-center align gap-3 mt-4 mb-2">   
   {languages.map((lang: string) => (
-    <div class="lang-tag p-1 flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
-      <Image class="h-8 w-8" height="32" width="32" title={lang} alt={lang} src={languageIcons[`../assets/Languages/${langMap(lang)}.svg`]}/>
-      <p class="text-sm mt-2">{lang}</p>
-    </div> 
+    <Tool className="lang-tag" hoverable={true} toolName={lang} icon={languageIcons[`../assets/Languages/${langMap(lang)}.svg`]} />
   ))}
 </div>
 <div class="flex flex-wrap justify-center gap-2 mt-2">   
   {frameworks.map((fw: string) => (
-    <div class="fw-tag p-1 hidden flex flex-col justify-center items-center cursor-pointer hover:-translate-y-1 transition-transform duration-200">
-      <Image class="h-8 w-8" height="32" width="32" title={fw} alt={fw} src={frameworkIcons[`../assets/Frameworks/${fw}.svg`]}/>
-      <p class="text-sm mt-2">{fw}</p>
-    </div>   
+    <Tool className="fw-tag hidden" hoverable={true} toolName={fw} icon={frameworkIcons[`../assets/Frameworks/${fw}.svg`]} />
   ))}
 </div>
 
@@ -266,10 +261,7 @@ const toolTypes = ["Version Control", "IDE", "CMS", "3D Viewer", "Database Admin
         <div class="tt-tag my-2 text-md font-bold">{tt}</div>
         <div class={`flex flex-row justify-center flex-wrap md:flex-nowrap ${idx % 3 == 0 ? "md:justify-start" : (idx % 3 == 1 ? "md:justify-center": "md:justify-end")}`}>
           {tools.filter(tool => toolMap(tool) == tt).map((tool: string) => (
-              <div class="tool-tag p-1 flex flex-col whitespace-nowrap justify-center items-center">
-                <Image class="h-8 w-8" height="32" width="32" title={tool} alt={tool} src={toolIcons[`../assets/Tools/${tool}.svg`]}/>
-                <p class="text-sm mt-2">{tool}</p>
-              </div> 
+                <Tool className="tool-tag" hoverable={false} toolName={tool} icon={toolIcons[`../assets/Tools/${tool}.svg`]} />
             ))}
         </div>
       </div>
