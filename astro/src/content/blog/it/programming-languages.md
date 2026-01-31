@@ -32,3 +32,7 @@ Released by Dutch Guido von Rossum in 1991, it is a dynamically typed language w
 ## php
 
 Created in the mid-90s, it usually runs on a webserver. Stands for PHP: Hypertext Preprocessor.
+
+## Visual Basic
+
+Microsoft's version from BASIC, initially. A new product, also called Visual Basic, sometimes referred to VB.NET has also been developed by Microsoft and is more closely to C# with Visual Basic Syntax. Visual Studio is the primary IDE for both.
