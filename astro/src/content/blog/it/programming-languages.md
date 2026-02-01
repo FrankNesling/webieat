@@ -2,7 +2,7 @@
 title: "Programming Languages"
 description: "An overview"
 pubDate: 2026-01-05
-lastEdit: 2026-01-27
+lastEdit: 2026-01-31
 ---
 
 ## C
@@ -84,4 +84,3 @@ Mainly used for statistics.
 ## MATLAB
 
 Used for mathematical and engineering processes. Array indexing starts with 1.
-
