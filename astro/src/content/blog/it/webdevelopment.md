@@ -2,7 +2,7 @@
 title: "Webdevelopment"
 description: ""
 pubDate: 2026-01-03
-lastEdit: 2026-01-03
+lastEdit: 2026-02-01
 ---
 
 ## Client-Side Rendering (CSR)
@@ -45,7 +45,9 @@ Send data to another system as fast as possible with loss accepted.
 ## Differentiation
 
 HTTP    → Ask & answer
+
 Webhook → Notify on events
+
 Socket  → Ongoing conversation
 
 ## IMAP
