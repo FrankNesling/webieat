@@ -2,7 +2,7 @@
 title: "Operating System"
 description: ""
 pubDate: 2026-01-03
-lastEdit: 2026-01-24
+lastEdit: 2026-02-03
 ---
 
 ## Kernel
@@ -42,3 +42,9 @@ Same purpose as X11 with a more modern design and simpler architecture.
 ## GNU
 
 Core tools (shell commands, compilers, ...) that together with the Linux kernel form a complete OS.
+
+## Virtual Machine (VM)
+
+## Virtualization
+
+## Hyperthreading

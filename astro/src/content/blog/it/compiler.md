@@ -7,7 +7,7 @@ lastEdit: 2026-02-03
 
 ## Bytecode
 
-Fast to generate engine-level low-level code (registries, memory, ...). It then can be JIT (just-in-time) compiled to actual machine code (specific to the machine). Bytecode can "run" everywhere where the engine exists.
+Fast to generate engine-level low-level code like ADD, LOAD. It then can be JIT (just-in-time) compiled to actual machine code (specific to the machine). Bytecode can "run" everywhere where the engine exists.
 
 ## Phases of Compilation
 
@@ -35,8 +35,6 @@ The source code written in a high-level language (HLL) is translated into interp
 
 ## Abstract Syntax Tree (AST)
 
-## Intermediate Represantation (IR)
-
 ## Just-in-Time Compilation (JIT)
 
 A JIT is a program that runs alongside an interpreter. When the interpreter detects frequently executed code or a potential speed-up, it compiles the code section, just-in-time, and runs the compiled section instead of the interpreter's handler
@@ -45,3 +43,16 @@ A JIT is a program that runs alongside an interpreter. When the interpreter dete
 
 ## LLVM
 
+## GCC
+
+## Intermediate Language (IL)
+
+Bytecode for the engine to run. Used for interpreters or JIT compilation. Stored in a file and is machine-independent.
+
+## Intermediate Represantation (IR)
+
+Any form of the code that is needed for the final compilation. Could be an AST or the TAC. Used for compilers and not meant for execution, usually temporarily only saved in memory.
+
+## Virtual Machine (VM)
+
+In the context of programming languages, it is an environment that runs platform-independent and contains the necessities to have source code run on the machine. The Java Virtual Machine (JVM) is a famous example.

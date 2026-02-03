@@ -2,7 +2,7 @@
 title: "Computer Graphics"
 description: ""
 pubDate: 2026-01-04
-lastEdit: 2026-01-14
+lastEdit: 2026-02-03
 ---
 
 ## Shader
@@ -184,3 +184,7 @@ A sprite maps image data (texture or parts of it) to a screen position.
 ## Graphics Memory (VRAM)
 
 Saves images or textures, sprites, color palettes and often the frame buffer.
+
+## Anti-Aliasing
+
+## V-Sync
