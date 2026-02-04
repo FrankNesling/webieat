@@ -2,7 +2,7 @@
 title: "Compiler"
 description: ""
 pubDate: 2026-02-01
-lastEdit: 2026-02-03
+lastEdit: 2026-02-04
 ---
 
 ## Bytecode
@@ -41,9 +41,17 @@ A JIT is a program that runs alongside an interpreter. When the interpreter dete
 
 ## Assembly
 
-## LLVM
+## LLVM (Low Level Virtual Machine)
 
-## GCC
+It is a set of compiler and tools that does the backend phases. So, any programming language is responsible for its frontend compilation but can then use LLVM to do the backend. The LLVM IR is the standard representation the frontend needs to lower the code to.
+
+## GCC (GNU Compiler Collection)
+
+A collection of compilers for different languages, including C, C++, that compiles code for different systems, initially for Linux. It does both frontend and backend.
+
+## Clang
+
+A compiler front-end for most C-like languages like C or C++, that uses LLVM as its backend.
 
 ## Intermediate Language (IL)
 
