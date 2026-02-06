@@ -65,3 +65,5 @@ Protocol that defines how to send emails between mail servers and clients. A new
 ## Mail server
 
 It is essentially a database where the mails are stored. The desktop app or the web mail app are clients of it (and for example synced via IMAP).
+
+## Nginx
