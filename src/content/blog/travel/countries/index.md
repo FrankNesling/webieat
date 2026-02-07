@@ -2,8 +2,20 @@
 title: "Countries"
 description: ""
 pubDate: 2026-01-03
-lastEdit: 2026-01-05
+lastEdit: 2026-02-07
 ---
+
+## Countries I've been in 2026 (5 so far)
+
+Switzerland
+
+France
+
+Austria
+
+Germany
+
+Italy
 
 ## Countries I've been in 2025 (15)
 
