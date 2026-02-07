@@ -599,5 +599,18 @@
     "tags": ["Computer Graphics", "Desktop Program"],
     "tools": ["Visual Studio", "GitHub"],
     "codebase": "https://github.com/FrankNesling/OpenGL-Playground"
+   },
+   { 
+    "id": 46,
+    "topic": "ActivityUp", 
+    "description": "Track your activities.",
+    "type": "application",
+    "professionell": false,
+    "url": "",
+    "logo": "",
+    "languages": ["C#"],
+    "frameworks": ["MAUI"],
+    "tags": ["Mobile App"],
+    "tools": []
    }
 ]
