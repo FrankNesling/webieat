@@ -1,8 +1,8 @@
 ---
-title: "Politic"
+title: "Politics"
 description: "The terms"
 pubDate: 2026-01-26
-lastEdit: 2026-02-05
+lastEdit: 2026-02-07
 ---
 
 ## Kommunismus

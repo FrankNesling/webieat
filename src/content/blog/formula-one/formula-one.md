@@ -2,12 +2,12 @@
 title: "Favourite Races & Seasons"
 description: "A list of my favourite races or season, or races that I like in general"
 pubDate: 2025-12-31
-lastEdit: 2026-01-02
+lastEdit: 2026-02-07
 ---
 
 _Everything 1994 onwards_
 
-_I don't have that much memory of 2010 and 2011, so they might be underrepresented. I only have seen races live from 2012 Bahrain onwards, 1994 until 2012 China I watched recorded. Also some races in between 2019 and 2021 I only saw in the highlights (Brazil '21, Italy '21, Italy '20, Bahrain '20, Portugal '20, Tuscany '20, Eifel '20, Spain '19?, more?)_
+_I don't have that much memory of 2010 and 2011, so they might be underrepresented. I only have seen races live from 2012 Bahrain onwards, 1994 until 2012 China I watched recorded. Also some races in between 2019 and 2021 I only saw in the highlights (Brazil '21, Portugal '21, Italy '21, Italy '20, Bahrain '20, Portugal '20, Tuscany '20, Eifel '20, Spain '19?, more?)_
 
 ## My favourite races
 2012 Brazil (Interlagos)
