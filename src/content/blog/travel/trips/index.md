@@ -6,3 +6,5 @@ lastEdit: 2026-01-02
 ---
 
 Tripping ay bla bla
+
+TODO: filter by year? by country?
