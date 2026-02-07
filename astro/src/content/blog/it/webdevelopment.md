@@ -2,7 +2,7 @@
 title: "Webdevelopment"
 description: ""
 pubDate: 2026-01-03
-lastEdit: 2026-02-01
+lastEdit: 2026-02-07
 ---
 
 ## Client-Side Rendering (CSR)
@@ -67,3 +67,9 @@ Protocol that defines how to send emails between mail servers and clients. A new
 It is essentially a database where the mails are stored. The desktop app or the web mail app are clients of it (and for example synced via IMAP).
 
 ## Nginx
+
+A modern webserver that is very performant in serving files like css, js or html. A worker can have thousands of connetions.
+
+## Apache
+
+In the past the most popular webserver, that starts one thread per connection, which is slower at scale.
