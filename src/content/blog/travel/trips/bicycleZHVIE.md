@@ -77,7 +77,7 @@ They offered a small ferry across the river but the problem was that I had almos
 
 On the other side though I realized, now I am completely cashless. So, I asked in a restaurant if I can somehow get cash, but he said arrogantly that he is not a bank (apparently he is actually a detective called Sherlock). The modern people of Austria (*hust* *hust*) were suprisingly modern, so I could pay the 2€ after the ferry ride in the restaurant on the other side, with my credit card. Neat!
 
-My final stop was at a old school friend's place near Linz, where she lives with her boyfriend. It was cool to reunite and see again.
+My final stop was at an old school friend's place near Linz, where she lives with her boyfriend. It was cool to reunite and see again.
 
 ## Day 9: Faster than the boat
 
@@ -97,7 +97,7 @@ Before that I needed to get home first, and now the logisitcal masterclass comes
 
 Close to my home, the final hill (my family house is on a hill), I passed the street where his Dad was living. He just arrived or was just on the brink of leaving, but we managed somehow to meet at the right time and he gave me my laptop. A perfect timing, perfectly on the right location, for me on my way and for him on his way. Thanks, such a trustworthy friend! The friend of my friend who was there as well probably is still confused to this day.
 
-Another encounter on the way, merely minuters after my laptop retrieval, was my Uncle. His house is on the same street and he was in his garden. Seeing me, he obviously asked me, where I came from. He also seemed to be buffled, he invited me to his house, but I declined because all I wanted was to get home. He still talks about this perculiar meeting to this day!
+Another encounter on the way, merely minutes after my laptop retrieval, was my Uncle. His house is on the same street and he was in his garden. Seeing me, he obviously asked me, where I came from. He also seemed to be buffled, he invited me to his house, but I declined because all I wanted was to get home. He still talks about this peculiar meeting to this day!
 
 Finally at home! Finally! Ten days, around 1000km, this last day, according to my accompanying friend took 140km. Exhausted, but happy. I did it. After all, I did it! I am proud of myself. Now, finally I can take a big rest... Oh, wait, the appointment!
 
