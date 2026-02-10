@@ -107,7 +107,7 @@ Anyways, this journey fills me with great joy when thinking back about it. Thank
 
 # Preparation days
 
-## Avoinding the rainy clouds
+## Avoiding the rainy clouds
 
 Lausanne -> Zürich
 
