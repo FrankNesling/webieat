@@ -7,7 +7,7 @@ lastEdit: 2026-02-10
 
 # From Zürich to Vienna by bike. 1000km in 10 days.
 
-The goal was clear. Go from my current home in Zürich to my old home in Vienna. But not as usual with 8h train but by bike, just a little bit longer. I just finished my exams (they were in August), and early September seemed to be a good time weatherwise as well. There was one problem: I had an appointment with old school friends and my old religous teacher that I desperately wanted to join. I had 11 days to this meeting. So, hurry up.
+The goal was clear. Go from my current home in Zürich to my old home in Vienna. Not as usual with 8h train but by bike, just a little bit longer. I just finished my exams (they were in August), and early September seemed to be a good time weatherwise as well. There was one problem: I had an appointment with old school friends and my old religous teacher that I desperately wanted to join. I had 11 days to this meeting. So, hurry up.
 
 ## Day 0 and 1: A sick start
 
@@ -15,7 +15,7 @@ Ouch. I was sick. So I decided to stay one more day at home, get more rest and t
 
 The next morning, my dream was not crushed, but neither really fulfilled. But time was of essence, so I packed my bike with all necessities, the tent and ... that's it. I wrote to a friend, that the journey starts, if I die, he is the only one who knows what I was doing. 
 
-With a little sickness I went towards Chur, along the Zürich lake, then the Walensee and finally my first river, the mighty Rhine, not so mighty yet (five years later I with brother and father will do the Rhine river in the opposite direction). 
+With a little sickness I went towards Chur, along the Zürich lake, then the Walensee and finally my first river, the mighty Rhine, not so mighty yet (five years later my brother, father and me will do the Rhine river in the opposite direction). 
 
 On the way there I only was briefly hold up by a naughty school class, they just cannot go out of the way. Approaching Chur I started to suffer a lot, had a hard time to keep going, ate some stuff for fresh energy that saved me just enough to get to my first night's destination, a camping place not too far from Chur. I called them I will come late, and indeed I arrived at around 21:00, when the camp guards were already closing. Fortunately, they let me in with my assurance of the previous call and I fell asleep quickly.
 
@@ -33,29 +33,29 @@ Another obstacle emerged when the bicycle route lead up along the hill through t
 
 ## Day 3: The Pass
 
-First of all, I did not know anything about it, I just know I need to cross it to get to the Inn to go into Austria. Anyways, I started my journey up. How long, I did not know and I did not dare to care. Soon, some other bikers overtook me, some cheering me up, and some even paying respect to do that ascend with this bike (don't forget the heavy tent).
+First of all, I did not know anything about it, I just knew I need to cross it to get to the river Inn to go into Austria. Anyways, I started my journey upwards. How long, I did not know and I did not dare to care. Soon, some other bikers overtook me, some cheering me up, and some even paying respect to do that ascend with this bike (don't forget the heavy tent).
 
 There was no going back. Up and up. Pretty, but exhausting. Up and up. The scenery invited for beautiful bridges for the Albula Express train, aqueducts and much more. Nevertheless, food has priority when I get hungry, so I went to a restaurant and got a "cheap" (~20 CHF) meal that gave me as much carbs as possible: Rösti!
 
 One way to distract myself from exhaustion was to see who is going on this pass. So, I checked the number plates of the cars to see if all 26 cantons of Switzerland will be present. To my disappointment, I cannot remember what my final assesment yielded, but it was a good distraction nevertheless.
 
-Finally, on top of the mountain (around 1300m elevation), I did not spend much time there and went onwards, actually downwards, to the next river valley: The Engandin (the river is called En or Inn). Very steep downwards, I did not like it but reaching the basin of the valley: So beautiful, wow! Now it was easier and I could go very far as along the river it was always downwards.
+Finally, on top of the mountain (around 1300m elevation), I did not spend much time there and went onwards, actually downwards, to the next river valley: The Engandin (the river is called En or Inn). Very steep downwards, I did not like it but reaching the basin of the valley: So beautiful, wow! Now it was easier and I could go very far because along the river it was always downwards.
 
-Haha, I got you. No, the road goes up and down a lot because the valley is narrow, so the pathways are therfore on the hillside. Anyways, starting to become tired, I called a hotel I wanted to stay in Scuol. He seemd not too friendly but agreed. So, just a few more up and downs (the last ones were really exhausting), I arrived in beautiful Scuol and checked in. He seemd suprised that I still arrived but fortunately I could stay. I went to the nearby Pizza restaurant, gave a bigger tip despite the long waiting time, which made the servant very happy and I went to bed, an old bed, but a bed is a bed, especially after a long exhausting day. Good night!
+Haha, I got you. No, the road goes up and down a lot because the valley is narrow, so the pathways are therfore on the hillside. Anyways, starting to become tired, I called a hotel in Scuol I wanted to stay in. He seemd not too friendly but agreed. So, just a few more up and downs (the last ones were really exhausting), I arrived in beautiful Scuol and checked in. He seemd suprised that I still arrived but fortunately I could stay. I went to the nearby Pizza restaurant, gave a bigger tip despite the long waiting time, which made the servant very happy and I went to bed, an old bed, but a bed is a bed, especially after a long exhausting day. Good night!
 
-## Day 4: Along the Inn into Austria
+## Day 4: Along the river into Austria
 
 I went into Austria without much problem. One of the roads leading into my home country was a bit scary as it was high above with fast cars. This whole journey was in 2021. Do you remember what happened in that year? I forgot until writing this lines as well, but this year was still very much impacted by the Corona pandemics. This made the road very calm as there were not that many cars crossing the countries. Not everything was bad, hehe.
 
-Arriving in Landeck I got some food, I think again some Pizza, got some weird message from old school friends and continued onwards along the river. Actually, before contuination I passed a Covid test check as it was mandatary to get certificates for the hotels. Fortunately, I was not infected. Who knows, maybe in the nature or in the camping spots I could have gotten it?
+Arriving in Landeck I got some food, I think again some Pizza, got some weird message from old school friends and continued onwards along the river. Actually, before contuination I passed a Covid test check as it was mandatory to get certificates for the hotels. Fortunately, I was not infected. Who knows, maybe in the nature or in the camping spots I could have gotten it?
 
-Arriving in Telfs I commited to stay for the night there, shortly before Innsbruck. I quickly found a place with free beds to sleep, but apparently, an older couple was just seconds earlier than me and the host said, she actually does not have a bed for me anymore. She seemed to like me, so she decided to give me her son's old room. It smelled horribly like cigarettes smoke but it was cheap (30€) and I was tired. Thank you!
+Arriving in Telfs I commited to stay for the night there, shortly before Innsbruck. I quickly found a place with free beds to sleep, but apparently, an older couple was just seconds earlier than me and the host said, she actually does not have a bed for me anymore. She seemed to like me, so she decided to give me her son's old room. It smelled horribly like cigarettes but it was cheap (30€) and I was tired. Thank you!
 
 ## Day 5: Approaching Germany
 
 In the morning I passed Innsbruck, where some of my relatives live. I decided not to visit them as I wanted to keep going. So, that's what I did. Keep going. The whole day. Keep going. It was pretty effective so that I arrived Kufstein on the border to Germany quite early.
 
-It was so uneventful that I am not even fully sure that I actually spent the night there. But I wouldn't know where else.
+It was so uneventful that I am not even fully sure if I actually spent the night there. But I wouldn't know where else.
 
 ## Day 6: The Youth Suite
 
@@ -65,13 +65,13 @@ The whole day I was set to camp for this night. I did not find a camping place a
 
 ## Day 7: The end of the Inn
 
-Around this time, I got the results of my exams. I failed some of them. Furious, I was furious. Especially, on one of them, because this was the worst of the worst exams for me: Formal Methods. Formally proof that the algorithm does what you claim it to do. Awful. It was even a shared exam, the other was Functional Programming, which is a fun but very difficult way to program. So, I failed this (again btw.) and this whole day I was furious. Annoyed, angry. Eventually, I never did the exam again but compensated it with another subject. Horror exam!
+Around this time, I got the results of my exams. I failed some of them. Furious, I was furious. Especially, on one of them, because this was the worst of the worst exams for me: Formal Methods. Formally prove that the algorithm does what you claim it to do. Awful. It was even a shared exam, the other was Functional Programming, which is a fun but very difficult way to program. So, I failed this (again btw.) and this whole day I was furious. Annoyed, angry. Eventually, I never did the exam again but compensated it with another subject. Horror exam!
 
-Other than that, it was a beautiful day and I arrived in Passau in Germany, again on the border back to Austria. It started raining but this time I really went camping. There was a small camping place a bit outside which the rain fortunately mostly avoided and it was so small that you could hear quite a lot of the other's giggles and laughs. Hahaha, let me sleep.
+Other than that, it was a beautiful day and I arrived in Passau in Germany, again on the border back to Austria. It started raining but this time I really went camping. There was a small camping place a bit outside which the rain fortunately mostly avoided and it was so small that you could hear quite a lot of the other's giggles and laughs. Hahaha, let me sleep, come on!
 
 ## Day 8: Left and right of the Danube
 
-The border between Germany and Austria along the Danube river (in Passua the Inn flows into the Danube, so I reached flawlessly the next river) is magnificent. The beauty of nature! You can go either on the left or the right side but because of recent storms parts of both sides were blocked, so I needed to cross the river twice.
+The border between Germany and Austria along the Danube river (in Passau the Inn flows into the Danube, so I reached flawlessly the next river) is magnificent. The beauty of nature! You can go either on the left or the right side but because of recent storms parts of both sides were blocked, so I needed to cross the river twice.
 
 They offered a small ferry across the river but the problem was that I had almost no cash, not even the 2€ required for the ferry. The staff was fortunately very indifferent when I was offering him 2 CHF (not usable anywhere else outside of Switzerland which is quite far away from there), so he accepted and said, his boss will be confused how he got this currency.
 
@@ -95,13 +95,13 @@ Home, sweet home, is now really, really close. We went through the city, sometim
 
 Before that I needed to get home first, and now the logistical masterclass comes into the picture. Before the trip I was visiting a friend who did an internship in Köln/Cologne, Germany. I left my laptop with him, because I will need it in Vienna but I did not want to bring it on my bicycle tour, so I asked him to bring it to Vienna when his internship ends. Realizing now, I was lying, there were actually two people who knew of this adventure beforehand, him and the other friend of the first day.
 
-Close to my home, the final hill (my family house is on a hill), I passed the street where his Dad was living. He just arrived or was just on the brink of leaving, but we managed somehow to meet at the right time and he gave me my laptop. A perfect timing, perfectly on the right location, for me on my way and for him on his way. Thanks, such a trustworthy friend! The friend of my friend who was there as well probably is still confused to this day.
+Close to my home, the final hill (my family house is on a hill), I passed the street where his Dad was living. He just arrived or was just on the brink of leaving, but we managed somehow to meet at the right time and he gave me my laptop. A perfect timing, perfectly on the right location, for me on my way and for him on his way. Thanks, such a trustworthy friend! The friend of my friend who was there as well probably is still confused about it in his daily life.
 
 Another encounter on the way, merely minutes after my laptop retrieval, was my Uncle. His house is on the same street and he was in his garden. Seeing me, he obviously asked me, where I came from. He also seemed to be buffled, he invited me to his house, but I declined because all I wanted was to get home. He still talks about this peculiar meeting to this day!
 
 Finally at home! Finally! Ten days, around 1000km, this last day, according to my accompanying friend took 140km. Exhausted, but happy. I did it. After all, I did it! I am proud of myself. Now, finally I can take a big rest... Oh, wait, the appointment!
 
-I rushed to it and met with them. A happy and joyful end of the journey. Legend says, that on the way to it, it poured down heavily and I crashed my bike, the only accident of the trip, of course, the whole trip nothing and then those five minutes something happens. But maybe this actually was a few days later, but then the story would have been not so mythical.
+I rushed to it and met with them. A happy and deserving end of my journey. Legend says, that on the way to it, it poured down heavily and I crashed my bike, the only accident of the trip, of course, the whole trip nothing and then those five minutes something happens. But maybe this actually was a few days later, but then the story would have been not so mythical.
 
 Anyways, this journey fills me with great joy when thinking back about it. Thanks for reading and I encourage you to do similar trips. There is not that much to worry about, just do it. Have fun!
 
