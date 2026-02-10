@@ -1,5 +1,5 @@
 ---
-title: "Bicycle tour 2021 - A logistic masterclass"
+title: "Bicycle tour 2021 - A logistical masterclass"
 description: "Vienna Zürich, 1000km, 10 days"
 pubDate: 2026-01-02
 lastEdit: 2026-02-10
@@ -93,7 +93,7 @@ We talked about his medicine studies, the good old times, technical stuff and mu
 
 Home, sweet home, is now really, really close. We went through the city, sometimes it was hard to know where actually but eventually I said goodbye to my friend as we lived in different areas. But not to also invite him for the looming meeting with my religous teacher in the evening, don't forget, to arrive in time was the goal after all.
 
-Before that I needed to get home first, and now the logisitcal masterclass comes into the picture. Before the trip I was visiting a friend who did an internship in Köln/Cologne, Germany. I left my laptop with him, because I will need it in Vienna but I did not want to bring it on my bicycle tour, so I asked him to bring it to Vienna when his internship ends. Realizing now, I was lying, there were actually two people who knew of this adventure beforehand, him and the other friend of the first day.
+Before that I needed to get home first, and now the logistical masterclass comes into the picture. Before the trip I was visiting a friend who did an internship in Köln/Cologne, Germany. I left my laptop with him, because I will need it in Vienna but I did not want to bring it on my bicycle tour, so I asked him to bring it to Vienna when his internship ends. Realizing now, I was lying, there were actually two people who knew of this adventure beforehand, him and the other friend of the first day.
 
 Close to my home, the final hill (my family house is on a hill), I passed the street where his Dad was living. He just arrived or was just on the brink of leaving, but we managed somehow to meet at the right time and he gave me my laptop. A perfect timing, perfectly on the right location, for me on my way and for him on his way. Thanks, such a trustworthy friend! The friend of my friend who was there as well probably is still confused to this day.
 
