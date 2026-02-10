@@ -12,3 +12,7 @@
 .blog-content h3 {
   @apply text-lg font-semibold mb-1 mt-5;
 }
+
+.blog-content p {
+  @apply mb-3 mt-1;
+}
