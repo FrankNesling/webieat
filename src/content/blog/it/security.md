@@ -2,7 +2,7 @@
 title: "Security"
 description: ""
 pubDate: 2026-02-05
-lastEdit: 2026-02-06
+lastEdit: 2026-02-11
 ---
 
 ## MD5 (message-digest)
@@ -33,3 +33,10 @@ It is a cryptographical system to encrypt data and digital signatures, using the
 
 It is a protocol that enables a secure creation of a shared key that will be used for further encrypted data transfer between two parties. The key is not transmitted.
 
+## Bearer token
+
+If you have the token, you are authorized and no other proof is necessary.
+
+## JWT (JSON Web Token)
+
+A format for a token.
