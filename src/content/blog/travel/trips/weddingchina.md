@@ -1,6 +1,6 @@
 ---
-title: "China 2025"
-description: "East coast"
+title: "Mandarin Party 2025"
+description: "East coast China & Taiwan"
 pubDate: 2026-02-07
 lastEdit: 2026-02-10
 ---
