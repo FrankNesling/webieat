@@ -304,7 +304,7 @@
     "frameworks": [""],
     "tags": ["Web", "Game"],
     "tools": ["Visual Studio", "GitHub"],
-    "codebase": "https://github.com/FrankNesling/webieat/tree/main/knack-the-Gno"
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/public/knack-the-Gno"
    },
    { 
     "id": 24,
@@ -318,7 +318,7 @@
     "frameworks": [""],
     "tags": ["Web", "Game"],
     "tools": ["Visual Studio", "GitHub"],
-    "codebase": "https://github.com/FrankNesling/webieat/tree/main/projectwarrior"
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/public/projectwarrior"
    },
    { 
     "id": 25,
@@ -332,7 +332,7 @@
     "frameworks": [""],
     "tags": ["Web", "Game"],
     "tools": ["Visual Studio", "GitHub"],
-    "codebase": "https://github.com/FrankNesling/webieat/tree/main/escapeisland"
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/public/escapeisland"
    },
    { 
     "id": 26,
@@ -346,7 +346,7 @@
     "frameworks": [""],
     "tags": ["Web", "Game"],
     "tools": ["GitHub"],
-    "codebase": "https://github.com/FrankNesling/webieat/tree/main/fledermaus"
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/public/fledermaus"
    },
    { 
     "id": 27,
@@ -360,7 +360,7 @@
     "frameworks": [""],
     "tags": ["Web", "Game"],
     "tools": ["Visual Studio", "GitHub"],
-    "codebase": "https://github.com/FrankNesling/webieat/tree/main/maze'ya'up"
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/public/maze'ya'up"
    },
    { 
     "id": 28,
@@ -374,7 +374,7 @@
     "frameworks": [""],
     "tags": ["Web", "Game"],
     "tools": ["Visual Studio", "GitHub"],
-    "codebase": "https://github.com/FrankNesling/webieat/tree/main/hangman"
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/public/hangman"
    },
    { 
     "id": 29,
@@ -388,7 +388,7 @@
     "frameworks": [""],
     "tags": ["Web", "Game"],
     "tools": ["Visual Studio", "GitHub"],
-    "codebase": "https://github.com/FrankNesling/webieat/tree/main/paytaxes"
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/public/paytaxes"
    },
    { 
     "id": 30,
@@ -402,7 +402,7 @@
     "frameworks": [""],
     "tags": ["Web", "Game"],
     "tools": ["Visual Studio", "GitHub"],
-    "codebase": "https://github.com/FrankNesling/webieat/tree/main/pong"
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/public/pong"
    },
    { 
     "id": 31,
@@ -416,7 +416,7 @@
     "frameworks": [""],
     "tags": ["Web", "Game"],
     "tools": ["Visual Studio", "GitHub"],
-    "codebase": "https://github.com/FrankNesling/webieat/tree/main/starwars"
+    "codebase": "https://github.com/FrankNesling/webieat/tree/main/public/starwars"
    },
    { 
     "id": 32,
