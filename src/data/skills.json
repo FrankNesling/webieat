@@ -95,7 +95,7 @@
   { 
     "id": 8,
     "topic": "PraiseUp", 
-    "description": "Praise your taiwanese girlfriend",
+    "description": "Praise your Taiwanese girlfriend",
     "type": "application",
     "professionell": true,
     "url": "https://webie.at/praiseup.apk",
@@ -103,7 +103,8 @@
     "languages": ["Kotlin"],
     "frameworks": [],
     "tags": ["Mobile App", "Machine Learning / AI"],
-    "tools": ["Android Studio"]
+    "tools": ["Android Studio"],
+    "codebase": "https://github.com/FrankNesling/praiseup"
   },
   { 
     "id": 9,
