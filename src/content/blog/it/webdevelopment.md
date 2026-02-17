@@ -73,3 +73,7 @@ A modern webserver that is very performant in serving files like css, js or html
 ## Apache
 
 In the past the most popular webserver, that starts one thread per connection, which is slower at scale.
+
+## Media Access Control address (MAC)
+
+A globally unique identity for the Data link layer (Ethernet). Routers use IP, Switches use MAC. It is a separation of concerns, and MAC logic has less overhead. The authority to keep it unique is the IEEE (Institute of Electrical and Electronics Engineers).
