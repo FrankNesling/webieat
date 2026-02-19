@@ -64,3 +64,11 @@ Any form of the code that is needed for the final compilation. Could be an AST o
 ## Virtual Machine (VM)
 
 In the context of programming languages, it is an environment that runs platform-independent and contains the necessities to have source code run on the machine. The Java Virtual Machine (JVM) is a famous example.
+
+## LL(1) Parser
+
+Left to right (L) and Left-derivation (L), which means top-down parser, with 1 look ahead token. Uses FIRST and FOLLOW. 
+
+## CFG
+
+Context-free grammar
