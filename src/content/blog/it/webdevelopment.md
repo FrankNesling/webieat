@@ -76,4 +76,8 @@ In the past the most popular webserver, that starts one thread per connection, w
 
 ## Media Access Control address (MAC)
 
-A globally unique identity for the Data link layer (Ethernet). Routers use IP, Switches use MAC. It is a separation of concerns, and MAC logic has less overhead. The authority to keep it unique is the IEEE (Institute of Electrical and Electronics Engineers).
+A globally unique identity for the Data link layer (Ethernet). Routers use IP, Switches use MAC. It is a separation of concerns, and MAC logic has less overhead. The authority to keep it unique is the IEEE (Institute of Electrical and Electronics Engineers). The MAC address is used between two devices, so the sender to an IP address most of the time does not know the MAC address of the receiver, but they know the MAC address of their closest router.
+
+## Address Resolution Protocol (ARP)
+
+Gets the MAC address of your router.
