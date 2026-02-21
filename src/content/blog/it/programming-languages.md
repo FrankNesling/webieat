@@ -2,7 +2,7 @@
 title: "Programming Languages"
 description: "An overview"
 pubDate: 2026-01-05
-lastEdit: 2026-01-31
+lastEdit: 2026-02-21
 ---
 
 ## C
@@ -16,6 +16,15 @@ C with OOP. Released in 1985 by Danish Bjarne Stroustrup.
 ## Java
 
 Maintained by Oracle and first released in 1995. Write Once, Run Anywhere (WORA). The source code is compiled to bytecode that can run on any computer with the JVM.
+
+JRE (Java Runtime Environment) - everything needed to run a Java program, contains the standard libraries (eg. Maths) and the JVM
+
+JVM (Java Virtual Machine) - executes the program and takes care of behind-the-scene stuff like garbage collection
+
+JDK (Java Development Kit) - everything needed to create a Java program, eg. javac (java compiler)
+
+.jar (Java Archive) - archive file (like .zip) that bundles java related stuff together
+
 
 ## JavaScript
 
