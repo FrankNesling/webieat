@@ -46,7 +46,7 @@ let logoIcon = logosSVG[`../assets/Logos/${item.data.id}.svg`] ?? logosPNG[`../a
       <!-- Description -->
       <p class="text-sm text-gray-600 mb-2">{item.data.description}</p>
       {item.data.codebase ? <a href={item.data.codebase} onclick="event.stopPropagation()" target="_blank" class="italic underline mb-1 cursor-pointer">Link to Codebase</a> : null}
-      {item.data.url ? <a href={item.data.url} onclick="event.stopPropagation()" target="_blank" class="italic underline mb-1 cursor-pointer block md:hidden">Download</a> : null}
+      {item.data.url ? <a href={item.data.url} onclick="event.stopPropagation()" target="_blank" class="italic underline mb-1 cursor-pointer block md:hidden">Download / Open</a> : null}
     </div>
 
     <!-- DL -->
