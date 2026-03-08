@@ -2,8 +2,10 @@
 title: "LTB List (WIP)"
 description: "LTB Books in possesion"
 pubDate: 2026-01-09
-lastEdit: 2026-03-01
+lastEdit: 2026-03-08
 ---
+
+WIP -> Don Rosa comics
 
 ALT -> besser ist die NEU-Version, ALT hat die gleichen Geschichten, aber ein "schlechteres" Cover (vor Allem seitlich) und nicht alle Geschichten sind vollständig farbig; geringere Priorität zum Ersetzen, aber Ziel ist 1-100 in NEU (oder OK) zu haben
 
@@ -37,7 +39,7 @@ Doppelt (in NEU): 125, 293, 429, 467
 
 97: NEU
 
-100: NEU
+99-100: NEU
 
 ## 101 - 200
 105: NEU
@@ -208,6 +210,8 @@ ab jetzt alle NEU oder OK
 
 43
 
+114
+
 ## Extra
 
 1 - Fußball Fieber
@@ -216,9 +220,9 @@ ab jetzt alle NEU oder OK
 
 4
 
-## Wienerisch
+## Mundart
 
-3
+3 - Wienerisch
 
 ## Ultimate Phantomias
 
