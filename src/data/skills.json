@@ -625,6 +625,7 @@
     "languages": ["C#"],
     "frameworks": [""],
     "tags": ["Desktop App", "Game"],
-    "tools": ["Visual Studio"]
+    "tools": ["Visual Studio"],
+    "codebase": "https://github.com/FrankNesling/EasterEpp"
    }
 ]
