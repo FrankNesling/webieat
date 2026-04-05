@@ -613,5 +613,18 @@
     "frameworks": ["MAUI"],
     "tags": ["Mobile App"],
     "tools": []
+   },
+   { 
+    "id": 47,
+    "topic": "EasterEpp", 
+    "description": "Find the easter eggs.",
+    "type": "application",
+    "professionell": false,
+    "url": "https://webie.at/EasterEpp.zip",
+    "logo": "",
+    "languages": ["C#"],
+    "frameworks": [""],
+    "tags": ["Desktop App", "Game"],
+    "tools": ["Visual Studio"]
    }
 ]
