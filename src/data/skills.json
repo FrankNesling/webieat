@@ -627,5 +627,19 @@
     "tags": ["Desktop App", "Game"],
     "tools": ["Visual Studio"],
     "codebase": "https://github.com/FrankNesling/EasterEpp"
+   },
+   { 
+    "id": 48,
+    "topic": "BaskIt", 
+    "description": "Sort your way out of trouble",
+    "type": "project",
+    "professionell": true,
+    "url": "https://webie.at/baskit.apk",
+    "logo": "",
+    "languages": ["Kotlin"],
+    "frameworks": ["Jetpack Compose"],
+    "tags": ["Mobile App", "Game"],
+    "tools": ["Android Studio"]
    }
+
 ]
