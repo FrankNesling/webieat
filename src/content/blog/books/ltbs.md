@@ -54,9 +54,7 @@ Doppelt (in NEU): 125, 293, 429, 467
 
 ab jetzt alle NEU oder OK
 
-119-120
-
-122-127
+119-127
 
 129-130
 
