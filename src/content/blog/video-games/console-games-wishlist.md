@@ -19,7 +19,7 @@ lastEdit: 2026-01-09
 
 - [ ] [N64] Kirby 64: The Crystal Shards
 
-- [ ] [N64] Beetle Adventure Racing
+- [x] ~~[N64] Beetle Adventure Racing~~
 
 - [x] ~~[N64] Donkey Kong 64~~
 
@@ -57,7 +57,7 @@ lastEdit: 2026-01-09
 
 - [ ] [Nintendo Switch] Super Mario Odyssey
 
-- [ ] [Nintendo Switch] Donkey Kong Country: Tropical Freeze
+- [x] ~~[Nintendo Switch] Donkey Kong Country: Tropical Freeze~~
 
 - [ ] [Nintendo Switch] Donkey Kong Country Returns HD
 
