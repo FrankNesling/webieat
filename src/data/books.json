@@ -1,0 +1,14 @@
+[
+ { 
+    "id": 1,
+    "name": "",
+    "author": "",
+    "year": "",
+    "country": "maybe maybe",
+    "recommendation": "-2,-1,0,1,2",
+    "explanation": "why recommendation",
+    "language": "English",
+    "original": true,
+    "type": "Science, Historical, Romance, Fantasy??"
+   }
+]
