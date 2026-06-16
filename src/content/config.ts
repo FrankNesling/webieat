@@ -39,4 +39,24 @@ const blog = defineCollection({
 
 // somewhere I need to specify I am familiar with all Windows, MacOS and Linxu (Ubuntu, Fedora)
 
-export const collections = { skills, blog };
+const videogames = defineCollection({
+  loader: file("src/data/videogames.json"),
+  schema: z.object({
+    id: z.number(),
+    name: z.string(),
+    year: z.string().optional(),
+    series: z.string().optional(),
+    developer: z.string().optional(),
+    stars: z.number().optional(),
+    recommendation: z.string().optional(),
+    addons: z.string().optional(),
+    genre: z.string().optional(),
+    platform: z.array(z.string()).optional(),
+    playtime: z.string().optional(),
+    completion: z.string().optional(),
+    campaignsCompleted: z.array(z.string()).optional(),
+    customMods: z.array(z.string()).optional(),
+  }),
+});
+
+export const collections = { skills, blog, videogames };

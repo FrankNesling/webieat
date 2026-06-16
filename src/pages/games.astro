@@ -1,0 +1,16 @@
+---
+import LayoutWithTopNavBar from '../layouts/LayoutWithTopNavBar.astro';
+import GameItem from '../components/GameItem.astro';
+import { getCollection } from 'astro:content';
+
+const games = await getCollection('videogames');
+---
+
+<LayoutWithTopNavBar>
+  <h1 class="text-3xl font-bold mb-6 text-center">Video Games</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {games.map(game => (
+      <GameItem item={game} />
+    ))}
+  </div>
+</LayoutWithTopNavBar>

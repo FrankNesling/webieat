@@ -1,0 +1,64 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+const { item } = Astro.props as { item: CollectionEntry<'videogames'> };
+const game = item.data;
+
+const completionColors: Record<string, string> = {
+  'wishlist': 'bg-gray-300 text-gray-700',
+  'started': 'bg-blue-300 text-blue-800',
+  'played': 'bg-yellow-300 text-yellow-800',
+  'completed': 'bg-green-300 text-green-800',
+  '100%': 'bg-amber-400 text-amber-900',
+};
+
+const completionKey = game.completion?.toLowerCase() ?? '';
+const completionClass = completionColors[completionKey] ?? 'bg-gray-300 text-gray-700';
+---
+
+<div class="game-item px-4 py-5 rounded border border-[#e8c8b0] flex flex-col gap-2">
+  <div class="flex justify-between items-start gap-2">
+    <h3 class="text-lg font-semibold leading-tight">{game.name}</h3>
+    {game.stars !== undefined && (
+      <span class="text-amber-400 shrink-0 text-base" title={`${game.stars}/5`}>
+        {'★'.repeat(game.stars)}{'☆'.repeat(5 - game.stars)}
+      </span>
+    )}
+  </div>
+
+  <div class="flex flex-wrap gap-x-3 text-sm text-gray-500">
+    {game.year && <span>{game.year}</span>}
+    {game.genre && <span>· {game.genre}</span>}
+    {game.series && game.series !== game.name && <span>· {game.series}</span>}
+  </div>
+
+  {game.recommendation && (
+    <p class="text-sm text-gray-600 italic">"{game.recommendation}"</p>
+  )}
+
+  <div class="flex flex-wrap gap-2 mt-1">
+    {game.completion && (
+      <span class={`text-xs font-semibold px-2 py-0.5 rounded ${completionClass}`}>
+        {game.completion}
+      </span>
+    )}
+    {game.playtime && (
+      <span class="text-xs bg-purple-200 text-purple-800 px-2 py-0.5 rounded">
+        {game.playtime}
+      </span>
+    )}
+    {game.platform?.map((p: string) => (
+      <span class="text-xs bg-gray-200 text-gray-700 px-2 py-0.5 rounded">{p}</span>
+    ))}
+  </div>
+
+  {game.addons && (
+    <p class="text-xs text-gray-500">Addons: {game.addons}</p>
+  )}
+  {game.campaignsCompleted && game.campaignsCompleted.length > 0 && (
+    <p class="text-xs text-gray-500">Campaigns: {game.campaignsCompleted.join(', ')}</p>
+  )}
+  {game.customMods && game.customMods.length > 0 && (
+    <p class="text-xs text-gray-500">Mods: {game.customMods.join(', ')}</p>
+  )}
+</div>
