@@ -1,19 +1,9 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import Tag from './Tag.astro';
 
 const { item } = Astro.props as { item: CollectionEntry<'videogames'> };
 const game = item.data;
-
-const completionColors: Record<string, string> = {
-  'wishlist': 'bg-gray-300 text-gray-700',
-  'started': 'bg-blue-300 text-blue-800',
-  'played': 'bg-yellow-300 text-yellow-800',
-  'completed': 'bg-green-300 text-green-800',
-  '100%': 'bg-amber-400 text-amber-900',
-};
-
-const completionKey = game.completion?.toLowerCase() ?? '';
-const completionClass = completionColors[completionKey] ?? 'bg-gray-300 text-gray-700';
 ---
 
 <div class="skill-item relative px-4 py-6 group">
@@ -23,8 +13,31 @@ const completionClass = completionColors[completionKey] ?? 'bg-gray-300 text-gra
       <!-- Logo and Name -->
       <div class={`w-12 h-12 rounded-full bg-blue-300 mb-4`}></div>
       <h3 class="text-lg font-semibold mb-2">{game.name}</h3>
+      <Tag class="tag-tag" tagName={game.genre}/>
+      <p>{game.year} - {game.series}</p>
       <!-- Description -->
       <p class="text-sm text-gray-600 mb-2">{game.recommendation}</p>
+      <!-- Developer -->
+      <div class="flex flex-wrap justify-center gap-2 mt-4">   
+        <Tag class="tag-tag" tagName={game.developer}/>
+        <Tag class="tag-tag" tagName={game.publisher}/>
+        <Tag class="tag-tag" tagName={game.developerCountry}/>
+      </div>
+      <!-- personal experience -->
+      <p>{game.playtime} - {game.completion}</p>
+      <!-- Platform: TODO icons -->
+      <div class="flex flex-wrap justify-center gap-2 mt-4">   
+        {game.platform?.map((pf: string) => (
+          <Tag class="tag-tag" tagName={pf}/>
+        ))}
+      </div>
+      <!-- addons -->
+      <h3 class="text-md font-semibold mb-2">{game.addons}</h4>
+      <h3 class="text-md mb-2">Campaigns: {game.campaignsCompleted}</h4>  <!-- TODO red/green for completion -->
+      <h3 class="text-md mb-2">Mods: {game.customMods}</h4>
+
+
+
     </div>
 
 </div>

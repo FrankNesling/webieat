@@ -47,6 +47,8 @@ const videogames = defineCollection({
     year: z.string().optional(),
     series: z.string().optional(),
     developer: z.string().optional(),
+    publisher: z.string().optional(),
+    developerCountry: z.string().optional(),
     stars: z.number().optional(),
     recommendation: z.string().optional(),
     addons: z.string().optional(),
