@@ -51,7 +51,7 @@ const videogames = defineCollection({
     developerCountry: z.string().optional(),
     stars: z.number().optional(),
     recommendation: z.string().optional(),
-    addons: z.string().optional(),
+    addons: z.array(z.string()).optional(),
     genre: z.string().optional(),
     platform: z.array(z.string()).optional(),
     playtime: z.string().optional(),

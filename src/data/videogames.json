@@ -9,7 +9,7 @@
         "developerCountry": "Canada",
         "stars": 5,
         "recommendation": "Fun Fun Fun. Just play! Racing against AI maybe least interesting, but police wow",
-        "addons": "Black Edition",
+        "addons": ["Black Edition"],
         "genre": "Racing (Strategy, Adventure, Action, Platformer, Shooter,) ",
         "platform": ["PC", "PS3 ..."],
         "playtime": "short, MEDIUM, a lot, massively",
@@ -27,7 +27,7 @@
         "platform": ["PC"],
         "playtime": "massively",
         "completion": "completed",
-        "addons": "Zeitalter der Eroberung",
+        "addons": ["Zeitalter der Eroberung"],
         "campaignsCompleted": ["Romans, Pacific, Russian, English, Greek, German"],
         "customMods": ["Swedish?"]
     },
@@ -55,7 +55,7 @@
         "platform": ["PC"],
         "playtime": "a lot",
         "completion": "completed",
-        "addons": "Die Nacht des Rabens",
+        "addons": ["Die Nacht des Rabens"],
         "campaignsCompleted": []
     },
     { 

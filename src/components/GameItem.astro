@@ -4,6 +4,7 @@ import Tag from './Tag.astro';
 
 const { item } = Astro.props as { item: CollectionEntry<'videogames'> };
 const game = item.data;
+
 ---
 
 <div class="skill-item relative px-4 py-6 group">
@@ -13,6 +14,13 @@ const game = item.data;
       <!-- Logo and Name -->
       <div class={`w-12 h-12 rounded-full bg-blue-300 mb-4`}></div>
       <h3 class="text-lg font-semibold mb-2">{game.name}</h3>
+
+      <div class="flex flex-wrap justify-center gap-2 mb-4">   
+        {game.addons?.map(addon => (
+          <h3 class="text-sm font-semibold mb-2">{addon}</h3>
+        ))}     
+      </div>
+
       <Tag class="tag-tag" tagName={game.genre}/>
       <p class="mt-2">{game.year} - {game.series}</p>
       <!-- Description -->
@@ -33,9 +41,8 @@ const game = item.data;
         ))}
       </div>
       <!-- addons -->
-      <h3 class="text-md font-semibold mb-2">{game.addons}</h4>
-      <h3 class="text-md mb-2">Campaigns: {game.campaignsCompleted}</h4>  <!-- TODO red/green for completion -->
-      <h3 class="text-md mb-2">Mods: {game.customMods}</h4>
+      <h3 class="text-md mb-2">Campaigns: {game.campaignsCompleted}</h3>  <!-- TODO red/green for completion -->
+      <h3 class="text-md mb-2">Mods: {game.customMods}</h3>
 
 
 
