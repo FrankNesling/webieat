@@ -14,16 +14,17 @@ const game = item.data;
       <div class={`w-12 h-12 rounded-full bg-blue-300 mb-4`}></div>
       <h3 class="text-lg font-semibold mb-2">{game.name}</h3>
       <Tag class="tag-tag" tagName={game.genre}/>
-      <p>{game.year} - {game.series}</p>
+      <p class="mt-2">{game.year} - {game.series}</p>
       <!-- Description -->
       <p class="text-sm text-gray-600 mb-2">{game.recommendation}</p>
       <!-- Developer -->
       <div class="flex flex-wrap justify-center gap-2 mt-4">   
-        <Tag class="tag-tag" tagName={game.developer}/>
-        <Tag class="tag-tag" tagName={game.publisher}/>
-        <Tag class="tag-tag" tagName={game.developerCountry}/>
+        {game.developer ? <Tag class="tag-tag" tagName={game.developer}/> : null}
+        {game.publisher ? <Tag class="tag-tag" tagName={game.publisher}/> : null}
+        {game.developerCountry ? <Tag class="tag-tag" tagName={game.developerCountry}/> : null}
       </div>
       <!-- personal experience -->
+       <!-- TODO display two very small pretty colored tags with time and check icon -->
       <p>{game.playtime} - {game.completion}</p>
       <!-- Platform: TODO icons -->
       <div class="flex flex-wrap justify-center gap-2 mt-4">   
