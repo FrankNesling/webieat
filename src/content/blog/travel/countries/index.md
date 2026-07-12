@@ -2,10 +2,14 @@
 title: "Countries"
 description: ""
 pubDate: 2026-01-03
-lastEdit: 2026-02-07
+lastEdit: 2026-11-12
 ---
 
-## Countries I've been in 2026 (5 so far)
+## Countries I've been in 2026 (7 so far)
+
+Czechia
+
+Slovakia
 
 Switzerland
 
