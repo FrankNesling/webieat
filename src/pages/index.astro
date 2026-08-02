@@ -1,24 +1,153 @@
 ---
-import LandingPage from './LandingPage.astro';
-import LayoutWithTopNavBar from '../layouts/LayoutWithTopNavBar.astro';
-
-/* TODOs
-
-split professionell on nesling.com to private webie.at
-nesling com can be hosted on github, webieat should be hosted somewhere else (to upload singular (data) files)
-
-private:
-filter lists (similar to coding projects) -> Games (can link to Blog entries), Travels?, Events, 
-lexikon -> politics, history?
-blog entries -> travels, IT?? on nesling.com
-collections? -> LTBs (with stats?), 
-
-some behind login?
-
-
-*/
 ---
+<title>
+    Matthias Gnilsen - Software development
+</title>
 
-<LayoutWithTopNavBar>
-    <LandingPage />
-</LayoutWithTopNavBar>
+<main>
+<header class="hero">
+    <h1>Quality, long-lasting, robust sofware solutions.</h1>
+    <h2>Are you looking for software that is reliable and robust? Software, on which the customers can count on to function persistently? Software that will still be in a good shape in a few years?<br>
+    Then I am the right person to contact. <b>Matthias Gnilsen</b>, my name! I am from Austria, currently based in Switzerland. I am a very structured personality that loves to build clean and consistent digital solutions.</h2>
+    <h3>Contact me: <a href="mailto:matthias.gnilsen@hotmail.com">matthias.gnilsen@hotmail.com</a></h3>
+</header>
+
+<!-- Explanations -->
+<section class="prose">
+    <h2>Current projects:</h2>
+    <ul>
+        <li>
+            <b>SIGA</b> - Photogrammetry and 3D model manipulation
+            <ul>
+                <li>Performance tweaks</li>
+                <li>Software architecture</li>
+            </ul>
+        </li>
+        <li>
+            <b>Schranner</b> - Learning platform including AI service
+            <ul>
+                <li>Robust database structure</li>
+                <li>Vague business requirements into precise output</li>
+            </ul>
+        </li>
+        <li>
+            <b>BaskIt (WIP)</b> - Fast-paced 2D casual game
+            <ul>
+                <li>User Experience (UX) - Intuitive</li>
+                <li>User Interface (UI) - Simplicity</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<!-- Lists -->
+<section class="prose">
+    <h2>Skills:</h2>
+
+    <ul>
+        <li><b>API:</b> C#/.NET, nestjs/Nodejs, php</li>        
+        <li><b>3D Engine:</b> Babylon.js, OpenGL</li>
+        <li><b>Mobile Development:</b> Kotlin, Swift, Java, C#/MAUI, Dart/Flutter </li>
+        <li><b>Desktop Development:</b> C#, Python, C++, Java</li>
+        <li><b>Web Development:</b> JavaScript/HTML/CSS, TypeScript, React, Astro.js, Gatsby.js</li>
+        <li><b>Visual Computing:</b> Structure-from-Motion (SfM), Multi-Video stereo (MVS)</li>
+        <li><b>Machine Learning:</b> LLMs, 2D/3D Geometry (SAM, NERFs, Gaussian Splatting, HLoc, ...)</li>
+        <li><b>Database:</b> MySQL, PostgreSQL, Sqlite</li>
+        <li><b>DevOps:</b> Kubernetes, Docker</li>
+        <li><b></b>Rust, OCaml, Haskell, Assembly, MATLAB</li>
+    </ul>
+
+    <h2>Tools:</h2>
+    <ul>
+        <li><b>Version Control:</b> GitHub, GitLab</li>
+        <li><b>IDEs:</b> Visual Studio, VS Code, Eclipse, Android Studio, XCode, Unity</li>
+        <li><b>Database administration:</b> NeonDB, MySQL Workbench, phpMyAdmin, pgAdmin, SQLite Browser</li>
+        <li><b>Networking:</b> Insomnia, Postman</li>
+        <li><b>User Management:</b> Clerk, MS Entra</li>
+        <li><b>Cloud:</b> Azure, Kubernetes</li>
+        <li><b>Monitoring:</b> DataDog</li>
+        <li><b>Work management:</b> Atlassian, Notion, MS Teams</li>
+        <li><b>Design:</b> Figma, GIMP</li>
+        <li><b>CRM:</b> D365</li>
+        <li><b>3D manipulation:</b> Blender, Meshlab</li>
+
+    </ul>
+
+    <footer>
+        <h3>Contact me: <a href="mailto:matthias.gnilsen@hotmail.com">matthias.gnilsen@hotmail.com</a></h3>
+    </footer>
+</section>
+</main>
+
+<style>
+    main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: clamp(4rem, 12vh, 9rem) 1.5rem 6rem;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 5rem;
+    }
+
+    h1 {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-weight: 700;
+        font-size: clamp(2.4rem, 7vw, 4.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        margin: 0;
+    }
+
+    .prose {
+        margin-bottom: 4rem;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    h2 {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-size: 1.35rem;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        margin: 2.5rem 0 0.75rem;
+    }
+
+    p {
+        margin: 0 0 1.1rem;
+        color: #d3e8f2;
+    }
+
+    ul,
+    ol {
+        margin: 0 0 1.1rem;
+        padding-left: 1.3rem;
+        color: #d3e8f2;
+    }
+
+    footer {
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(234, 246, 251, 0.15);
+    }
+    body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Inter", system-ui, sans-serif;
+        color: #eaf6fb;
+        line-height: 1.7;
+        background: linear-gradient(
+            to bottom,
+            #000000 0%,
+            #05121f 33%,
+            #0e2b45 66%,
+            #1e5680 100%
+        );
+    }
+</style>
