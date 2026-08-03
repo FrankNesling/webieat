@@ -14,6 +14,7 @@
 
 <!-- Explanations -->
 <section class="prose">
+    <div class="circle"></div>
     <h2>Current projects:</h2>
     <ul>
         <li>
@@ -33,8 +34,8 @@
         <li>
             <b>BaskIt (WIP)</b> - Fast-paced 2D casual game
             <ul>
-                <li>User Experience (UX) - Intuitive</li>
-                <li>User Interface (UI) - Simplicity</li>
+                <li>Simple and intuitive UI + UX</li>
+                <li>Monetary system</li>
             </ul>
         </li>
     </ul>
@@ -80,6 +81,22 @@
 </main>
 
 <style>
+    .circle {
+        position: absolute;
+        top: -500px;
+        right: -350px;
+        width: 1000px;
+        height: 1000px;
+        border-radius: 100%;
+        z-index: -1;
+        background: linear-gradient(
+            #05121f 10%,
+            #0e2b45 50%,
+            #05121f 90%
+        );
+        box-shadow: 0 0 10px #0e2b45, 0 0 20px #0e2b45, 0 0 40px #0e2b45;
+    }
+
     main {
         max-width: 720px;
         margin: 0 auto;
@@ -147,7 +164,7 @@
             #000000 0%,
             #05121f 33%,
             #0e2b45 66%,
-            #1e5680 100%
+            #1a3f5b 100%
         );
     }
 </style>
