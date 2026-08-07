@@ -185,6 +185,10 @@ A sprite maps image data (texture or parts of it) to a screen position.
 
 Saves images or textures, sprites, color palettes and often the frame buffer.
 
+## Stencil buffer 
+
+A buffer for the pixels that can be filled with integer values. On the stencil test (before the depth test), any effect depending on the value can be applied.
+
 ## Anti-Aliasing
 
 ## V-Sync
