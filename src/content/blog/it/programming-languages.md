@@ -25,6 +25,8 @@ JDK (Java Development Kit) - everything needed to create a Java program, eg. jav
 
 .jar (Java Archive) - archive file (like .zip) that bundles java related stuff together
 
+Spring is a popular framework that enables developers to focus more on business logic as it provides more common stuff than base Java.
+
 
 ## JavaScript
 

@@ -72,3 +72,11 @@ Left to right (L) and Left-derivation (L), which means top-down parser, with 1 l
 ## CFG
 
 Context-free grammar
+
+## Maven
+
+A build-automation tool (compile + link) primarily used for Java projects. Described via XML.
+
+## Gradle
+
+Uses the concept of Maven but is written in either Kotlin or Groovy. Primarily used for Java Projects and languages that use the JVM like Kotlin.
