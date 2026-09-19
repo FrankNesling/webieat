@@ -5,7 +5,7 @@ pubDate: 2026-01-03
 lastEdit: 2026-09-09
 ---
 
-## Countries I've been in 2026 (9 so far)
+## Countries I've been in 2026 (10 so far)
 
 Czechia
 
@@ -24,6 +24,8 @@ Italy
 Taiwan
 
 South Korea
+
+China
 
 ## Countries I've been in 2025 (15)
 
