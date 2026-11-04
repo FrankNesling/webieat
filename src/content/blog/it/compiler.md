@@ -2,7 +2,7 @@
 title: "Compiler"
 description: ""
 pubDate: 2026-02-01
-lastEdit: 2026-02-04
+lastEdit: 2026-08-29
 ---
 
 ## Bytecode
@@ -80,3 +80,7 @@ A build-automation tool (compile + link) primarily used for Java projects. Descr
 ## Gradle
 
 Uses the concept of Maven but is written in either Kotlin or Groovy. Primarily used for Java Projects and languages that use the JVM like Kotlin.
+
+## Android/Movile terms
+
+Factory, Repository, VCVM, Dependency Injection (build time)
