@@ -2,10 +2,10 @@
 title: "Countries"
 description: ""
 pubDate: 2026-01-03
-lastEdit: 2026-09-09
+lastEdit: 2026-11-05
 ---
 
-## Countries I've been in 2026 (10 so far)
+## Countries I've been in 2026 (11 so far)
 
 Czechia
 
@@ -26,6 +26,8 @@ Taiwan
 South Korea
 
 China
+
+Denmark
 
 ## Countries I've been in 2025 (15)
 
