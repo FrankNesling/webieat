@@ -5,6 +5,9 @@ const background = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg', 
 });
 ---
 <head>
+<title>
+    Webie.at - Verkehrsgigant
+</title>
 <link rel="icon" type="image/svg+xml" href="/trafficgiant/icon.bmp" />
 <style>
   html, body {
@@ -30,27 +33,57 @@ const background = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg', 
       gap: 1rem;
       align-items: flex-start;
     }
+  .sized {
+    width: 45%;
+  }
+  a {
+    color: black;
+  }
+  a:visited {
+    color: white;
+  }
 </style>
 </head>
 <body>
 
 <div id="main">
    <h1><b>Verkehrsgigant</b></h1>
+   <p>Here is an incomplete list of interesting findings in the game files of Verkehrsgigant / Traffic Giant, as well as a few modifications.</p>
+   <h2><b>Vehicles.cfg meaning</b></h2>
+   <p>WIP</p>
    <h2><b>Unused assets</b></h2>
    <h3>Trucks</h3>
-    <p> There are a few truck assets hidden in the game files. It is possible to put them into the game and the animation works, but for now only as a replacement of a bus.</p>
+   <p> There are a few truck assets hidden in the game files. It is possible to put them into the game and the animation works, but for now only as a replacement of a bus instead of being part of the normal traffic.</p>
    <div class="row">
       <img src="/trafficgiant/lkw1.bmp" />
       <img src="/trafficgiant/lkw2.bmp" />
       <img src="/trafficgiant/lkw3.bmp" />
       <img src="/trafficgiant/lkw4.bmp" />
-    </div>
+   </div>
+   <h3>Stations</h3>
+   <p>Very interesting are unused assets of two railways stations. They are only in this version, ie. there is not a version for each of the four base colors.</p>
+   <img src="/trafficgiant/stations.bmp" />
    <h2><b>Flipped suspension rail</b></h2>
+   <p>By default, the second vehicle of the suspension rail faces the same direction as the first one. For trams, the second vehicle is flipped. It would look more realistic, if the second one is also flipped for the suspension rail. And it is possible with some <a href="https://github.com/FrankNesling/Traffic-Giant-Tools/blob/master/Verkehrsgigant/Schwebebahn_Hook.py"> hack (WIP).</a></p>
+   <h4>Default look:</h4>
+   <img src="/trafficgiant/unflipped-suspension-rail.bmp" />
+   <h4>Modified look:</h4>
+   <img src="/trafficgiant/flipped-suspension-rail.bmp" />
    <h2><b>Magnetbahn</b></h2>
+   <p>WIP - The head of it looks a bit off-placed. Might be an easy fix</p>
    <h2><b>Fun facts</b></h2>
-   <p>London metro network background</p>
-   <p>Manderl</p>
-   <p>Ebensee</p>
+   <h3>London metro network background</h3>
+   <p>The blue background in the menus has the London metro network on it. It is hard to read the station names but as soon as you compare the lines, it is clear.</p>
+   <div class="row">
+      <img class="sized" src="/trafficgiant/background-menu.bmp" />
+      <img class="sized" src="/trafficgiant/metro-london.png" />
+   </div>
+   <h3>Manderl</h3>
+   <p>The waiting passenger's assets are called 'Manderl', which is the local dialect (Salzkammergut in Austria) for men or humans.</p>
+   <h3>Ebensee</h3>
+   <p>The developer studio was based in Ebensee, Upper Austria (most likely Bahnhofstrasse 22). The even have created the town as a playable campaign map for the game. Though, the accuracy of the town does not seem to be very perfect.</p>
+   <h4>My best guess of their development studio inside the game:</h4>
+    <img class="sized" src="/trafficgiant/ebensee.png" />
 </div>
 
 </body>
