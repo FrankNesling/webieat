@@ -1,0 +1,56 @@
+---
+const background = import.meta.glob<ImageMetadata>('../assets/Languages/*.svg', {
+  eager: true,
+  import: 'default',
+});
+---
+<head>
+<link rel="icon" type="image/svg+xml" href="/trafficgiant/icon.bmp" />
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+  }
+  body {
+    background: url("/trafficgiant/traffigiant.bmp") left top / 400px 100% repeat-x fixed;
+  }
+  #main {
+    background-color: #183B56;
+    width: 50%;
+    margin: 4rem auto 0;
+    padding: 1rem;
+    color: white;
+    border-radius: 12px;
+  }
+  h1 {
+    text-align: center;
+  }
+  .row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+</style>
+</head>
+<body>
+
+<div id="main">
+   <h1><b>Verkehrsgigant</b></h1>
+   <h2><b>Unused assets</b></h2>
+   <h3>Trucks</h3>
+    <p> There are a few truck assets hidden in the game files. It is possible to put them into the game and the animation works, but for now only as a replacement of a bus.</p>
+   <div class="row">
+      <img src="/trafficgiant/lkw1.bmp" />
+      <img src="/trafficgiant/lkw2.bmp" />
+      <img src="/trafficgiant/lkw3.bmp" />
+      <img src="/trafficgiant/lkw4.bmp" />
+    </div>
+   <h2><b>Flipped suspension rail</b></h2>
+   <h2><b>Magnetbahn</b></h2>
+   <h2><b>Fun facts</b></h2>
+   <p>London metro network background</p>
+   <p>Manderl</p>
+   <p>Ebensee</p>
+</div>
+
+</body>
